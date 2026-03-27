@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrepPilot — System Documentation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--o:#E8500A;--o2:#FF6B2B;--bg:#FAFAFA;--card:#FFF;--ink:#0A0A0A;--ink2:#6B6B6B;--ink3:#ADADAD;--border:#E5E4E1;--radius:16px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--o);text-decoration:none}
+
+/* Header */
+.header{background:linear-gradient(135deg,var(--o),var(--o2));color:#fff;padding:60px 24px;text-align:center}
+.header h1{font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:8px}
+.header p{font-size:18px;opacity:.85;max-width:640px;margin:0 auto 24px}
+.badge-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.badge{background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);padding:8px 20px;border-radius:40px;font-size:14px;font-weight:600}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:24px}
+
+/* Metrics */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin:-40px 24px 32px;position:relative;z-index:1;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 24px}
+.metric{background:var(--card);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid var(--border)}
+.metric .num{font-size:32px;font-weight:800;color:var(--o)}
+.metric .label{font-size:12px;color:var(--ink2);margin-top:4px}
+
+/* Section */
+.section{margin-bottom:40px}
+.section-title{font-size:24px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-title .icon{width:36px;height:36px;background:linear-gradient(135deg,var(--o),var(--o2));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px}
+
+/* Architecture */
+.arch-flow{display:flex;flex-direction:column;gap:0;align-items:center;margin:24px 0}
+.arch-box{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:20px 28px;width:100%;max-width:700px;position:relative}
+.arch-box.highlight{border-color:var(--o);background:linear-gradient(135deg,#FFF5F0,#FFF)}
+.arch-box h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.arch-box p{font-size:13px;color:var(--ink2)}
+.arch-arrow{font-size:24px;color:var(--o);margin:4px 0;text-align:center}
+
+/* Category grid */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.cat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s}
+.cat-card:hover{box-shadow:0 8px 30px rgba(232,80,10,.1)}
+.cat-header{padding:16px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none}
+.cat-header:hover{background:#FAFAFA}
+.cat-name{font-size:15px;font-weight:700}
+.cat-count{font-size:12px;color:var(--o);font-weight:700;background:#FFF3E0;padding:3px 10px;border-radius:20px}
+.cat-body{display:none;border-top:1px solid var(--border)}
+.cat-card.open .cat-body{display:block}
+.cat-chevron{transition:transform .2s;font-size:18px;color:var(--ink3)}
+.cat-card.open .cat-chevron{transform:rotate(180deg)}
+
+/* Handler list */
+.handler-list{padding:0}
+.handler-item{padding:12px 20px;border-bottom:1px solid #F5F5F5;cursor:pointer;transition:background .15s}
+.handler-item:hover{background:#FFF8F4}
+.handler-item:last-child{border-bottom:none}
+.handler-id{font-size:13px;font-weight:600;color:var(--o);font-family:'JetBrains Mono',monospace}
+.handler-desc{font-size:12px;color:var(--ink2);margin-top:2px}
+.handler-meta{display:flex;gap:8px;margin-top:4px;flex-wrap:wrap}
+.handler-tag{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600}
+.tag-table{background:#E8F5E9;color:#2E7D32}
+.tag-chart{background:#E3F2FD;color:#1565C0}
+.tag-dataset{background:#FFF3E0;color:#E65100}
+
+/* Handler detail modal */
+.handler-detail{display:none;background:#FAFAFA;border-top:1px solid var(--border);padding:16px 20px}
+.handler-item.expanded .handler-detail{display:block}
+.detail-section{margin-bottom:12px}
+.detail-section h4{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.detail-section p{font-size:12px;color:var(--ink2)}
+.formula{background:var(--ink);color:#fff;padding:12px 16px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:12px;overflow-x:auto;margin-top:4px;white-space:pre}
+.params-table{width:100%;font-size:12px;border-collapse:collapse;margin-top:4px}
+.params-table th{text-align:left;padding:6px 8px;background:#F0F0F0;font-weight:600;border-radius:4px}
+.params-table td{padding:6px 8px;border-bottom:1px solid #F0F0F0}
+
+/* Algorithm grid */
+.algo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.algo-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:border-color .2s;cursor:pointer}
+.algo-card:hover{border-color:var(--o)}
+.algo-card h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.algo-card .lib{font-size:11px;color:var(--ink3);font-family:monospace}
+.algo-card .best{font-size:12px;color:var(--ink2);margin-top:6px}
+.algo-card .formula-mini{background:#F5F5F5;padding:8px 12px;border-radius:8px;font-family:monospace;font-size:11px;margin-top:8px;color:var(--ink);display:none}
+.algo-card.expanded .formula-mini{display:block}
+.task-label{display:inline-block;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;margin-bottom:8px}
+.task-clf{background:#E8F5E9;color:#2E7D32}
+.task-reg{background:#E3F2FD;color:#1565C0}
+.task-clu{background:#F3E5F5;color:#7B1FA2}
+
+/* Commands */
+.cmd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.cmd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;border-left:4px solid var(--o)}
+.cmd-name{font-size:16px;font-weight:700;color:var(--o);font-family:monospace}
+.cmd-desc{font-size:13px;color:var(--ink2);margin-top:6px}
+.cmd-output{font-size:11px;color:var(--ink3);margin-top:8px;padding-top:8px;border-top:1px solid #F0F0F0}
+
+/* Footer */
+.footer{text-align:center;padding:40px 24px;color:var(--ink3);font-size:13px;border-top:1px solid var(--border);margin-top:40px}
+
+@media(max-width:768px){
+  .cat-grid,.algo-grid,.cmd-grid{grid-template-columns:1fr}
+  .metrics{grid-template-columns:repeat(2,1fr);margin-top:-30px}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>PrepPilot</h1>
+  <p>AI-Powered Data Science Platform — Full System Documentation</p>
+  <div class="badge-row">
+    <span class="badge">417 Handlers</span>
+    <span class="badge">27 ML Algorithms</span>
+    <span class="badge">56 Chart Types</span>
+    <span class="badge">5 Slash Commands</span>
+  </div>
+</div>
+
+<!-- Metrics -->
+<div class="metrics">
+  <div class="metric"><div class="num">417</div><div class="label">Pre-built Handlers</div></div>
+  <div class="metric"><div class="num">27</div><div class="label">ML Algorithms</div></div>
+  <div class="metric"><div class="num">56</div><div class="label">Plotly Chart Types</div></div>
+  <div class="metric"><div class="num">20+</div><div class="label">File Formats</div></div>
+  <div class="metric"><div class="num">7</div><div class="label">AI Categories</div></div>
+  <div class="metric"><div class="num">10</div><div class="label">AI Agents</div></div>
+</div>
+
+<div class="container">
+
+<!-- Architecture -->
+<div class="section">
+  <div class="section-title"><div class="icon">&#9881;</div> System Architecture</div>
+  <div class="arch-flow">
+    <div class="arch-box"><h3>User (Browser)</h3><p>Upload dataset (20+ formats) &rarr; Chat with AI &rarr; Get results</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box"><h3>Next.js 16 Frontend (port 3000)</h3><p>Chat UI &bull; DatasetPicker &bull; PlotlyChart &bull; TrainResultCard &bull; PrepFolderCard &bull; InsightsReportCard &bull; DocumentReportCard &bull; Google OAuth (NextAuth v5)</p></div>
+    <div class="arch-arrow">&darr; HTTP (JSON)</div>
+    <div class="arch-box highlight"><h3>FastAPI Backend (port 8000)</h3><p>10 API routes &bull; 10 AI agents &bull; 417 handlers &bull; Sandboxed Python execution</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box"><h3>DS-Agent (Two-Stage AI Routing)</h3>
+      <p><strong>Stage 1:</strong> Category Router (LLM, 200 tokens) &rarr; classifies into 1-3 of 7 categories<br>
+      <strong>Stage 1.5:</strong> AI Verification (if direct_answer + dataset loaded)<br>
+      <strong>Stage 2:</strong> Focused Planner (LLM) &rarr; JSON plan with handler/codegen steps<br>
+      <strong>Execute:</strong> Handler &rarr; instant | Codegen &rarr; LLM writes Python &rarr; sandbox</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slash Commands -->
+<div class="section">
+  <div class="section-title"><div class="icon">/</div> Slash Commands</div>
+  <div class="cmd-grid">
+    <div class="cmd-card"><div class="cmd-name">/cleaning</div><div class="cmd-desc">AI analyzes data issues, plans cleaning operations, executes handlers automatically. Handles nulls, duplicates, types, outliers.</div><div class="cmd-output">Output: Cleaned dataset + operation report</div></div>
+    <div class="cmd-card"><div class="cmd-name">/ml-prepare</div><div class="cmd-desc">AI selects optimal PrepConfig (scaling, encoding, outlier treatment), runs 10-step pipeline, produces train/test split.</div><div class="cmd-output">Output: X_train, X_test, y_train, y_test (folder card)</div></div>
+    <div class="cmd-card"><div class="cmd-name">/train</div><div class="cmd-desc">Auto ML: selects 5-8 algorithms, 5-fold cross-validates, Optuna hyperparameter tunes top 3, evaluates with Plotly charts.</div><div class="cmd-output">Output: TrainResultCard + .joblib model download</div></div>
+    <div class="cmd-card"><div class="cmd-name">/insights</div><div class="cmd-desc">Technical analysis: data quality score, weaknesses, possible analyses, interesting columns, action plan.</div><div class="cmd-output">Output: InsightsReportCard (export MD/PDF)</div></div>
+    <div class="cmd-card"><div class="cmd-name">/report</div><div class="cmd-desc">Business intelligence: executive summary, market analysis, promotion strategies, prioritized recommendations.</div><div class="cmd-output">Output: DocumentReportCard (export MD/HTML/PDF)</div></div>
+  </div>
+</div>
+
+<!-- Handler Categories -->
+<div class="section">
+  <div class="section-title"><div class="icon">&#9638;</div> 417 Handlers — Click to Explore</div>
+  <div class="cat-grid" id="handler-grid"></div>
+</div>
+
+<!-- ML Algorithms -->
+<div class="section">
+  <div class="section-title"><div class="icon">&#9733;</div> 27 ML Algorithms (/train)</div>
+  <div id="algo-section"></div>
+</div>
+
+<!-- Training Pipeline -->
+<div class="section">
+  <div class="section-title"><div class="icon">&#9881;</div> Auto ML Pipeline</div>
+  <div class="arch-flow">
+    <div class="arch-box"><h3>Step 1: Analyze</h3><p>Detect task type (classification / regression / clustering) from target column</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box"><h3>Step 2: Auto-Preprocess</h3><p>Coerce types &bull; Drop ID columns &bull; Fill nulls &bull; One-hot encode categoricals &bull; Scale &bull; Train/test split</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box highlight"><h3>Step 3: Select 5-8 Algorithms</h3><p>Smart selection based on dataset size, feature count, class balance</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box"><h3>Step 4: Cross-Validate (5-fold)</h3><p>StratifiedKFold for classification, KFold for regression. Auto-reduce folds for small datasets.</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box highlight"><h3>Step 5: Optuna Tuning (Top 3)</h3><p>50 trials per model using TPE sampler. Optimizes F1 (classification) or RMSE (regression).</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box"><h3>Step 6: Final Evaluation</h3><p>Best model retrained on full train set. Confusion matrix, ROC curve, feature importance, learning curve.</p></div>
+    <div class="arch-arrow">&darr;</div>
+    <div class="arch-box"><h3>Step 7: Save & Report</h3><p>Model + pipeline saved as .joblib. AI generates summary. TrainResultCard with download.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  PrepPilot &mdash; Senior Project, Applied Computer Science, KMUTT 2026
+</div>
+
+<script>
+// Handler data with formulas
+const HANDLERS = {
+  "Stats (56)": {
+    color: "#2E7D32", icon: "&#931;",
+    handlers: [
+      {id:"stats.shape", desc:"Row/column count, memory usage, duplicate count", output:"table", params:"(none)"},
+      {id:"stats.describe", desc:"Full statistical profile: dtype, nulls, mean, std, min, quartiles, max for numeric; top/freq for categorical", output:"table", params:"column?",
+       formula:"Numeric: count, mean, std, min, 25%, 50%, 75%, max\nCategorical: count, unique, top, freq"},
+      {id:"stats.null_report", desc:"Null counts + percentages per column, sorted by severity", output:"table", params:"(none)",
+       formula:"null_pct = (null_count / total_rows) * 100"},
+      {id:"stats.value_counts", desc:"Value frequencies + percentage for one column. Use for 'how many percent' questions", output:"table", params:"column?, n?",
+       formula:"percentage = (count / total) * 100"},
+      {id:"stats.correlation", desc:"Pearson correlation matrix + heatmap chart", output:"table+chart", params:"(none)",
+       formula:"r = \u03A3((xi - x\u0304)(yi - \u0233)) / \u221A(\u03A3(xi - x\u0304)\u00B2 \u00B7 \u03A3(yi - \u0233)\u00B2)"},
+      {id:"stats.cross_tab", desc:"Contingency table between 2 columns + heatmap", output:"table+chart", params:"columns (list of 2)"},
+      {id:"stats.class_balance", desc:"Target class distribution + imbalance severity check", output:"table", params:"column?",
+       formula:"imbalance_ratio = max_class_count / min_class_count"},
+      {id:"stats.group_stats", desc:"Descriptive stats per group (groupby + describe)", output:"table", params:"column? (group), value_column?"},
+      {id:"stats.top_bottom_values", desc:"Top N and bottom N values of a column", output:"table", params:"column?, n?"},
+      {id:"stats.frequency_table", desc:"Frequency table with cumulative percentage", output:"table", params:"column?",
+       formula:"cum_pct = cumsum(count) / total * 100"},
+      {id:"stats.normality_test", desc:"Shapiro-Wilk normality test per column", output:"table", params:"column?",
+       formula:"W = (\u03A3 a_i x_(i))\u00B2 / \u03A3(x_i - x\u0304)\u00B2\nH0: data is normally distributed (p > 0.05)"},
+      {id:"stats.chi2_test", desc:"Chi-squared independence test between two categorical columns", output:"table", params:"columns (list of 2)",
+       formula:"\u03C7\u00B2 = \u03A3 (O_i - E_i)\u00B2 / E_i\ndf = (rows-1)(cols-1)"},
+      {id:"stats.t_test", desc:"Independent t-test: compare numeric column across two groups", output:"table", params:"column?, group_column?",
+       formula:"t = (x\u03041 - x\u03042) / \u221A(s\u00B2\u2081/n\u2081 + s\u00B2\u2082/n\u2082)"},
+      {id:"stats.anova_test", desc:"One-way ANOVA: compare numeric across multiple groups", output:"table", params:"column?, group_column?",
+       formula:"F = MSB / MSW = (SSB/df_b) / (SSW/df_w)"},
+      {id:"stats.skewness", desc:"Skewness per numeric column (measures asymmetry)", output:"table", params:"(none)",
+       formula:"skew = (1/n) \u03A3 ((xi - x\u0304) / s)\u00B3"},
+      {id:"stats.kurtosis", desc:"Kurtosis per numeric column (measures tail heaviness)", output:"table", params:"(none)",
+       formula:"kurt = (1/n) \u03A3 ((xi - x\u0304) / s)\u2074 - 3"},
+      {id:"stats.outlier_report", desc:"IQR-based outlier detection with count per column", output:"table", params:"(none)",
+       formula:"IQR = Q3 - Q1\nOutlier if x < Q1 - 1.5*IQR or x > Q3 + 1.5*IQR"},
+      {id:"stats.z_score_report", desc:"Z-score analysis, flags extreme values (|z|>3)", output:"table", params:"column?",
+       formula:"z = (x - \u03BC) / \u03C3"},
+      {id:"stats.mutual_info_report", desc:"Mutual information scores between features and target", output:"table", params:"column? (target)",
+       formula:"MI(X;Y) = \u03A3 p(x,y) log(p(x,y) / p(x)p(y))"},
+      {id:"stats.entropy_report", desc:"Shannon entropy per column (measures randomness)", output:"table", params:"(none)",
+       formula:"H(X) = -\u03A3 p(xi) log\u2082 p(xi)"},
+      {id:"stats.class_weight_calc", desc:"Calculate balanced class weights for ML training", output:"table", params:"column (target)",
+       formula:"w_j = n_samples / (n_classes * n_samples_j)"},
+    ]
+  },
+  "Clean (60)": {
+    color: "#1565C0", icon: "&#9986;",
+    handlers: [
+      {id:"clean.fill_nulls", desc:"Fill missing values with strategy: auto/mean/median/mode/zero", output:"dataset", params:"strategy?, column?",
+       formula:"auto: skew > 1 \u2192 median, else mean (numeric); mode (categorical)"},
+      {id:"clean.remove_duplicates", desc:"Remove duplicate rows", output:"dataset", params:"(none)"},
+      {id:"clean.clip_outliers", desc:"Cap extreme values using IQR bounds", output:"dataset", params:"method? (iqr/zscore)",
+       formula:"clipped = clip(x, Q1 - 1.5*IQR, Q3 + 1.5*IQR)"},
+      {id:"clean.fix_dtypes", desc:"Auto-convert string columns that look numeric or datetime", output:"dataset", params:"(none)"},
+      {id:"clean.smote_oversample", desc:"SMOTE: generate synthetic minority samples using k-NN interpolation", output:"dataset", params:"column (target)",
+       formula:"x_new = x_i + \u03BB \u00B7 (x_nn - x_i), \u03BB \u2208 [0,1]"},
+      {id:"clean.adasyn_oversample", desc:"ADASYN: adaptive synthetic sampling, focuses on harder examples", output:"dataset", params:"column (target)",
+       formula:"\u0393_i = \u0394_i / K (ratio of majority neighbors)\nMore samples generated where \u0393_i is higher"},
+      {id:"clean.random_oversample", desc:"Randomly duplicate minority class rows", output:"dataset", params:"column (target)"},
+      {id:"clean.random_undersample", desc:"Randomly remove majority class rows", output:"dataset", params:"column (target)"},
+      {id:"clean.auto_dtype_infer", desc:"Smart data type inference + auto-conversion for all columns", output:"dataset", params:"(none)"},
+      {id:"clean.drop_column", desc:"Drop specified columns from dataset", output:"dataset", params:"columns (list)"},
+      {id:"clean.strip_whitespace", desc:"Trim leading/trailing whitespace from string columns", output:"dataset", params:"(none)"},
+      {id:"clean.remove_special_chars", desc:"Remove special characters, keep letters (all languages) + digits", output:"dataset", params:"column?",
+       formula:"regex: [^\\w\\s] \u2192 removed (Unicode \\w keeps Thai/CJK)"},
+    ]
+  },
+  "Transform (64)": {
+    color: "#E65100", icon: "&#8644;",
+    handlers: [
+      {id:"transform.filter_rows", desc:"Filter rows by condition", output:"dataset", params:"column, operator, value"},
+      {id:"transform.sort_values", desc:"Sort by column(s)", output:"dataset", params:"column?, ascending?"},
+      {id:"transform.group_aggregate", desc:"GroupBy + aggregation (sum/mean/count/min/max)", output:"table", params:"column? (group), agg?"},
+      {id:"transform.one_hot_encode", desc:"One-hot encoding for categorical column", output:"dataset", params:"column?",
+       formula:"[A,B,C] \u2192 col_A(0/1), col_B(0/1), col_C(0/1)"},
+      {id:"transform.label_encode", desc:"Label encoding: categories to integers", output:"dataset", params:"column?",
+       formula:"[cat, dog, bird] \u2192 [0, 1, 2]"},
+      {id:"transform.target_encode_transform", desc:"Target encoding: replace category with mean of target (Bayesian smoothed)", output:"dataset", params:"column, target",
+       formula:"enc = (\u03BB * group_mean + (1-\u03BB) * global_mean)\n\u03BB = n_group / (n_group + smoothing)"},
+      {id:"transform.frequency_encode_transform", desc:"Replace category with its frequency count or proportion", output:"dataset", params:"column"},
+      {id:"transform.leave_one_out_encode", desc:"LOO encoding: target encoding with leave-one-out to reduce overfitting", output:"dataset", params:"column, target",
+       formula:"enc_i = (group_sum - y_i) / (group_count - 1)"},
+      {id:"transform.standard_scale", desc:"StandardScaler: zero mean, unit variance", output:"dataset", params:"column?",
+       formula:"z = (x - \u03BC) / \u03C3"},
+      {id:"transform.minmax_scale", desc:"MinMaxScaler: scale to [0, 1]", output:"dataset", params:"column?",
+       formula:"x' = (x - min) / (max - min)"},
+      {id:"transform.robust_scale", desc:"RobustScaler: scale using median and IQR (outlier-resistant)", output:"dataset", params:"column?",
+       formula:"x' = (x - median) / IQR"},
+      {id:"transform.log_transform", desc:"Log transformation for right-skewed data", output:"dataset", params:"column?",
+       formula:"x' = log(x + 1)"},
+      {id:"transform.stratified_sample", desc:"Stratified random sampling preserving class ratios", output:"dataset", params:"column, frac?"},
+      {id:"transform.datetime_decompose", desc:"Extract year, month, day, weekday, hour, quarter, is_weekend", output:"dataset", params:"column?"},
+    ]
+  },
+  "Viz (56)": {
+    color: "#7B1FA2", icon: "&#9673;",
+    handlers: [
+      {id:"viz.bar_chart", desc:"Bar chart of value counts for a column", output:"chart", params:"column?, percentage?"},
+      {id:"viz.histogram", desc:"Histogram of numeric column distribution", output:"chart", params:"column?, bins?"},
+      {id:"viz.scatter", desc:"Scatter plot for two numeric columns", output:"chart", params:"columns? [x, y, color?]"},
+      {id:"viz.line_chart", desc:"Line chart for trends and sequences", output:"chart", params:"column?"},
+      {id:"viz.pie_chart", desc:"Pie chart (auto-groups categories > 5)", output:"chart", params:"column?"},
+      {id:"viz.heatmap", desc:"Correlation heatmap of all numeric columns", output:"chart", params:"(none)"},
+      {id:"viz.box_plot", desc:"Box plot showing quartiles, median, outliers", output:"chart", params:"column?",
+       formula:"Box: Q1 to Q3\nWhiskers: Q1-1.5*IQR to Q3+1.5*IQR\nDots: outliers beyond whiskers"},
+      {id:"viz.violin_plot", desc:"Violin plot (box + density distribution shape)", output:"chart", params:"column?"},
+      {id:"viz.treemap", desc:"Treemap for hierarchical proportions", output:"chart", params:"column?"},
+      {id:"viz.sankey", desc:"Sankey flow diagram between categorical columns", output:"chart", params:"columns? (list of 2-3)"},
+      {id:"viz.waterfall", desc:"Waterfall chart showing cumulative effect of values", output:"chart", params:"column?"},
+      {id:"viz.radar_chart", desc:"Radar/spider chart comparing multiple metrics", output:"chart", params:"columns?"},
+      {id:"viz.qq_plot", desc:"Q-Q plot to check normality", output:"chart", params:"column?"},
+      {id:"viz.density_plot", desc:"Kernel density estimation plot", output:"chart", params:"column?"},
+    ]
+  },
+  "Feature (63)": {
+    color: "#00695C", icon: "&#10024;",
+    handlers: [
+      {id:"feature.pca", desc:"Principal Component Analysis — dimensionality reduction", output:"dataset+chart", params:"n_components?",
+       formula:"X_pca = X \u00B7 W\nW = eigenvectors of cov(X)\nExplained variance = \u03BB_i / \u03A3\u03BB"},
+      {id:"feature.rfe_select", desc:"Recursive Feature Elimination — iteratively remove weakest features", output:"dataset", params:"column (target), n_features?",
+       formula:"1. Train model\n2. Rank features by importance\n3. Remove least important\n4. Repeat until n_features reached"},
+      {id:"feature.boruta_select", desc:"Boruta: all-relevant feature selection using shadow features + random forest", output:"dataset", params:"column (target)",
+       formula:"1. Create shadow features (shuffled copies)\n2. Train RF on real + shadow\n3. Feature confirmed if importance > max shadow importance"},
+      {id:"feature.mutual_info_select", desc:"Rank features by mutual information with target", output:"dataset+chart", params:"column (target), n?",
+       formula:"MI(X;Y) = \u03A3 p(x,y) log(p(x,y) / p(x)p(y))"},
+      {id:"feature.variance_threshold", desc:"Drop features with variance below threshold", output:"dataset", params:"threshold?",
+       formula:"Var(X) = E[(X - \u03BC)\u00B2]\nDrop if Var < threshold"},
+      {id:"feature.rolling_window", desc:"Rolling window statistics (mean, std, min, max)", output:"dataset", params:"column, window?, stats?",
+       formula:"rolling_mean_t = (1/w) \u03A3 x_{t-i} for i=0..w-1"},
+      {id:"feature.expanding_window", desc:"Expanding/cumulative statistics", output:"dataset", params:"column, stats?"},
+      {id:"feature.seasonal_features", desc:"Cyclical sin/cos encoding for periodic features", output:"dataset", params:"column?",
+       formula:"sin_feature = sin(2\u03C0 \u00B7 value / period)\ncos_feature = cos(2\u03C0 \u00B7 value / period)"},
+      {id:"feature.polynomial_features", desc:"Generate polynomial and interaction features", output:"dataset", params:"columns?, degree?",
+       formula:"degree=2: [x1, x2] \u2192 [x1, x2, x1\u00B2, x1*x2, x2\u00B2]"},
+      {id:"feature.interaction_features", desc:"Create multiplication interaction between columns", output:"dataset", params:"columns?",
+       formula:"interaction = col_A * col_B"},
+    ]
+  },
+  "NLP (56)": {
+    color: "#AD1457", icon: "A",
+    handlers: [
+      {id:"nlp.tokenize", desc:"Split text into tokens (words)", output:"dataset", params:"column?"},
+      {id:"nlp.sentiment_score", desc:"Sentiment analysis score (-1 to +1)", output:"dataset", params:"column?",
+       formula:"Score \u2208 [-1, 1]\n-1 = very negative, 0 = neutral, +1 = very positive"},
+      {id:"nlp.ner_extract", desc:"Named Entity Recognition (persons, organizations, locations)", output:"dataset", params:"column?"},
+      {id:"nlp.tfidf", desc:"TF-IDF vectorization for text columns", output:"dataset", params:"column?, max_features?",
+       formula:"TF-IDF(t,d) = TF(t,d) \u00B7 IDF(t)\nTF = count(t,d) / |d|\nIDF = log(N / df(t))"},
+      {id:"nlp.word_frequency", desc:"Corpus-wide word frequency analysis", output:"table+chart", params:"column?, n?"},
+      {id:"nlp.translate", desc:"Translate text between languages", output:"dataset", params:"column?, target_lang?"},
+      {id:"nlp.remove_stopwords", desc:"Remove stop words from text", output:"dataset", params:"column?, language?"},
+      {id:"nlp.text_clean", desc:"Clean text: lowercase, remove URLs, emails, special chars", output:"dataset", params:"column?"},
+      {id:"nlp.ngrams", desc:"Generate n-gram features (bigrams, trigrams)", output:"table", params:"column?, n?"},
+    ]
+  },
+  "Analysis (62)": {
+    color: "#0277BD", icon: "&#128200;",
+    handlers: [
+      {id:"analysis.compare_extremes", desc:"Compare rows with max vs min value. Use for 'cheapest vs most expensive'", output:"table+chart", params:"column?"},
+      {id:"analysis.deep_profile", desc:"Deep statistical profile of one column with distribution chart", output:"table+chart", params:"column?"},
+      {id:"analysis.group_insights", desc:"Compare stats across groups with box plot", output:"table+chart", params:"column? (group), value_column?"},
+      {id:"analysis.anomaly_detect", desc:"Detect anomalies using IQR or Z-score method", output:"table+chart", params:"column?, method?"},
+      {id:"analysis.cluster_kmeans", desc:"K-Means clustering with auto k selection (silhouette score)", output:"table+chart", params:"max_k?",
+       formula:"Minimize: J = \u03A3 \u03A3 ||x - \u03BC_k||\u00B2\nSilhouette = (b - a) / max(a, b)"},
+      {id:"analysis.dbscan_clustering", desc:"DBSCAN density-based clustering (arbitrary shapes + noise)", output:"table+chart", params:"eps?, min_samples?",
+       formula:"Core point: |N_eps(p)| \u2265 MinPts\nBorder: within eps of core point\nNoise: neither core nor border"},
+      {id:"analysis.pca_2d", desc:"PCA 2D projection with explained variance", output:"chart", params:"(none)"},
+      {id:"analysis.regression_quick", desc:"Quick OLS linear regression + scatter + R\u00B2", output:"table+chart", params:"column? (target), feature?",
+       formula:"y = \u03B20 + \u03B21*x\nR\u00B2 = 1 - SS_res / SS_tot"},
+      {id:"analysis.ab_test", desc:"A/B test with significance (p-value, effect size, CI)", output:"table", params:"column?, group_column?",
+       formula:"Cohen's d = (x\u03041 - x\u03042) / s_pooled\np < 0.05 \u2192 significant"},
+      {id:"analysis.data_drift_detect", desc:"Compare distributions for drift using KS test and PSI", output:"table+chart", params:"column?",
+       formula:"KS = max|F1(x) - F2(x)|\nPSI = \u03A3 (p_i - q_i) * ln(p_i / q_i)"},
+      {id:"analysis.market_basket", desc:"Association rule mining (support, confidence, lift)", output:"table", params:"group?, column?",
+       formula:"Support = P(A\u2229B)\nConfidence = P(B|A)\nLift = P(B|A) / P(B)"},
+      {id:"analysis.granger_causality", desc:"Granger causality test between two time-ordered columns", output:"table", params:"column?, y?, max_lag?",
+       formula:"H0: X does not Granger-cause Y\nF-test on lagged X coefficients in Y regression"},
+    ]
+  }
+};
+
+const ALGORITHMS = {
+  "Classification (12)": {
+    task: "clf", items: [
+      {name:"Logistic Regression", lib:"sklearn", best:"Baseline, interpretable, linear", formula:"P(y=1|x) = 1 / (1 + e^(-(\u03B20 + \u03B21x1 + ... + \u03B2nxn)))"},
+      {name:"Decision Tree", lib:"sklearn", best:"Interpretable, non-linear", formula:"Split criterion: Gini = 1 - \u03A3 p_i\u00B2\nor Entropy = -\u03A3 p_i log(p_i)"},
+      {name:"Random Forest", lib:"sklearn", best:"General purpose, robust", formula:"Ensemble of B decision trees\ny\u0302 = mode(tree_1(x), ..., tree_B(x))"},
+      {name:"XGBoost", lib:"xgboost", best:"Competition-winning, handles imbalanced", formula:"y\u0302 = \u03A3 f_k(x)\nObj = \u03A3 L(y_i, y\u0302_i) + \u03A3 \u03A9(f_k)\n\u03A9 = \u03B3T + \u00BD\u03BB||w||\u00B2"},
+      {name:"LightGBM", lib:"lightgbm", best:"Fast, large datasets", formula:"Leaf-wise growth (vs level-wise)\nGOSS: gradient-based one-side sampling"},
+      {name:"Gradient Boosting", lib:"sklearn", best:"High accuracy, sequential", formula:"F_m(x) = F_{m-1}(x) + \u03BD \u00B7 h_m(x)\nh_m fits pseudo-residuals"},
+      {name:"SVM (SVC)", lib:"sklearn", best:"High-dimensional data", formula:"max 2/||w|| s.t. y_i(w\u00B7x_i + b) \u2265 1\nKernel: K(x,x') = \u03C6(x)\u00B7\u03C6(x')"},
+      {name:"KNN", lib:"sklearn", best:"Simple, similarity-based", formula:"y\u0302 = mode of k nearest neighbors\ndist = \u221A(\u03A3(x_i - x_j)\u00B2)"},
+      {name:"Naive Bayes", lib:"sklearn", best:"Text classification, fast", formula:"P(y|x) \u221D P(y) \u220F P(x_i|y)\nAssumes feature independence"},
+      {name:"MLP Neural Network", lib:"sklearn", best:"Complex non-linear patterns", formula:"a = \u03C3(Wx + b)\n\u03C3 = ReLU or sigmoid\nBackpropagation gradient descent"},
+      {name:"Extra Trees", lib:"sklearn", best:"Faster than RF, noisy data", formula:"Like RF but splits are random\n(no best-split search)"},
+      {name:"AdaBoost", lib:"sklearn", best:"Boost weak learners", formula:"F(x) = \u03A3 \u03B1_t h_t(x)\n\u03B1_t = \u00BD ln((1-\u03B5_t)/\u03B5_t)"},
+    ]
+  },
+  "Regression (11)": {
+    task: "reg", items: [
+      {name:"Linear Regression", lib:"sklearn", best:"Baseline, interpretable", formula:"y = \u03B20 + \u03B21x1 + ... + \u03B2nxn\n\u03B2 = (X\u1D40X)\u207B\u00B9X\u1D40y"},
+      {name:"Ridge", lib:"sklearn", best:"L2 regularization, multicollinearity", formula:"min ||y - X\u03B2||\u00B2 + \u03B1||\u03B2||\u00B2"},
+      {name:"Lasso", lib:"sklearn", best:"L1, automatic feature selection", formula:"min ||y - X\u03B2||\u00B2 + \u03B1||\u03B2||\u2081\n(drives coefficients to zero)"},
+      {name:"ElasticNet", lib:"sklearn", best:"Combined L1+L2", formula:"min ||y - X\u03B2||\u00B2 + \u03B1\u03C1||\u03B2||\u2081 + \u03B1(1-\u03C1)||\u03B2||\u00B2"},
+      {name:"Random Forest", lib:"sklearn", best:"Robust to outliers", formula:"y\u0302 = mean(tree_1(x), ..., tree_B(x))"},
+      {name:"XGBoost", lib:"xgboost", best:"Handles missing values", formula:"Same as classification XGBoost\nwith squared error loss"},
+      {name:"LightGBM", lib:"lightgbm", best:"Fast, large datasets", formula:"Same as classification LightGBM\nwith regression objective"},
+      {name:"Gradient Boosting", lib:"sklearn", best:"Sequential ensemble", formula:"F_m(x) = F_{m-1}(x) + \u03BD \u00B7 h_m(x)"},
+      {name:"SVR", lib:"sklearn", best:"Non-linear kernels", formula:"min \u00BD||w||\u00B2 + C\u03A3(\u03BE + \u03BE*)\ns.t. |y - f(x)| \u2264 \u03B5 + \u03BE"},
+      {name:"KNN Regressor", lib:"sklearn", best:"Local patterns", formula:"y\u0302 = mean of k nearest neighbors"},
+      {name:"Decision Tree", lib:"sklearn", best:"Non-linear, interpretable", formula:"Split to minimize MSE in each leaf"},
+    ]
+  },
+  "Clustering (4)": {
+    task: "clu", items: [
+      {name:"KMeans", lib:"sklearn", best:"Spherical clusters, known K", formula:"min J = \u03A3\u2096 \u03A3 ||x - \u03BC_k||\u00B2\nIterative: assign \u2192 update centroids"},
+      {name:"DBSCAN", lib:"sklearn", best:"Arbitrary shapes, noise detection", formula:"Core: \u2265 MinPts within eps radius\nNo need to specify K"},
+      {name:"Hierarchical", lib:"sklearn", best:"Dendrogram, unknown K", formula:"Ward linkage: minimize within-cluster variance\nd(A,B) = \u0394(variance when merging A,B)"},
+      {name:"Gaussian Mixture", lib:"sklearn", best:"Soft clustering, elliptical", formula:"P(x) = \u03A3 \u03C0_k \u00B7 N(x|\u03BC_k, \u03A3_k)\nEM: E-step (assign) \u2192 M-step (update)"},
+    ]
+  }
+};
+
+// Render handler categories
+const grid = document.getElementById('handler-grid');
+Object.entries(HANDLERS).forEach(([catName, cat]) => {
+  const card = document.createElement('div');
+  card.className = 'cat-card';
+  card.innerHTML = `
+    <div class="cat-header" onclick="this.parentElement.classList.toggle('open')">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:20px">${cat.icon}</span>
+        <span class="cat-name">${catName}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cat-count">${cat.handlers.length} handlers</span>
+        <span class="cat-chevron">&#9660;</span>
+      </div>
+    </div>
+    <div class="cat-body">
+      <div class="handler-list">
+        ${cat.handlers.map(h => `
+          <div class="handler-item" onclick="this.classList.toggle('expanded')">
+            <div class="handler-id">${h.id}</div>
+            <div class="handler-desc">${h.desc}</div>
+            <div class="handler-meta">
+              <span class="handler-tag ${h.output==='chart'?'tag-chart':h.output==='dataset'?'tag-dataset':'tag-table'}">${h.output}</span>
+              ${h.params!=='(none)'?`<span style="font-size:10px;color:#999">params: ${h.params}</span>`:''}
+            </div>
+            ${h.formula ? `<div class="handler-detail"><div class="detail-section"><h4>Formula / Logic</h4><div class="formula">${h.formula}</div></div></div>` : ''}
+          </div>
+        `).join('')}
+        <div style="padding:12px 20px;text-align:center;color:#999;font-size:11px">
+          Showing ${cat.handlers.length} of ${catName.match(/\d+/)?.[0] || '?'} handlers in this category
+        </div>
+      </div>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+// Render algorithms
+const algoSection = document.getElementById('algo-section');
+Object.entries(ALGORITHMS).forEach(([taskName, task]) => {
+  const taskClass = task.task === 'clf' ? 'task-clf' : task.task === 'reg' ? 'task-reg' : 'task-clu';
+  const html = `
+    <div style="margin-bottom:24px">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">
+        <span class="task-label ${taskClass}">${task.task.toUpperCase()}</span> ${taskName}
+      </h3>
+      <div class="algo-grid">
+        ${task.items.map(a => `
+          <div class="algo-card" onclick="this.classList.toggle('expanded')">
+            <h4>${a.name}</h4>
+            <div class="lib">${a.lib}</div>
+            <div class="best">${a.best}</div>
+            <div class="formula-mini">${a.formula}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  algoSection.innerHTML += html;
+});
+</script>
+</body>
+</html>
