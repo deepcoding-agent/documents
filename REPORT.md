@@ -300,7 +300,7 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 
 โครงงานนี้จึงมุ่งพัฒนาระบบ **PrepPilot** ระบบปัญญาประดิษฐ์สำหรับการเตรียมข้อมูลและการวิเคราะห์ข้อมูลอัตโนมัติ ที่นำจุดแข็งของ LLM, Multi-Agent Architecture และ Sandboxed Execution มารวมกันในรูปแบบ Web Application ที่ผู้ใช้งานสามารถใช้ภาษาธรรมชาติทั้งภาษาไทยและภาษาอังกฤษในการสั่งงาน โดยระบบสามารถวิเคราะห์ข้อมูล ทำความสะอาด แสดงผลกราฟเชิงโต้ตอบ และฝึกแบบจำลอง Machine Learning ได้ภายในที่เดียวกัน
 
-> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 1.1 ตัวอย่างขั้นตอน Data Science Lifecycle ตั้งแต่ Raw Data จนถึง Model Deployment โดยขั้นตอน Data Preparation (กรอบสีส้ม) เป็นจุดที่ใช้เวลามากที่สุด
+![รูปที่ 1.1 ขั้นตอน Data Science Lifecycle ตั้งแต่ Raw Data จนถึง Model Deployment โดยขั้นตอน Data Preparation (กรอบสีส้ม) เป็นจุดที่ใช้เวลามากที่สุด ประมาณ 60% ของเวลาทั้งโครงการ](element/fig-1-1_data-science-lifecycle.png)
 
 ## 1.2 วัตถุประสงค์ของโครงงาน
 
@@ -535,7 +535,7 @@ Clustering คือการจัดกลุ่มข้อมูลที่
 
 Cross-validation (CV) เป็นเทคนิคประเมินประสิทธิภาพแบบจำลองที่แบ่งข้อมูลเป็น k ส่วน (Fold) แล้วฝึก k ครั้ง โดยแต่ละครั้งใช้ Fold หนึ่งเป็นชุดทดสอบและที่เหลือเป็นชุดฝึก ค่าเฉลี่ยของผลทั้ง k ครั้งจะให้ค่าประมาณที่เสถียรกว่าการแบ่ง Train/Test เพียงครั้งเดียว ระบบ PrepPilot ใช้ 5-fold cross-validation เป็นค่าตั้งต้นในคำสั่ง `/train`
 
-> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 2.2 ขั้นตอน Cross-validation 5 Fold โดยแต่ละ Fold จะถูกใช้เป็นชุดทดสอบ หนึ่งครั้งและเป็นชุดฝึกในรอบที่เหลือ
+![รูปที่ 2.2 ขั้นตอน Cross-Validation 5 Fold โดยแต่ละ Fold จะถูกใช้เป็นชุดทดสอบหนึ่งครั้งและเป็นชุดฝึกในรอบที่เหลือ เมื่อครบ 5 Iteration ระบบจะคำนวณค่าเฉลี่ยของตัวชี้วัดเป็นผลลัพธ์สุดท้าย](element/fig-2-2_cross-validation-5fold.png)
 
 ### 2.2.6 Hyperparameter Tuning ด้วย Optuna
 
@@ -578,7 +578,7 @@ LLM ที่โครงงานนี้นำมาใช้งานปร�
 
 AI Agent คือระบบที่ใช้ LLM เป็นแกนกลางในการตัดสินใจ และสามารถเรียกใช้ "เครื่องมือ" (Tools) ภายนอก เช่น ฟังก์ชัน, API หรือฐานข้อมูล ในการตอบสนองความต้องการของผู้ใช้ แนวคิดนี้แตกต่างจาก Chatbot ทั่วไป ตรงที่ Agent สามารถดำเนินการ (Take Action) ได้จริง ไม่ใช่เพียงตอบคำถาม
 
-> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 2.1 สถาปัตยกรรมของระบบ AI Agent โดยทั่วไป ประกอบด้วย LLM, Memory, Tools และ Orchestrator ที่ประสานการทำงาน
+![รูปที่ 2.1 สถาปัตยกรรมโดยทั่วไปของระบบ AI Agent ประกอบด้วย LLM เป็นแกนกลางสำหรับ Reasoning และ Planning เชื่อมต่อกับ Memory ที่เก็บประวัติการสนทนา Tools ที่เป็นฟังก์ชันสำเร็จรูป Orchestrator ที่ควบคุม Workflow และ Sandbox สำหรับรันโค้ดอย่างปลอดภัย](element/fig-2-1_ai-agent-architecture.png)
 
 ลักษณะสำคัญของ AI Agent ประกอบด้วย
 
@@ -914,7 +914,7 @@ DS-Agent เก็บข้อมูลใน `api/agents/datascience.py` ซึ
 
 ### 3.5.2 Two-Stage Planner
 
-> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 3.3 สถาปัตยกรรม Two-Stage Routing โดยขั้นแรก Router จัดหมวด ขั้นสอง Focused Planner เลือก Handler ที่เหมาะสมจากหมวดที่ถูกเลือก
+![รูปที่ 3.3 สถาปัตยกรรม Two-Stage Routing ของ DS-Agent ขั้นแรก Category Router จัดข้อความเข้า 1-3 หมวดจาก 7 หมวด ขั้นสอง Focused Planner เห็นเฉพาะ Handler ของหมวดที่ถูกเลือก จึงเหลือ Handler ที่ต้องพิจารณาจาก 417 เหลือเพียง 50-150](element/fig-3-3_two-stage-routing.png)
 
 **Stage 1 — Category Router**
 
@@ -1077,7 +1077,7 @@ class BaseHandler:
 
 ### 3.7.1 ภาพรวม Pipeline `/train`
 
-> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 3.4 Sequence Diagram ของวงจรการฝึกแบบจำลอง ตั้งแต่อัปโหลดข้อมูล สั่ง /train ระบบ Preprocess + CV + Tune + Evaluate และเก็บ .joblib + .json ไว้ในระบบเพื่อให้ผู้ใช้ดาวน์โหลด
+![รูปที่ 3.4 Sequence Diagram ของวงจรการฝึกแบบจำลอง /train ตั้งแต่ผู้ใช้คลิกปุ่ม /train ระบบส่งคำขอผ่าน Frontend, API Proxy, FastAPI ไปยัง TrainAgent ที่ทำหน้าที่ Detect Task Type, Preprocess ผ่าน Sandbox, Cross-Validation 5 Fold, Optuna Tuning, สร้าง Evaluation Charts จากนั้นบันทึก .joblib + .json metadata ใน Model Storage ก่อนคืน TrainResultCard ให้ผู้ใช้ดาวน์โหลด](element/fig-3-4_training-sequence-diagram.png)
 
 **ตารางที่ 3.7** ขั้นตอน Pipeline ของคำสั่ง `/train`
 
