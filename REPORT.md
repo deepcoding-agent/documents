@@ -549,19 +549,19 @@ Optuna [12] เป็นเฟรมเวิร์ค Hyperparameter Optimizati
 
 **ตารางที่ 2.7** ตัวชี้วัดประสิทธิภาพแบบจำลอง
 
-| ปัญหา          | Metric                  | สูตร / ความหมาย                            |
-| -------------- | ----------------------- | ------------------------------------------ | ----- | --- |
-| Classification | Accuracy                | สัดส่วนทำนายถูก                            |
-| Classification | Precision / Recall / F1 | ความแม่น / ความครบ / ค่ากลาง               |
-| Classification | ROC-AUC                 | พื้นที่ใต้กราฟ ROC                         |
-| Classification | Log Loss                | ค่าเฉลี่ยของ Cross-entropy                 |
-| Regression     | MAE                     | ค่าเฉลี่ยของ                               | y − ŷ |     |
-| Regression     | MSE                     | ค่าเฉลี่ยของ (y − ŷ)²                      |
-| Regression     | RMSE                    | √MSE                                       |
-| Regression     | R²                      | สัดส่วนความแปรปรวนที่อธิบายได้             |
-| Regression     | MAPE                    | ค่าเฉลี่ยของ                               | y − ŷ | /y  |
-| Clustering     | Silhouette Score        | ความใกล้ในกลุ่มเทียบกับนอกกลุ่ม            |
-| Clustering     | Davies-Bouldin          | อัตราส่วนการกระจายภายในต่อระยะระหว่างกลุ่ม |
+| ปัญหา | Metric | สูตร / ความหมาย |
+|---|---|---|
+| Classification | Accuracy | สัดส่วนของจำนวนการทำนายที่ถูกต้องต่อจำนวนการทำนายทั้งหมด |
+| Classification | Precision / Recall / F1 | ความแม่นยำ / ความครบถ้วน / ค่าเฉลี่ยฮาร์โมนิกของทั้งสอง |
+| Classification | ROC-AUC | พื้นที่ใต้กราฟ ROC (Receiver Operating Characteristic) |
+| Classification | Log Loss | ค่าเฉลี่ยของ Cross-entropy Loss ระหว่างความน่าจะเป็นที่ทำนายกับ Label จริง |
+| Regression | MAE | Mean Absolute Error — ค่าเฉลี่ยของ \|y − ŷ\| |
+| Regression | MSE | Mean Squared Error — ค่าเฉลี่ยของ (y − ŷ)² |
+| Regression | RMSE | Root Mean Squared Error — √MSE |
+| Regression | R² | สัดส่วนความแปรปรวนของ y ที่แบบจำลองสามารถอธิบายได้ |
+| Regression | MAPE | Mean Absolute Percentage Error — ค่าเฉลี่ยของ \|y − ŷ\| / y |
+| Clustering | Silhouette Score | ความใกล้ของจุดในคลัสเตอร์เดียวกัน เทียบกับจุดในคลัสเตอร์ที่ใกล้ที่สุด |
+| Clustering | Davies-Bouldin | อัตราส่วนของการกระจายภายในคลัสเตอร์ต่อระยะห่างระหว่างคลัสเตอร์ |
 
 ## 2.3 ทฤษฎีด้าน Large Language Model และ AI Agent
 
