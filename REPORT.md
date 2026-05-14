@@ -784,7 +784,7 @@ Li และคณะ [7] เสนอวิธีใช้ LLM ในการ�
 11. **Auto-retry on Sandbox Error** — โค้ดที่ Error ส่งกลับให้ LLM แก้ไขครั้งหนึ่ง
 12. **Two-stage Routing — no Hardcoded Keywords** — ไม่ใช้ Regex หรือ Keyword Map ตายตัว
 
-![รูปที่ 3.1 ภาพรวมสถาปัตยกรรมของ PrepPilot โดยแสดง Services (LLM Providers), Web (Next.js), Backend (FastAPI + Agents), Storage และ CI/CD (รายละเอียดดูที่ docs/element/system_architecture.svg)](element/system_architecture.png)
+![รูปที่ 3.1 ภาพรวมสถาปัตยกรรมแบบ Layered Architecture ของระบบ PrepPilot ประกอบด้วย 5 Layer หลัก ได้แก่ Client (เว็บเบราว์เซอร์ของผู้ใช้), Frontend (Next.js 16 + React 19 + Plotly + NextAuth), API Gateway (Next.js API Routes ที่ทำหน้าที่ Thin Proxy + Auth Middleware + Prisma ORM), Backend (FastAPI ที่ประกอบด้วย Multi-Agent System 8 Agent, Handler Registry 417 ตัว และ Sandboxed exec()), และ Data Storage (Database + Dataset Blobs + Model Registry) โดยมี External Services อยู่ด้านขวาประกอบด้วย Anthropic Claude, OpenAI GPT, Google OAuth และ Hosting ของ Vercel กับ Fly.io](element/system_architecture.png)
 
 ![รูปที่ 3.2 ขั้นตอนการสนทนาของผู้ใช้กับระบบ ตั้งแต่อัปโหลดชุดข้อมูล สนทนา ฝึกแบบจำลอง จนถึงดาวน์โหลดผลลัพธ์ (รายละเอียดดูที่ docs/element/user_flow_vertical.svg)](element/user_flow_vertical.png)
 
