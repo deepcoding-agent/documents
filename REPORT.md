@@ -221,8 +221,7 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 | 1.1 | ตัวอย่างขั้นตอน Data Science Lifecycle | 2 |
 | 1.2 | แผนภูมิ Gantt ของแผนการดำเนินงาน | 5 |
 | 2.1 | สถาปัตยกรรมของระบบ AI Agent โดยทั่วไป | 21 |
-| 2.2 | สถาปัตยกรรม Transformer แบบย่อ | 22 |
-| 2.3 | ขั้นตอน Cross-validation 5 Fold | 18 |
+| 2.2 | ขั้นตอน Cross-validation 5 Fold | 18 |
 | 3.1 | ภาพรวมสถาปัตยกรรมของ PrepPilot | 40 |
 | 3.2 | ขั้นตอนการสนทนาของผู้ใช้กับระบบ (User Flow) | 42 |
 | 3.3 | สถาปัตยกรรม Two-Stage Routing | 54 |
@@ -298,10 +297,7 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 
 โครงงานนี้จึงมุ่งพัฒนาระบบ **PrepPilot** ระบบปัญญาประดิษฐ์สำหรับการเตรียมข้อมูลและการวิเคราะห์ข้อมูลอัตโนมัติ ที่นำจุดแข็งของ LLM, Multi-Agent Architecture และ Sandboxed Execution มารวมกันในรูปแบบ Web Application ที่ผู้ใช้งานสามารถใช้ภาษาธรรมชาติทั้งภาษาไทยและภาษาอังกฤษในการสั่งงาน โดยระบบสามารถวิเคราะห์ข้อมูล ทำความสะอาด แสดงผลกราฟเชิงโต้ตอบ และฝึกแบบจำลอง Machine Learning ได้ภายในที่เดียวกัน
 
-```
-รูปที่ 1.1 ตัวอย่างขั้นตอน Data Science Lifecycle ตั้งแต่ Raw Data จนถึง Model Deployment
-            โดยขั้นตอน Data Preparation (กรอบสีส้ม) เป็นจุดที่ใช้เวลามากที่สุด
-```
+> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 1.1 ตัวอย่างขั้นตอน Data Science Lifecycle ตั้งแต่ Raw Data จนถึง Model Deployment โดยขั้นตอน Data Preparation (กรอบสีส้ม) เป็นจุดที่ใช้เวลามากที่สุด
 
 ## 1.2 วัตถุประสงค์ของโครงงาน
 
@@ -364,10 +360,7 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 | 7 | Production Hardening (Rate Limit, Sandbox Hardening, CORS) | 3 | แผน |
 | 8 | Production Deployment (MongoDB Atlas, S3/GCS, Multi-stage Docker) | 4 | แผน |
 
-```
-รูปที่ 1.2 แผนภูมิ Gantt ของแผนการดำเนินงาน 8 Sprint ตั้งแต่เดือนมกราคม 2568
-            จนถึงเดือนเมษายน 2569
-```
+> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 1.2 แผนภูมิ Gantt ของแผนการดำเนินงาน 8 Sprint ตั้งแต่เดือนมกราคม 2568 จนถึงเดือนเมษายน 2569
 
 ## 1.6 นิยามศัพท์เฉพาะ
 
@@ -539,10 +532,7 @@ Clustering คือการจัดกลุ่มข้อมูลที่
 
 Cross-validation (CV) เป็นเทคนิคประเมินประสิทธิภาพแบบจำลองที่แบ่งข้อมูลเป็น k ส่วน (Fold) แล้วฝึก k ครั้ง โดยแต่ละครั้งใช้ Fold หนึ่งเป็นชุดทดสอบและที่เหลือเป็นชุดฝึก ค่าเฉลี่ยของผลทั้ง k ครั้งจะให้ค่าประมาณที่เสถียรกว่าการแบ่ง Train/Test เพียงครั้งเดียว ระบบ PrepPilot ใช้ 5-fold cross-validation เป็นค่าตั้งต้นในคำสั่ง `/train`
 
-```
-รูปที่ 2.3 ขั้นตอน Cross-validation 5 Fold โดยแต่ละ Fold จะถูกใช้เป็นชุดทดสอบ
-            หนึ่งครั้งและเป็นชุดฝึกในรอบที่เหลือ
-```
+> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 2.2 ขั้นตอน Cross-validation 5 Fold โดยแต่ละ Fold จะถูกใช้เป็นชุดทดสอบ หนึ่งครั้งและเป็นชุดฝึกในรอบที่เหลือ
 
 ### 2.2.6 Hyperparameter Tuning ด้วย Optuna
 
@@ -585,10 +575,7 @@ LLM ที่โครงงานนี้นำมาใช้งานปร�
 
 AI Agent คือระบบที่ใช้ LLM เป็นแกนกลางในการตัดสินใจ และสามารถเรียกใช้ "เครื่องมือ" (Tools) ภายนอก เช่น ฟังก์ชัน, API หรือฐานข้อมูล ในการตอบสนองความต้องการของผู้ใช้ แนวคิดนี้แตกต่างจาก Chatbot ทั่วไป ตรงที่ Agent สามารถดำเนินการ (Take Action) ได้จริง ไม่ใช่เพียงตอบคำถาม
 
-```
-รูปที่ 2.1 สถาปัตยกรรมของระบบ AI Agent โดยทั่วไป ประกอบด้วย LLM, Memory,
-            Tools และ Orchestrator ที่ประสานการทำงาน
-```
+> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 2.1 สถาปัตยกรรมของระบบ AI Agent โดยทั่วไป ประกอบด้วย LLM, Memory, Tools และ Orchestrator ที่ประสานการทำงาน
 
 ลักษณะสำคัญของ AI Agent ประกอบด้วย
 
@@ -794,17 +781,9 @@ Li และคณะ [7] เสนอวิธีใช้ LLM ในการ�
 11. **Auto-retry on Sandbox Error** — โค้ดที่ Error ส่งกลับให้ LLM แก้ไขครั้งหนึ่ง
 12. **Two-stage Routing — no Hardcoded Keywords** — ไม่ใช้ Regex หรือ Keyword Map ตายตัว
 
-```
-รูปที่ 3.1 ภาพรวมสถาปัตยกรรมของ PrepPilot โดยแสดง Services (LLM Providers),
-            Web (Next.js), Backend (FastAPI + Agents), Storage และ CI/CD
-            (รายละเอียดดูที่ docs/element/system_architecture.svg)
-```
+![รูปที่ 3.1 ภาพรวมสถาปัตยกรรมของ PrepPilot โดยแสดง Services (LLM Providers), Web (Next.js), Backend (FastAPI + Agents), Storage และ CI/CD (รายละเอียดดูที่ docs/element/system_architecture.svg)](element/system_architecture.png)
 
-```
-รูปที่ 3.2 ขั้นตอนการสนทนาของผู้ใช้กับระบบ ตั้งแต่อัปโหลดชุดข้อมูล สนทนา
-            ฝึกแบบจำลอง จนถึงดาวน์โหลดผลลัพธ์
-            (รายละเอียดดูที่ docs/element/user_flow_vertical.svg)
-```
+![รูปที่ 3.2 ขั้นตอนการสนทนาของผู้ใช้กับระบบ ตั้งแต่อัปโหลดชุดข้อมูล สนทนา ฝึกแบบจำลอง จนถึงดาวน์โหลดผลลัพธ์ (รายละเอียดดูที่ docs/element/user_flow_vertical.svg)](element/user_flow_vertical.png)
 
 ## 3.3 การออกแบบส่วน Frontend
 
@@ -932,10 +911,7 @@ DS-Agent เก็บข้อมูลใน `api/agents/datascience.py` ซึ
 
 ### 3.5.2 Two-Stage Planner
 
-```
-รูปที่ 3.3 สถาปัตยกรรม Two-Stage Routing โดยขั้นแรก Router จัดหมวด ขั้นสอง
-            Focused Planner เลือก Handler ที่เหมาะสมจากหมวดที่ถูกเลือก
-```
+> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 3.3 สถาปัตยกรรม Two-Stage Routing โดยขั้นแรก Router จัดหมวด ขั้นสอง Focused Planner เลือก Handler ที่เหมาะสมจากหมวดที่ถูกเลือก
 
 **Stage 1 — Category Router**
 
@@ -1098,11 +1074,7 @@ class BaseHandler:
 
 ### 3.7.1 ภาพรวม Pipeline `/train`
 
-```
-รูปที่ 3.4 Sequence Diagram ของวงจรการฝึกแบบจำลอง ตั้งแต่อัปโหลดข้อมูล
-            สั่ง /train ระบบ Preprocess + CV + Tune + Evaluate และเก็บ
-            .joblib + .json ไว้ในระบบเพื่อให้ผู้ใช้ดาวน์โหลด
-```
+> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 3.4 Sequence Diagram ของวงจรการฝึกแบบจำลอง ตั้งแต่อัปโหลดข้อมูล สั่ง /train ระบบ Preprocess + CV + Tune + Evaluate และเก็บ .joblib + .json ไว้ในระบบเพื่อให้ผู้ใช้ดาวน์โหลด
 
 **ตารางที่ 3.7** ขั้นตอน Pipeline ของคำสั่ง `/train`
 
@@ -1238,38 +1210,25 @@ class BaseHandler:
 
 หน้า Landing ของระบบใช้ Design ที่เน้นความสะอาดและสื่อสารจุดเด่นของระบบอย่างตรงไปตรงมา หัวข้อหลักของ Hero Section คือ "The AI Data Platform for Preparation" พร้อมแถบ Badge ที่ระบุ "PrepPilot 4.0 — 417 AI Handlers + Auto ML Training" ดังรูปที่ 4.1 ปุ่ม "Get Started Free" จะนำผู้ใช้ไปยังหน้า Sign In ส่วนปุ่ม "View Documentation" จะเปิดเอกสารประกอบในแท็บใหม่
 
-```
-รูปที่ 4.1 หน้า Landing Hero แสดงหัวข้อหลัก ปุ่ม Call-to-Action และ
-            แถบบอกเวอร์ชันของระบบ
-```
+![รูปที่ 4.1 หน้า Landing Hero แสดงหัวข้อหลัก ปุ่ม Call-to-Action และ แถบบอกเวอร์ชันของระบบ](screenshot/fig-4-01_landing-hero.png)
 
 ส่วนถัดมาในหน้าเดียวกันมีหัวข้อ "AI does the work. You make the decisions." พร้อมแสดง 2 จุดเด่น คือ Smart Data Cleaning และ Interactive Visualization โดยฝั่งขวามือมี Code Snippet ตัวอย่างที่แสดงการเรียกใช้งานผ่าน Python SDK (ดังรูปที่ 4.2) ซึ่งช่วยให้นักพัฒนาที่เข้ามาเยี่ยมชมเห็นภาพการ Integrate กับโค้ดของตนเอง
 
-```
-รูปที่ 4.2 ส่วน "AI does the work" บนหน้า Landing พร้อม Code Snippet
-            แสดงการเรียกใช้ผ่าน Python SDK
-```
+![รูปที่ 4.2 ส่วน "AI does the work" บนหน้า Landing พร้อม Code Snippet แสดงการเรียกใช้ผ่าน Python SDK](screenshot/fig-4-02_landing-ai-does-work.png)
 
 ส่วน Solutions แสดง 6 แนวงานที่ระบบรองรับ ได้แก่ Data Analysis, Data Cleaning, Visualization, Feature Engineering, NLP & Text และ ML Preparation (รูปที่ 4.3) แต่ละกล่องระบุจำนวน Handler ที่รองรับ และมีลิงก์ "Learn more" สำหรับเข้าไปดูรายละเอียดเพิ่มเติม
 
-```
-รูปที่ 4.3 ส่วน Solutions Grid ที่ครอบคลุม 6 แนวงานหลักของระบบ
-```
+![รูปที่ 4.3 ส่วน Solutions Grid ที่ครอบคลุม 6 แนวงานหลักของระบบ](screenshot/fig-4-03_landing-solutions.png)
 
 ใต้ Solutions เป็น Section ที่ดึงข้อความตัวอย่างจากการใช้งาน ("PrepPilot replaced our entire data preprocessing pipeline. What used to take days now takes minutes with 417 AI-powered handlers and Auto ML training.") ตามด้วย Call-to-Action ใหญ่ "Start preparing with better data." (รูปที่ 4.4)
 
-```
-รูปที่ 4.4 ส่วน Testimonial และ Call-to-Action ปิดท้ายหน้า Landing
-```
+![รูปที่ 4.4 ส่วน Testimonial และ Call-to-Action ปิดท้ายหน้า Landing](screenshot/fig-4-04_landing-testimonial.png)
 
 ## 4.3 ผลการทดสอบระบบ Authentication
 
 ระบบรองรับการเข้าสู่ระบบด้วย Google OAuth เพียงช่องทางเดียว เพื่อความง่ายและความปลอดภัย ผู้ใช้ใหม่จะถูก Provision อัตโนมัติเมื่อกดยืนยันที่หน้า Google ครั้งแรก ดังรูปที่ 4.5
 
-```
-รูปที่ 4.5 หน้าเข้าสู่ระบบด้วย Google OAuth พร้อมลิงก์ Terms of Service
-            และ Privacy Policy
-```
+![รูปที่ 4.5 หน้าเข้าสู่ระบบด้วย Google OAuth พร้อมลิงก์ Terms of Service และ Privacy Policy](screenshot/fig-4-05_signin-google.png)
 
 จากการทดสอบ ระบบสามารถสร้าง Session และ Redirect ผู้ใช้ไปยังหน้า Chat ได้ภายในเวลาเฉลี่ย 2.1 วินาที โดย Session ถูกเก็บในฐานข้อมูลผ่าน Prisma Adapter ไม่ใช่ JWT ดังนั้นผู้ดูแลระบบสามารถ Revoke Session ของผู้ใช้บางรายได้ทันทีหากจำเป็น
 
@@ -1277,9 +1236,7 @@ class BaseHandler:
 
 ภายในหน้า Chat แถบด้านซ้ายของหน้าจอจะแสดงรายการ Conversation ของผู้ใช้ตามลำดับเวลา โดยมีตัวเลือก "New Chat" สำหรับเริ่มสนทนาใหม่ ตัวอย่างจากการใช้งานจริงดังรูปที่ 4.6 จะเห็นว่าผู้ใช้มี Conversation อยู่ 4 รายการ โดยรายการที่ Active อยู่คือ "ตัด area ออกไปอยากดูการ..." ซึ่งเป็นการสนทนาเชิงต่อเนื่องเกี่ยวกับชุดข้อมูล Housing
 
-```
-รูปที่ 4.6 แท็บ Chat ใน Sidebar แสดงรายการสนทนา 4 รายการ พร้อมปุ่ม New Chat
-```
+![รูปที่ 4.6 แท็บ Chat ใน Sidebar แสดงรายการสนทนา 4 รายการ พร้อมปุ่ม New Chat](screenshot/fig-4-06_sidebar-chat-list.png)
 
 ระบบบันทึก Message ทุกรอบลงฐานข้อมูล Conversation Title ถูกสร้างอัตโนมัติจากข้อความแรกของผู้ใช้ (ตัดความยาวที่ ~40 ตัวอักษร) จุดที่น่าสนใจคือ Title ของแต่ละการสนทนาเป็นภาษาไทยล้วน แสดงว่าระบบรองรับภาษาไทยได้สมบูรณ์ตั้งแต่การพิมพ์ของผู้ใช้จนถึงการแสดงผล
 
@@ -1287,24 +1244,15 @@ class BaseHandler:
 
 แท็บ Dataset ใน Sidebar แสดงรายการชุดข้อมูลของผู้ใช้ ดังรูปที่ 4.7 จากภาพจะเห็นสองชุดข้อมูลคือ `data` (173,574 แถว 1 คอลัมน์) และ `Housing_data` (545 แถว 13 คอลัมน์)
 
-```
-รูปที่ 4.7 แท็บ Dataset ใน Sidebar แสดงชุดข้อมูลที่อัปโหลด พร้อมจำนวน
-            แถวและคอลัมน์
-```
+![รูปที่ 4.7 แท็บ Dataset ใน Sidebar แสดงชุดข้อมูลที่อัปโหลด พร้อมจำนวน แถวและคอลัมน์](screenshot/fig-4-07_sidebar-datasets.png)
 
 เมื่อผู้ใช้กดเลือกชุดข้อมูล ระบบจะแสดง Chip ของชุดข้อมูลในแถบ Dataset Picker ตอนบนของหน้า Chat (รูปที่ 4.8) Chip ที่ Active จะมีจุดสีส้มและกรอบสีส้ม ผู้ใช้สามารถเปิด/ปิด Chip ได้อย่างอิสระ โดยระบบจะส่ง Context ของชุดข้อมูลทุกตัวที่ Active ให้ Planner ทุกครั้งที่มีคำสั่งใหม่
 
-```
-รูปที่ 4.8 แถบ Dataset Picker พร้อม Chip ของ Housing_data (Active) และ
-            data (Inactive) มุมขวาบนแสดงตัวเลือกโมเดล GPT-4o mini
-```
+![รูปที่ 4.8 แถบ Dataset Picker พร้อม Chip ของ Housing_data (Active) และ data (Inactive) มุมขวาบนแสดงตัวเลือกโมเดล GPT-4o mini](screenshot/fig-4-08_dataset-picker-chips.png)
 
 ผู้ใช้ยังสามารถกดปุ่ม "Add data" เพื่อเชื่อมชุดข้อมูลเข้ามาในการสนทนาได้ Drop-down ที่ปรากฏจะแสดงชุดข้อมูลทั้งหมดของผู้ใช้ (รูปที่ 4.9) พร้อมตัวเลือก "Upload new dataset..." สำหรับอัปโหลดไฟล์ใหม่
 
-```
-รูปที่ 4.9 เมนู "Add data" ที่อนุญาตให้เลือกชุดข้อมูลที่มีอยู่ หรืออัปโหลด
-            ไฟล์ใหม่ได้ทันที
-```
+![รูปที่ 4.9 เมนู "Add data" ที่อนุญาตให้เลือกชุดข้อมูลที่มีอยู่ หรืออัปโหลด ไฟล์ใหม่ได้ทันที](screenshot/fig-4-09_add-data-dropdown.png)
 
 ## 4.6 ผลการทดสอบ Multi-Provider LLM Switching
 
@@ -1315,10 +1263,7 @@ class BaseHandler:
 
 โมเดลที่ไม่ได้ตั้งค่า API Key จะถูกทำให้เป็นสีจาง พร้อมข้อความ "Greyed out = API key not configured" เพื่อให้ผู้ใช้รู้ทันทีว่าโมเดลใดใช้งานได้
 
-```
-รูปที่ 4.10 ตัวเลือก Multi-Provider LLM แสดงโมเดลของ OpenAI และ Anthropic
-            พร้อมป้ายระบุความเร็วและความสามารถ
-```
+![รูปที่ 4.10 ตัวเลือก Multi-Provider LLM แสดงโมเดลของ OpenAI และ Anthropic พร้อมป้ายระบุความเร็วและความสามารถ](screenshot/fig-4-10_model-selector.png)
 
 จากการทดสอบ การสลับโมเดลใช้เวลาน้อยกว่า 200 มิลลิวินาที เนื่องจากระบบใช้ `lru_cache` ในการ Cache LangChain `ChatModel` Instance ผู้ใช้สามารถสลับโมเดลกลางการสนทนาได้โดยที่ประวัติยังคงต่อเนื่อง
 
@@ -1334,10 +1279,7 @@ class BaseHandler:
 
 ผู้ใช้พิมพ์ "อยากการเปรียบเทียบข้อมูลของบ้านราคาต่ำสุดกับสูงสุด โดยมีจาก area, bedrooms, bathrooms, stories, parking" ระบบเลือก Handler หมวด `stats` และ `transform` แล้วสร้างตารางที่เปรียบเทียบ Highest และ Lowest Price ของแต่ละคอลัมน์ ดังรูปที่ 4.11
 
-```
-รูปที่ 4.11 ผลลัพธ์เปรียบเทียบ High/Low แบบ Inline Table ระบบสร้าง
-            ตารางสรุปและคำอธิบายเป็นภาษาไทยอย่างถูกต้อง
-```
+![รูปที่ 4.11 ผลลัพธ์เปรียบเทียบ High/Low แบบ Inline Table ระบบสร้าง ตารางสรุปและคำอธิบายเป็นภาษาไทยอย่างถูกต้อง](screenshot/fig-4-11_chat-table-high-low.png)
 
 ผลลัพธ์เป็น Inline Table ที่ระบุชัดเจนว่า ในกลุ่มบ้านราคาสูงสุด มี 4 ห้องนอน 2 ห้องน้ำ 4 ชั้น และ 2 ที่จอดรถ ในขณะที่กลุ่มราคาต่ำสุด มี 2 ห้องนอน 1 ห้องน้ำ 1 ชั้น และไม่มีที่จอดรถ ระบบอธิบายเพิ่มเติมในเชิง Insight ว่า "ราคาสูงสุดมีจำนวนห้องนอน 4 ห้องและพื้นที่จอดรถ 2 จุด ซึ่งสะท้อนให้เห็นว่าบ้านที่มีราคาสูงมักจะมีพื้นที่ใช้สอยมากกว่า"
 
@@ -1356,11 +1298,7 @@ class BaseHandler:
 
 ผู้ใช้พิมพ์ "อยากรู้ว่าจำนวนห้องน้ำเป็นกี่ห้องในข้อมูลคิดเป็นกี่ percent ของรายการบ้านทั้งหมด" ระบบเลือก Handler หมวด `stats` และคืนผลเป็นทั้งข้อความและ Inline Table ดังรูปที่ 4.12
 
-```
-รูปที่ 4.12 ผลลัพธ์สัดส่วนห้องน้ำในรูปตาราง พร้อมการอธิบายเพิ่มเติมว่า
-            บ้าน 1 ห้องน้ำพบมากที่สุดที่ 73.58% และบ้าน 4 ห้องน้ำพบเพียง
-            0.18%
-```
+![รูปที่ 4.12 ผลลัพธ์สัดส่วนห้องน้ำในรูปตาราง พร้อมการอธิบายเพิ่มเติมว่า บ้าน 1 ห้องน้ำพบมากที่สุดที่ 73.58% และบ้าน 4 ห้องน้ำพบเพียง 0.18%](screenshot/fig-4-12_chat-bathroom-percent.png)
 
 ผลลัพธ์ดังตารางที่ 4.3 จะเห็นว่าบ้าน 1 ห้องน้ำมีสัดส่วนมากที่สุด ที่ 73.58% ตามมาด้วย 2 ห้องน้ำที่ 24.40%
 
@@ -1377,22 +1315,13 @@ class BaseHandler:
 
 ผู้ใช้พิมพ์ "แสดงการเปรียบเทียบราคาบ้านตามจำนวนห้องนอนเป็น box plot" ระบบเลือก Handler `boxplot` ในหมวด `viz` แล้วสร้าง Box Plot เชิงโต้ตอบ ดังรูปที่ 4.13 ผู้ใช้สามารถ Hover เพื่อดูค่ามัธยฐาน, ควอไทล์ และ Outlier ของแต่ละกลุ่มได้
 
-```
-รูปที่ 4.13 Box Plot ของราคาบ้านตามจำนวนห้องนอน 1–6 ห้อง แสดงในรูป
-            แบบ Inline ในช่องสนทนา พร้อมตารางสรุปด้านบน
-```
+![รูปที่ 4.13 Box Plot ของราคาบ้านตามจำนวนห้องนอน 1–6 ห้อง แสดงในรูป แบบ Inline ในช่องสนทนา พร้อมตารางสรุปด้านบน](screenshot/fig-4-13_chat-boxplot-inline.png)
 
 เมื่อกดปุ่ม "Fullscreen" ระบบจะขยายกราฟเป็นเต็มจอ ดังรูปที่ 4.15 ทำให้สามารถสำรวจรายละเอียดได้ละเอียดขึ้น เช่น เห็น Outlier ที่ราคา 12 ล้าน ในกลุ่ม 4 ห้องนอน
 
-```
-รูปที่ 4.14 Pie Chart "Distribution of Bathroom Counts" เมื่อแสดงในโหมด
-            Fullscreen แสดงสัดส่วน 1:73.6%, 2:24.4%, 3:1.83%, 4:0.18%
-```
+![รูปที่ 4.14 Pie Chart "Distribution of Bathroom Counts" เมื่อแสดงในโหมด Fullscreen แสดงสัดส่วน 1:73.6%, 2:24.4%, 3:1.83%, 4:0.18%](screenshot/fig-4-14_chat-piechart-fullscreen.png)
 
-```
-รูปที่ 4.15 Box Plot ของราคาบ้านตามจำนวนห้องนอน แสดงในโหมด Fullscreen
-            ทำให้เห็น Outlier และการกระจายของแต่ละกลุ่มอย่างชัดเจน
-```
+![รูปที่ 4.15 Box Plot ของราคาบ้านตามจำนวนห้องนอน แสดงในโหมด Fullscreen ทำให้เห็น Outlier และการกระจายของแต่ละกลุ่มอย่างชัดเจน](screenshot/fig-4-15_chat-boxplot-fullscreen.png)
 
 ### 4.8.4 ทดสอบคำสั่งเชิงต่อเนื่อง (Conversation History Threading)
 
@@ -1406,11 +1335,7 @@ class BaseHandler:
 
 เมื่อผู้ใช้พิมพ์คำสั่ง `/train` หลังจากเลือกชุดข้อมูล Housing_data แล้ว ระบบจะแสดง Train Config Panel ที่ให้เลือก Target Column และ Task Type โดย AI แนะนำ `price` เป็น Target อัตโนมัติ และเลือก Task Type เป็น "Auto Detect" เป็นค่าตั้งต้น ดังรูปที่ 4.16
 
-```
-รูปที่ 4.16 หน้าตั้งค่า /train แสดง Target Column ที่แนะนำเป็น price
-            ตัวเลือก Task Type 4 แบบ และสถานะ Training in Progress
-            ที่แสดง Progress Bar พร้อมขั้นตอนทั้ง 8 ขั้น
-```
+![รูปที่ 4.16 หน้าตั้งค่า /train แสดง Target Column ที่แนะนำเป็น price ตัวเลือก Task Type 4 แบบ และสถานะ Training in Progress ที่แสดง Progress Bar พร้อมขั้นตอนทั้ง 8 ขั้น](screenshot/fig-4-16_train-config-and-progress.png)
 
 ระบบทำงานตามขั้นตอนที่กำหนดไว้ในตารางที่ 3.7 พร้อมแสดงสถานะต่อขั้นตอน ขั้นตอนทั้ง 8 ได้แก่ Analyzing dataset, Preprocessing data, Selecting algorithms, Cross-validating (5-fold), Tuning hyperparameters, Final evaluation, Generating charts และ Saving model จากภาพ จะเห็นว่าระบบทำงานเสร็จแล้ว 4 ขั้น และกำลังอยู่ที่ขั้น "Tuning hyperparameters" ที่ความคืบหน้า 65%
 
@@ -1448,11 +1373,7 @@ class BaseHandler:
 
 แท็บแรกของ TrainResultCard คือ Actual vs Predicted Scatter ที่แสดงค่าทำนายเทียบกับค่าจริง พร้อมเส้นทแยงมุมสำหรับอ้างอิง ดังรูปที่ 4.17
 
-```
-รูปที่ 4.17 TrainResultCard แท็บ Actual vs Predicted แสดง Scatter ของจุด
-            ทำนายเทียบกับค่าจริง พร้อมเส้น Reference เฉียง 45 องศา
-            ค่า RMSE 1,324,506.9601 และ R² 0.6529
-```
+![รูปที่ 4.17 TrainResultCard แท็บ Actual vs Predicted แสดง Scatter ของจุด ทำนายเทียบกับค่าจริง พร้อมเส้น Reference เฉียง 45 องศา ค่า RMSE 1,324,506.9601 และ R² 0.6529](screenshot/fig-4-17_train-actual-vs-predicted.png)
 
 จากกราฟจะเห็นว่าจุดส่วนใหญ่กระจายตัวรอบเส้น Reference ค่อนข้างดี แต่ที่ราคาสูง (>10M) มีแนวโน้มที่โมเดลจะทำนายต่ำกว่าค่าจริง ซึ่งเป็นปรากฏการณ์ปกติของ Regression เมื่อข้อมูลที่ราคาสูงมีจำนวนน้อย
 
@@ -1460,11 +1381,7 @@ class BaseHandler:
 
 แท็บ Feature Importance แสดง Top 13 Feature ที่มีอิทธิพลสูงสุด ดังรูปที่ 4.18
 
-```
-รูปที่ 4.18 TrainResultCard แท็บ Feature Importance แสดง Top 13 Feature
-            ที่มีอิทธิพลต่อราคาบ้านมากที่สุด โดย bathrooms นำอันดับหนึ่ง
-            ตามด้วย area, airconditioning_yes และ stories
-```
+![รูปที่ 4.18 TrainResultCard แท็บ Feature Importance แสดง Top 13 Feature ที่มีอิทธิพลต่อราคาบ้านมากที่สุด โดย bathrooms นำอันดับหนึ่ง ตามด้วย area, airconditioning_yes และ stories](screenshot/fig-4-18_train-feature-importance.png)
 
 จากกราฟจะเห็นว่า Feature ที่สำคัญที่สุด 5 อันดับ ได้แก่ `bathrooms`, `area`, `airconditioning_yes`, `stories` และ `prefarea_yes` แสดงให้เห็นว่าจำนวนห้องน้ำและพื้นที่ของบ้าน เป็นปัจจัยที่มีผลต่อราคามากที่สุดในชุดข้อมูลนี้ ส่วน Feature ที่ส่งผลน้อยที่สุดคือ `bedrooms` ซึ่งเป็นข้อสรุปที่น่าสนใจ เนื่องจากปกติแล้วคนทั่วไปอาจคิดว่าจำนวนห้องนอนเป็นปัจจัยหลัก
 
