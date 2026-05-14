@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 880" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FFC000"/>
+    </marker>
+    <style>
+      .box           { fill: #FFFFFF; stroke: #C9D0DA; stroke-width: 1.4; rx: 14; ry: 14; }
+      .box-orange    { fill: #FFFFFF; stroke: #FFC000; stroke-width: 2; rx: 14; ry: 14; }
+      .num-circle    { fill: #5B6470; }
+      .num-circle-or { fill: #FFC000; }
+      .num-text      { font-size: 20px; font-weight: 800; fill: #FFFFFF; }
+      .title         { font-size: 18px; font-weight: 800; fill: #0A0A0A; }
+      .subtitle      { font-size: 13px; fill: #6B6B6B; }
+      .header        { font-size: 12px; font-weight: 800; fill: #5B6470; letter-spacing: 1.5px; }
+      .arrow-line        { stroke: #222;    stroke-width: 2.2; fill: none; }
+      .arrow-line-orange { stroke: #FFC000; stroke-width: 2.6; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="400" height="880" fill="#FFFFFF"/>
+
+  <text x="30" y="36" class="header">USER FLOW · 7 STEPS</text>
+
+  <!-- 1 -->
+  <rect x="30" y="56" width="340" height="76" class="box"/>
+  <circle cx="74" cy="94" r="22" class="num-circle"/>
+  <text x="74" y="101" class="num-text" text-anchor="middle">1</text>
+  <text x="112" y="92" class="title">Upload</text>
+  <text x="112" y="114" class="subtitle">Drop your dataset (CSV / XLSX / JSON)</text>
+
+  <line x1="200" y1="132" x2="200" y2="160" class="arrow-line" marker-end="url(#arrow)"/>
+
+  <!-- 2 -->
+  <rect x="30" y="160" width="340" height="76" class="box"/>
+  <circle cx="74" cy="198" r="22" class="num-circle"/>
+  <text x="74" y="205" class="num-text" text-anchor="middle">2</text>
+  <text x="112" y="196" class="title">Clean</text>
+  <text x="112" y="218" class="subtitle">Type /cleaning — AI fixes the data</text>
+
+  <line x1="200" y1="236" x2="200" y2="264" class="arrow-line" marker-end="url(#arrow)"/>
+
+  <!-- 3 -->
+  <rect x="30" y="264" width="340" height="76" class="box"/>
+  <circle cx="74" cy="302" r="22" class="num-circle"/>
+  <text x="74" y="309" class="num-text" text-anchor="middle">3</text>
+  <text x="112" y="300" class="title">Prepare</text>
+  <text x="112" y="322" class="subtitle">/ml-prepare — split + encode for ML</text>
+
+  <line x1="200" y1="340" x2="200" y2="368" class="arrow-line-orange" marker-end="url(#arrowOrange)"/>
+
+  <!-- 4 — HOT -->
+  <rect x="30" y="368" width="340" height="76" class="box-orange"/>
+  <circle cx="74" cy="406" r="22" class="num-circle-or"/>
+  <text x="74" y="413" class="num-text" text-anchor="middle">4</text>
+  <text x="112" y="404" class="title">Train</text>
+  <text x="112" y="426" class="subtitle">/train — AI picks the best model</text>
+
+  <line x1="200" y1="444" x2="200" y2="472" class="arrow-line" marker-end="url(#arrow)"/>
+
+  <!-- 5 -->
+  <rect x="30" y="472" width="340" height="76" class="box"/>
+  <circle cx="74" cy="510" r="22" class="num-circle"/>
+  <text x="74" y="517" class="num-text" text-anchor="middle">5</text>
+  <text x="112" y="508" class="title">Save</text>
+  <text x="112" y="530" class="subtitle">Bookmark the model in the Models tab</text>
+
+  <line x1="200" y1="548" x2="200" y2="576" class="arrow-line-orange" marker-end="url(#arrowOrange)"/>
+
+  <!-- 6 — HOT -->
+  <rect x="30" y="576" width="340" height="76" class="box-orange"/>
+  <circle cx="74" cy="614" r="22" class="num-circle-or"/>
+  <text x="74" y="621" class="num-text" text-anchor="middle">6</text>
+  <text x="112" y="612" class="title">Predict</text>
+  <text x="112" y="634" class="subtitle">/predict — run model on new data</text>
+
+  <line x1="200" y1="652" x2="200" y2="680" class="arrow-line" marker-end="url(#arrow)"/>
+
+  <!-- 7 -->
+  <rect x="30" y="680" width="340" height="76" class="box"/>
+  <circle cx="74" cy="718" r="22" class="num-circle"/>
+  <text x="74" y="725" class="num-text" text-anchor="middle">7</text>
+  <text x="112" y="716" class="title">Export</text>
+  <text x="112" y="738" class="subtitle">Download results as CSV / XLSX</text>
+</svg>

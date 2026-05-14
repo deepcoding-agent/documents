@@ -1,0 +1,8 @@
+# Office lock files
+~$*
+
+# macOS
+.DS_Store
+
+# Accidental wget/curl output
+https:/

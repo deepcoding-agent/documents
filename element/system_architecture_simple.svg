@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 740" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FFC000"/>
+    </marker>
+    <style>
+      .group-bg          { fill: #F2F4F7; stroke: #D6DBE2; stroke-width: 1; }
+      .group-bg-orange   { fill: #FFF8E1; stroke: #FFE082; stroke-width: 1; }
+      .group-bg-blue     { fill: #EEF4FF; stroke: #D2DEF7; stroke-width: 1; }
+      .group-label       { font-size: 15px; font-weight: 800; fill: #5B6470; letter-spacing: 1px; }
+      .box               { fill: #FFFFFF; stroke: #C9D0DA; stroke-width: 1.2; rx: 10; ry: 10; }
+      .box-app           { fill: #FFFFFF; stroke: #1F2937; stroke-width: 1.6; rx: 12; ry: 12; }
+      .box-orange        { fill: #FFFFFF; stroke: #FFC000; stroke-width: 1.6; rx: 12; ry: 12; }
+      .title             { font-size: 16px; font-weight: 700; fill: #0A0A0A; }
+      .title-lg          { font-size: 19px; font-weight: 800; fill: #0A0A0A; }
+      .subtitle          { font-size: 13px; fill: #6B6B6B; }
+      .pill-text         { font-size: 12px; fill: #0A0A0A; font-weight: 700; }
+      .arrow-line        { stroke: #222;    stroke-width: 1.8; fill: none; }
+      .arrow-line-orange { stroke: #FFC000; stroke-width: 2.0; fill: none; }
+      .arrow-label       { font-size: 13px; font-weight: 700; fill: #444; }
+      .arrow-label-orange{ font-size: 13px; font-weight: 700; fill: #FFC000; }
+    </style>
+  </defs>
+
+  <!-- Page background -->
+  <rect width="1500" height="740" fill="#FFFFFF"/>
+
+  <!-- =====================================================================
+       LEGEND (top-right)
+       ===================================================================== -->
+  <g transform="translate(1180,20)">
+    <rect x="0" y="0" width="280" height="60" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E4E1" stroke-width="1.2"/>
+    <line x1="14" y1="20" x2="40" y2="20" class="arrow-line-orange" marker-end="url(#arrowOrange)"/>
+    <text x="48" y="24" class="subtitle">Hot path (chat → train → predict)</text>
+    <line x1="14" y1="42" x2="40" y2="42" class="arrow-line" marker-end="url(#arrow)"/>
+    <text x="48" y="46" class="subtitle">Data flow / LLM call</text>
+  </g>
+
+  <!-- =====================================================================
+       LAYER 1 — SERVICES (top, single LLM bus)
+       ===================================================================== -->
+  <text x="610" y="48" class="group-label">SERVICES — LLM PROVIDERS</text>
+  <rect x="600" y="56" width="400" height="84" rx="14" ry="14" class="group-bg-blue"/>
+  <rect x="618" y="74" width="174" height="50" class="box"/>
+  <circle cx="635" cy="99" r="7" fill="#10A37F"/>
+  <text x="650" y="96" class="title">OpenAI GPT</text>
+  <text x="650" y="111" class="subtitle">gpt-4o-mini (default)</text>
+  <rect x="808" y="74" width="174" height="50" class="box"/>
+  <circle cx="825" cy="99" r="7" fill="#D97757"/>
+  <text x="840" y="96" class="title">Anthropic Claude</text>
+  <text x="840" y="111" class="subtitle">claude-sonnet-4-6</text>
+
+  <!-- =====================================================================
+       LAYER 2 — MAIN HORIZONTAL FLOW
+                      USERS → FRONTEND → BACKEND → STORAGE
+       ===================================================================== -->
+
+  <!-- ── USERS ───────────────────────────────────────────────────────── -->
+  <text x="50" y="196" class="group-label">USERS</text>
+  <rect x="40" y="206" width="170" height="220" rx="14" ry="14" class="group-bg"/>
+  <g transform="translate(85,240)">
+    <circle cx="20" cy="20" r="14" fill="#0A0A0A"/>
+    <path d="M-2 60 Q20 36 42 60 L42 72 L-2 72 Z" fill="#0A0A0A"/>
+    <circle cx="42" cy="20" r="14" fill="#0A0A0A" opacity="0.5"/>
+    <path d="M20 60 Q42 36 64 60 L64 72 L20 72 Z" fill="#0A0A0A" opacity="0.5"/>
+  </g>
+  <text x="125" y="352" class="title" text-anchor="middle">Data scientist</text>
+  <text x="125" y="370" class="subtitle" text-anchor="middle">browser · uploads</text>
+  <text x="125" y="384" class="subtitle" text-anchor="middle">chats · /train · /predict</text>
+
+  <!-- ── FRONTEND (Next.js) ─────────────────────────────────────────── -->
+  <text x="262" y="196" class="group-label">WEB · NEXT.JS 16</text>
+  <rect x="252" y="206" width="328" height="346" rx="14" ry="14" class="group-bg"/>
+
+  <rect x="270" y="226" width="292" height="100" class="box-app"/>
+  <text x="284" y="252" class="title-lg">Next.js 16 Frontend</text>
+  <text x="284" y="274" class="subtitle">React 19 · Tailwind · Plotly</text>
+  <text x="284" y="292" class="subtitle">DatasetPicker · ModelsPanel</text>
+  <text x="284" y="310" class="subtitle">TrainConfig · PredictResult</text>
+  <rect x="498" y="298" width="56" height="18" rx="3" fill="#0A0A0A"/>
+  <text x="526" y="311" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">NEXT</text>
+
+  <rect x="270" y="338" width="292" height="84" class="box"/>
+  <text x="284" y="360" class="title">API routes (thin proxy)</text>
+  <text x="284" y="380" class="subtitle">/api/chat · /api/train</text>
+  <text x="284" y="396" class="subtitle">/api/predict · /api/datasets</text>
+  <text x="284" y="412" class="subtitle">/api/insights · /api/documents</text>
+
+  <rect x="270" y="438" width="138" height="100" class="box"/>
+  <text x="284" y="460" class="title">NextAuth v5</text>
+  <text x="284" y="480" class="subtitle">Google OAuth</text>
+  <text x="284" y="496" class="subtitle">PrismaAdapter</text>
+  <text x="284" y="514" class="subtitle">DB sessions</text>
+
+  <rect x="424" y="438" width="138" height="100" class="box"/>
+  <text x="438" y="460" class="title">Prisma ORM</text>
+  <text x="438" y="480" class="subtitle">SQLite (dev)</text>
+  <text x="438" y="496" class="subtitle">MongoDB (prod)</text>
+  <text x="438" y="514" class="subtitle">→ Database</text>
+
+  <!-- ── BACKEND (FastAPI) ──────────────────────────────────────────── -->
+  <text x="630" y="196" class="group-label">BACKEND · FASTAPI</text>
+  <rect x="620" y="206" width="396" height="500" rx="14" ry="14" class="group-bg-orange"/>
+
+  <rect x="638" y="226" width="360" height="68" class="box-orange"/>
+  <text x="652" y="252" class="title-lg">FastAPI (uvicorn :8000)</text>
+  <text x="652" y="276" class="subtitle">Pydantic v2 · CORS · /chat /train /predict</text>
+  <rect x="940" y="262" width="48" height="18" rx="3" fill="#FFC000"/>
+  <text x="964" y="275" font-size="10" font-weight="700" fill="#0A0A0A" text-anchor="middle">PY</text>
+
+  <rect x="638" y="306" width="360" height="64" class="box"/>
+  <text x="652" y="328" class="title">Two-stage AI routing</text>
+  <text x="652" y="346" class="subtitle">① Category router (7 cats, ~150 tok)</text>
+  <text x="652" y="362" class="subtitle">② Focused planner → JSON plan</text>
+
+  <text x="638" y="380" class="group-label">AGENTS</text>
+  <rect x="638" y="386" width="172" height="34" class="box"/>
+  <text x="724" y="407" class="pill-text" text-anchor="middle">DS-Agent (orchestrator)</text>
+  <rect x="826" y="386" width="172" height="34" class="box"/>
+  <text x="912" y="407" class="pill-text" text-anchor="middle">TrainAgent · /train</text>
+
+  <rect x="638" y="428" width="172" height="34" class="box"/>
+  <text x="724" y="449" class="pill-text" text-anchor="middle">PredictAgent · /predict</text>
+  <rect x="826" y="428" width="172" height="34" class="box"/>
+  <text x="912" y="449" class="pill-text" text-anchor="middle">AutoClean · AutoPrepare</text>
+
+  <rect x="638" y="470" width="172" height="34" class="box"/>
+  <text x="724" y="491" class="pill-text" text-anchor="middle">Insights · Document</text>
+  <rect x="826" y="470" width="172" height="34" class="box"/>
+  <text x="912" y="491" class="pill-text" text-anchor="middle">Coding-Agent (Q&amp;A)</text>
+
+  <rect x="638" y="518" width="360" height="68" class="box"/>
+  <text x="652" y="540" class="title">HANDLER_REGISTRY · 417 handlers</text>
+  <text x="652" y="560" class="subtitle">stats 56 · clean 60 · transform 64</text>
+  <text x="652" y="578" class="subtitle">viz 56 · feature 63 · nlp 56 · analysis 62</text>
+
+  <rect x="638" y="592" width="172" height="98" class="box"/>
+  <text x="652" y="612" class="title">Sandboxed exec()</text>
+  <text x="652" y="630" class="subtitle">pandas · sklearn</text>
+  <text x="652" y="644" class="subtitle">plotly · seaborn</text>
+  <text x="652" y="658" class="subtitle">xgboost · lightgbm</text>
+  <text x="652" y="672" class="subtitle">optuna · imbalanced</text>
+
+  <rect x="826" y="592" width="172" height="98" class="box"/>
+  <text x="840" y="612" class="title">Model registry</text>
+  <text x="840" y="630" class="subtitle">27 algorithms</text>
+  <text x="840" y="644" class="subtitle">12 chart types</text>
+  <text x="840" y="658" class="subtitle">CV + Optuna</text>
+  <text x="840" y="672" class="subtitle">SHAP (Sprint 5+)</text>
+
+  <!-- ── STORAGE ──────────────────────────────────────────────────── -->
+  <text x="1066" y="196" class="group-label">STORAGE</text>
+  <rect x="1056" y="206" width="404" height="320" rx="14" ry="14" class="group-bg"/>
+
+  <rect x="1074" y="226" width="368" height="86" class="box"/>
+  <text x="1088" y="248" class="title">Database (via Prisma)</text>
+  <text x="1088" y="266" class="subtitle">User · Session · Account</text>
+  <text x="1088" y="282" class="subtitle">Conversation · Dataset</text>
+  <text x="1088" y="300" class="subtitle">SQLite (dev) → MongoDB Atlas (Sprint 8)</text>
+
+  <rect x="1074" y="328" width="368" height="86" class="box-orange"/>
+  <text x="1088" y="348" class="title">ml-datascience/models/</text>
+  <text x="1088" y="366" class="subtitle">{uuid}.joblib — compressed model bundle</text>
+  <text x="1088" y="382" class="subtitle">{uuid}.json — metadata sidecar</text>
+  <text x="1088" y="400" class="subtitle">display_name · saved_to_library · metrics</text>
+
+  <rect x="1074" y="430" width="368" height="80" class="box"/>
+  <text x="1088" y="450" class="title">Dataset blobs</text>
+  <text x="1088" y="468" class="subtitle">JSON rows + columns inline in DB</text>
+  <text x="1088" y="484" class="subtitle">→ Sprint 8 → S3 / GCS object storage</text>
+  <text x="1088" y="500" class="subtitle">cap: 50 MB upload (Sprint 7)</text>
+
+  <!-- =====================================================================
+       ARROWS — every line in its own clear lane, none cross
+       ===================================================================== -->
+
+  <!-- Users → Frontend  (lane y = 316) -->
+  <line x1="212" y1="316" x2="248" y2="316" class="arrow-line" marker-end="url(#arrow)"/>
+  <text x="218" y="308" class="arrow-label">HTTPS</text>
+
+  <!-- Frontend → Backend  (lane y = 366) -->
+  <line x1="582" y1="366" x2="616" y2="366" class="arrow-line-orange" marker-end="url(#arrowOrange)"/>
+  <text x="582" y="358" class="arrow-label-orange">proxy</text>
+
+  <!-- Backend → Storage  (lane y = 362) -->
+  <line x1="1018" y1="362" x2="1052" y2="362" class="arrow-line-orange" marker-end="url(#arrowOrange)"/>
+  <text x="1020" y="354" class="arrow-label-orange">save / load</text>
+
+  <!-- Backend ↔ Services  (single vertical bus) -->
+  <line x1="804" y1="226" x2="804" y2="144" class="arrow-line" marker-end="url(#arrow)"/>
+  <line x1="822" y1="144" x2="822" y2="226" class="arrow-line" marker-end="url(#arrow)"/>
+  <text x="700" y="172" class="arrow-label" text-anchor="end">LLM call</text>
+  <text x="900" y="172" class="arrow-label" text-anchor="start">response</text>
+</svg>
