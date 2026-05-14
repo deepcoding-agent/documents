@@ -35,24 +35,24 @@
 
 ## หน้าอนุมัติ
 
-หัวข้อโครงงาน  : ระบบปัญญาประดิษฐ์สำหรับการเตรียมข้อมูลและการวิเคราะห์ข้อมูลอัตโนมัติ
-ผู้จัดทำ        : นายธัญพิสิษฐ์ บัวประคอง, นายนันทวัฒน์ สุกก่ำ, นายกรพันธ์ มณีทะ
+หัวข้อโครงงาน : ระบบปัญญาประดิษฐ์สำหรับการเตรียมข้อมูลและการวิเคราะห์ข้อมูลอัตโนมัติ
+ผู้จัดทำ : นายธัญพิสิษฐ์ บัวประคอง, นายนันทวัฒน์ สุกก่ำ, นายกรพันธ์ มณีทะ
 อาจารย์ที่ปรึกษา : ผู้ช่วยศาสตราจารย์ ดร. ฐิตาภรณ์ กนกรัตน
-หลักสูตร      : วิทยาศาสตรบัณฑิต
-สาขาวิชา      : วิทยาการคอมพิวเตอร์ประยุกต์
-ภาควิชา       : คณิตศาสตร์
-คณะ          : วิทยาศาสตร์
-ปีการศึกษา    : 2568
+หลักสูตร : วิทยาศาสตรบัณฑิต
+สาขาวิชา : วิทยาการคอมพิวเตอร์ประยุกต์
+ภาควิชา : คณิตศาสตร์
+คณะ : วิทยาศาสตร์
+ปีการศึกษา : 2568
 
 คณะกรรมการสอบโครงงาน
 
-........................................................   ประธานกรรมการสอบโครงงาน
+........................................................ ประธานกรรมการสอบโครงงาน
 ( ........................................................ )
 
-........................................................   กรรมการและอาจารย์ที่ปรึกษาโครงงาน
+........................................................ กรรมการและอาจารย์ที่ปรึกษาโครงงาน
 ( ผู้ช่วยศาสตราจารย์ ดร. ฐิตาภรณ์ กนกรัตน )
 
-........................................................   กรรมการ
+........................................................ กรรมการ
 ( ........................................................ )
 
 ลิขสิทธิ์ของมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
@@ -61,15 +61,15 @@
 
 ## บทคัดย่อ
 
-หัวข้อโครงงาน      : ระบบปัญญาประดิษฐ์สำหรับการเตรียมข้อมูลและการวิเคราะห์ข้อมูลอัตโนมัติ
-หน่วยกิต           : 6
-ผู้เขียน            : นายธัญพิสิษฐ์ บัวประคอง, นายนันทวัฒน์ สุกก่ำ, นายกรพันธ์ มณีทะ
-อาจารย์ที่ปรึกษา    : ผู้ช่วยศาสตราจารย์ ดร. ฐิตาภรณ์ กนกรัตน
-หลักสูตร           : วิทยาศาสตรบัณฑิต
-สาขาวิชา           : วิทยาการคอมพิวเตอร์ประยุกต์
-ภาควิชา            : คณิตศาสตร์
-คณะ               : วิทยาศาสตร์
-ปีการศึกษา         : 2568
+หัวข้อโครงงาน : ระบบปัญญาประดิษฐ์สำหรับการเตรียมข้อมูลและการวิเคราะห์ข้อมูลอัตโนมัติ
+หน่วยกิต : 6
+ผู้เขียน : นายธัญพิสิษฐ์ บัวประคอง, นายนันทวัฒน์ สุกก่ำ, นายกรพันธ์ มณีทะ
+อาจารย์ที่ปรึกษา : ผู้ช่วยศาสตราจารย์ ดร. ฐิตาภรณ์ กนกรัตน
+หลักสูตร : วิทยาศาสตรบัณฑิต
+สาขาวิชา : วิทยาการคอมพิวเตอร์ประยุกต์
+ภาควิชา : คณิตศาสตร์
+คณะ : วิทยาศาสตร์
+ปีการศึกษา : 2568
 
 **บทคัดย่อ**
 
@@ -85,16 +85,16 @@
 
 ## Abstract
 
-| Research Project Title | : Automate Data Preparation and Analysis Platform |
-|---|---|
-| Research Project Credits | : 6 |
-| Authors | : Mr. Thanyapisit Buaprakong, Mr. Nantawat Sukkam, Mr. Kornpan Maneetha |
-| Project Advisor | : Asst. Prof. Dr. Thitaporn Kanokrat |
-| Program | : Bachelor of Science |
-| Field of Study | : Applied Computer Science |
-| Department | : Mathematics |
-| Faculty | : Science |
-| Academic Year | : 2025 |
+| Research Project Title   | : Automate Data Preparation and Analysis Platform                       |
+| ------------------------ | ----------------------------------------------------------------------- |
+| Research Project Credits | : 6                                                                     |
+| Authors                  | : Mr. Thanyapisit Buaprakong, Mr. Nantawat Sukkam, Mr. Kornpan Maneetha |
+| Project Advisor          | : Asst. Prof. Dr. Thitaporn Kanokrat                                    |
+| Program                  | : Bachelor of Science                                                   |
+| Field of Study           | : Applied Computer Science                                              |
+| Department               | : Mathematics                                                           |
+| Faculty                  | : Science                                                               |
+| Academic Year            | : 2025                                                                  |
 
 **Abstract**
 
@@ -124,163 +124,164 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 
 ## สารบัญ
 
-|  | หน้า |
-|---|---|
-| บทคัดย่อภาษาไทย | ข |
-| บทคัดย่อภาษาอังกฤษ | ค |
-| กิตติกรรมประกาศ | ง |
-| สารบัญ | จ |
-| รายการตาราง | ช |
-| รายการรูปประกอบ | ซ |
-| รายการสัญลักษณ์และคำย่อ | ฌ |
-| **บทที่ 1 บทนำ** | **1** |
-| 1.1 ที่มาและความสำคัญของโครงงาน | 1 |
-| 1.2 วัตถุประสงค์ของโครงงาน | 3 |
-| 1.3 ขอบเขตของโครงงาน | 4 |
-| 1.4 ประโยชน์ที่คาดว่าจะได้รับ | 5 |
-| 1.5 แผนการดำเนินงาน | 5 |
-| 1.6 นิยามศัพท์เฉพาะ | 6 |
-| **บทที่ 2 ทฤษฎีและงานวิจัยที่เกี่ยวข้อง** | **8** |
-| 2.1 ทฤษฎีพื้นฐานด้านการเตรียมข้อมูล | 8 |
-| 2.2 ทฤษฎีด้าน Machine Learning | 14 |
-| 2.3 ทฤษฎีด้าน Large Language Model และ AI Agent | 20 |
-| 2.4 ทฤษฎีด้านการแสดงผลข้อมูลเชิงโต้ตอบ | 26 |
-| 2.5 ทฤษฎีด้านสถาปัตยกรรมเว็บแอปพลิเคชัน | 28 |
-| 2.6 งานวิจัยที่เกี่ยวข้อง | 32 |
-| **บทที่ 3 วิธีการดำเนินงาน** | **38** |
-| 3.1 ข้อกำหนดของระบบ | 38 |
-| 3.2 ภาพรวมสถาปัตยกรรมระบบ | 40 |
-| 3.3 การออกแบบส่วน Frontend | 43 |
-| 3.4 การออกแบบส่วน Backend | 48 |
-| 3.5 สถาปัตยกรรม Multi-Agent | 52 |
-| 3.6 คลัง Handler (HANDLER_REGISTRY) | 60 |
-| 3.7 ขั้นตอน Auto ML Training Pipeline | 65 |
-| 3.8 การออกแบบฐานข้อมูล | 70 |
-| 3.9 ระบบ CI/CD และการนำขึ้นใช้งานจริง | 72 |
-| 3.10 แผนการพัฒนา (Sprint Plan) | 74 |
-| **บทที่ 4 ผลการดำเนินงาน** | **76** |
-| 4.1 ชุดข้อมูลและสภาพแวดล้อมที่ใช้ทดสอบ | 76 |
-| 4.2 ผลการทดสอบหน้า Landing Page | 77 |
-| 4.3 ผลการทดสอบระบบ Authentication | 78 |
-| 4.4 ผลการทดสอบระบบจัดการการสนทนา | 79 |
-| 4.5 ผลการทดสอบระบบจัดการชุดข้อมูล | 80 |
-| 4.6 ผลการทดสอบ Multi-Provider LLM Switching | 81 |
-| 4.7 ผลการทดสอบ Two-Stage Routing | 82 |
-| 4.8 ผลการวิเคราะห์ข้อมูลด้วยภาษาธรรมชาติ | 83 |
-| 4.9 ผลการฝึกแบบจำลองด้วย /train | 88 |
-| 4.10 ผลการประเมินความเสถียรของระบบ | 92 |
-| 4.11 การเปรียบเทียบกับเครื่องมือใกล้เคียง | 94 |
-| 4.12 ผลการเปรียบเทียบประสิทธิภาพและความพึงพอใจของผู้ใช้ | 96 |
-| 4.13 สรุปผลการทดลอง | 98 |
-| **บทที่ 5 สรุปผล อภิปรายผล และข้อเสนอแนะ** | **98** |
-| 5.1 สรุปผลการดำเนินงาน | 98 |
-| 5.2 อภิปรายผล | 100 |
-| 5.3 ปัญหาและอุปสรรคในระหว่างการพัฒนา | 102 |
-| 5.4 ข้อจำกัดของระบบในปัจจุบัน | 104 |
-| 5.5 แนวทางการพัฒนาในอนาคต | 106 |
-| **เอกสารอ้างอิง** | **108** |
-| **ภาคผนวก ก** คู่มือการติดตั้งและใช้งานระบบ | 111 |
-| **ภาคผนวก ข** ตัวอย่างคำสั่งและผลลัพธ์ | 120 |
-| **ภาคผนวก ค** โครงสร้างฐานข้อมูล (Prisma Schema) | 126 |
-| **ประวัติผู้จัดทำ** | **128** |
+|                                                         | หน้า    |
+| ------------------------------------------------------- | ------- |
+| บทคัดย่อภาษาไทย                                         | ข       |
+| บทคัดย่อภาษาอังกฤษ                                      | ค       |
+| กิตติกรรมประกาศ                                         | ง       |
+| สารบัญ                                                  | จ       |
+| รายการตาราง                                             | ช       |
+| รายการรูปประกอบ                                         | ซ       |
+| รายการสัญลักษณ์และคำย่อ                                 | ฌ       |
+| **บทที่ 1 บทนำ**                                        | **1**   |
+| 1.1 ที่มาและความสำคัญของโครงงาน                         | 1       |
+| 1.2 วัตถุประสงค์ของโครงงาน                              | 3       |
+| 1.3 ขอบเขตของโครงงาน                                    | 4       |
+| 1.4 ประโยชน์ที่คาดว่าจะได้รับ                           | 5       |
+| 1.5 แผนการดำเนินงาน                                     | 5       |
+| 1.6 นิยามศัพท์เฉพาะ                                     | 6       |
+| **บทที่ 2 ทฤษฎีและงานวิจัยที่เกี่ยวข้อง**               | **8**   |
+| 2.1 ทฤษฎีพื้นฐานด้านการเตรียมข้อมูล                     | 8       |
+| 2.2 ทฤษฎีด้าน Machine Learning                          | 14      |
+| 2.3 ทฤษฎีด้าน Large Language Model และ AI Agent         | 20      |
+| 2.4 ทฤษฎีด้านการแสดงผลข้อมูลเชิงโต้ตอบ                  | 26      |
+| 2.5 ทฤษฎีด้านสถาปัตยกรรมเว็บแอปพลิเคชัน                 | 28      |
+| 2.6 งานวิจัยที่เกี่ยวข้อง                               | 32      |
+| **บทที่ 3 วิธีการดำเนินงาน**                            | **38**  |
+| 3.1 ข้อกำหนดของระบบ                                     | 38      |
+| 3.2 ภาพรวมสถาปัตยกรรมระบบ                               | 40      |
+| 3.3 การออกแบบส่วน Frontend                              | 43      |
+| 3.4 การออกแบบส่วน Backend                               | 48      |
+| 3.5 สถาปัตยกรรม Multi-Agent                             | 52      |
+| 3.6 คลัง Handler (HANDLER_REGISTRY)                     | 60      |
+| 3.7 ขั้นตอน Auto ML Training Pipeline                   | 65      |
+| 3.8 การออกแบบฐานข้อมูล                                  | 70      |
+| 3.9 ระบบ CI/CD และการนำขึ้นใช้งานจริง                   | 72      |
+| 3.10 แผนการพัฒนา (Sprint Plan)                          | 74      |
+| **บทที่ 4 ผลการดำเนินงาน**                              | **76**  |
+| 4.1 ชุดข้อมูลและสภาพแวดล้อมที่ใช้ทดสอบ                  | 76      |
+| 4.2 ผลการทดสอบหน้า Landing Page                         | 77      |
+| 4.3 ผลการทดสอบระบบ Authentication                       | 78      |
+| 4.4 ผลการทดสอบระบบจัดการการสนทนา                        | 79      |
+| 4.5 ผลการทดสอบระบบจัดการชุดข้อมูล                       | 80      |
+| 4.6 ผลการทดสอบ Multi-Provider LLM Switching             | 81      |
+| 4.7 ผลการทดสอบ Two-Stage Routing                        | 82      |
+| 4.8 ผลการวิเคราะห์ข้อมูลด้วยภาษาธรรมชาติ                | 83      |
+| 4.9 ผลการฝึกแบบจำลองด้วย /train                         | 88      |
+| 4.10 ผลการประเมินความเสถียรของระบบ                      | 92      |
+| 4.11 การเปรียบเทียบกับเครื่องมือใกล้เคียง               | 94      |
+| 4.12 ผลการเปรียบเทียบประสิทธิภาพและความพึงพอใจของผู้ใช้ | 96      |
+| 4.13 สรุปผลการทดลอง                                     | 98      |
+| **บทที่ 5 สรุปผล อภิปรายผล และข้อเสนอแนะ**              | **98**  |
+| 5.1 สรุปผลการดำเนินงาน                                  | 98      |
+| 5.2 อภิปรายผล                                           | 100     |
+| 5.3 ปัญหาและอุปสรรคในระหว่างการพัฒนา                    | 102     |
+| 5.4 ข้อจำกัดของระบบในปัจจุบัน                           | 104     |
+| 5.5 แนวทางการพัฒนาในอนาคต                               | 106     |
+| **เอกสารอ้างอิง**                                       | **108** |
+| **ภาคผนวก ก** คู่มือการติดตั้งและใช้งานระบบ             | 111     |
+| **ภาคผนวก ข** ตัวอย่างคำสั่งและผลลัพธ์                  | 120     |
+| **ภาคผนวก ค** โครงสร้างฐานข้อมูล (Prisma Schema)        | 126     |
+| **ประวัติผู้จัดทำ**                                     | **128** |
 
 ---
 
 ## รายการตาราง
 
-| ตารางที่ | คำอธิบาย | หน้า |
-|---|---|---|
-| 2.1 | เปรียบเทียบกลยุทธ์การจัดการ Missing Value | 11 |
-| 2.2 | เทคนิคการเข้ารหัส (Encoding) ที่รองรับ | 12 |
-| 2.3 | อัลกอริทึมจัดการ Class Imbalance | 13 |
-| 2.4 | รายการอัลกอริทึม Classification 12 ตัว | 16 |
-| 2.5 | รายการอัลกอริทึม Regression 11 ตัว | 17 |
-| 2.6 | รายการอัลกอริทึม Clustering 4 ตัว | 18 |
-| 2.7 | ตัวชี้วัดประสิทธิภาพแบบจำลอง (Evaluation Metrics) | 19 |
-| 3.1 | ข้อกำหนดด้านฮาร์ดแวร์ | 38 |
-| 3.2 | ข้อกำหนดด้านซอฟต์แวร์และไลบรารี | 39 |
-| 3.3 | จำนวน Handler แยกตามหมวดหมู่ | 60 |
-| 3.4 | ตัวอย่าง Handler ในหมวด `clean` | 62 |
-| 3.5 | ตัวอย่าง Handler ในหมวด `viz` | 63 |
-| 3.6 | ตัวอย่าง Handler ในหมวด `feature` | 64 |
-| 3.7 | ขั้นตอน Pipeline ของคำสั่ง `/ml-prepare` | 67 |
-| 3.8 | โครงสร้าง Model Metadata (`{uuid}.json`) | 70 |
-| 3.9 | ตารางในฐานข้อมูล (Prisma Schema) | 71 |
-| 4.1 | คุณสมบัติชุดข้อมูล Housing_data | 76 |
-| 4.2 | ผลการเปรียบเทียบราคา High/Low ตามคอลัมน์ | 84 |
-| 4.3 | สัดส่วนของบ้านตามจำนวนห้องน้ำ | 85 |
-| 4.4 | ผลลัพธ์ Model Comparison ของ `/train` | 89 |
-| 4.5 | เวลาเฉลี่ยที่ใช้ในแต่ละขั้นตอน | 92 |
-| 4.6 | เปรียบเทียบ PrepPilot กับเครื่องมือใกล้เคียง | 95 |
-| 4.7 | เปรียบเทียบเวลาที่ใช้ระหว่างการทำงานแบบ Manual กับ PrepPilot | 96 |
-| 4.8 | สรุปคะแนนความพึงพอใจของผู้ใช้ต่อระบบ | 97 |
+| ตารางที่ | คำอธิบาย                                                     | หน้า |
+| -------- | ------------------------------------------------------------ | ---- |
+| 2.1      | เปรียบเทียบกลยุทธ์การจัดการ Missing Value                    | 11   |
+| 2.2      | เทคนิคการเข้ารหัส (Encoding) ที่รองรับ                       | 12   |
+| 2.3      | อัลกอริทึมจัดการ Class Imbalance                             | 13   |
+| 2.4      | รายการอัลกอริทึม Classification 12 ตัว                       | 16   |
+| 2.5      | รายการอัลกอริทึม Regression 11 ตัว                           | 17   |
+| 2.6      | รายการอัลกอริทึม Clustering 4 ตัว                            | 18   |
+| 2.7      | ตัวชี้วัดประสิทธิภาพแบบจำลอง (Evaluation Metrics)            | 19   |
+| 3.1      | ข้อกำหนดด้านฮาร์ดแวร์                                        | 38   |
+| 3.2      | ข้อกำหนดด้านซอฟต์แวร์และไลบรารี                              | 39   |
+| 3.3      | จำนวน Handler แยกตามหมวดหมู่                                 | 60   |
+| 3.4      | ตัวอย่าง Handler ในหมวด `clean`                              | 62   |
+| 3.5      | ตัวอย่าง Handler ในหมวด `viz`                                | 63   |
+| 3.6      | ตัวอย่าง Handler ในหมวด `feature`                            | 64   |
+| 3.7      | ขั้นตอน Pipeline ของคำสั่ง `/ml-prepare`                     | 67   |
+| 3.8      | โครงสร้าง Model Metadata (`{uuid}.json`)                     | 70   |
+| 3.9      | ตารางในฐานข้อมูล (Prisma Schema)                             | 71   |
+| 4.1      | คุณสมบัติชุดข้อมูล Housing_data                              | 76   |
+| 4.2      | ผลการเปรียบเทียบราคา High/Low ตามคอลัมน์                     | 84   |
+| 4.3      | สัดส่วนของบ้านตามจำนวนห้องน้ำ                                | 85   |
+| 4.4      | ผลลัพธ์ Model Comparison ของ `/train`                        | 89   |
+| 4.5      | เวลาเฉลี่ยที่ใช้ในแต่ละขั้นตอน                               | 92   |
+| 4.6      | เปรียบเทียบ PrepPilot กับเครื่องมือใกล้เคียง                 | 95   |
+| 4.7      | เปรียบเทียบเวลาที่ใช้ระหว่างการทำงานแบบ Manual กับ PrepPilot | 96   |
+| 4.8      | สรุปคะแนนความพึงพอใจของผู้ใช้ต่อระบบ                         | 97   |
 
 ---
 
 ## รายการรูปประกอบ
 
-| รูปที่ | คำอธิบาย | หน้า |
-|---|---|---|
-| 1.1 | ตัวอย่างขั้นตอน Data Science Lifecycle | 2 |
-| 1.2 | แผนภูมิ Gantt แสดงแผนการดำเนินงานโครงงาน PrepPilot ม.ค.–พ.ค. 2569 | 5 |
-| 2.1 | สถาปัตยกรรมของระบบ AI Agent โดยทั่วไป | 21 |
-| 2.2 | ขั้นตอน Cross-validation 5 Fold | 18 |
-| 3.1 | ภาพรวมสถาปัตยกรรมของ PrepPilot | 40 |
-| 3.2 | ขั้นตอนการสนทนาของผู้ใช้กับระบบ (User Flow) | 42 |
-| 3.3 | สถาปัตยกรรม Two-Stage Routing | 54 |
-| 3.4 | Sequence Diagram ของวงจรการฝึกแบบจำลอง | 66 |
-| 4.1 | หน้า Landing Hero | 77 |
-| 4.2 | ส่วน "AI does the work" บนหน้า Landing | 77 |
-| 4.3 | ส่วน Solutions Grid ที่ครอบคลุม 6 แนวงาน | 78 |
-| 4.4 | ส่วน Testimonial และ Call-to-Action | 78 |
-| 4.5 | หน้าเข้าสู่ระบบด้วย Google OAuth | 79 |
-| 4.6 | แท็บ Chat ใน Sidebar แสดงรายการสนทนา | 80 |
-| 4.7 | แท็บ Dataset ใน Sidebar | 81 |
-| 4.8 | แถบ Dataset Picker และตัวเลือกโมเดล | 81 |
-| 4.9 | เมนู "Add data" สำหรับเชื่อมชุดข้อมูลเข้าสนทนา | 82 |
-| 4.10 | ตัวเลือก Multi-Provider LLM | 82 |
-| 4.11 | ผลลัพธ์เปรียบเทียบ High/Low แบบ Inline Table | 84 |
-| 4.12 | ผลลัพธ์สัดส่วนห้องน้ำในรูปตาราง + ค่าอธิบาย | 85 |
-| 4.13 | Box Plot ของราคาบ้านตามจำนวนห้องนอน (Inline) | 86 |
-| 4.14 | Pie Chart "Distribution of Bathroom Counts" แบบ Fullscreen | 87 |
-| 4.15 | Box Plot แบบ Fullscreen | 87 |
-| 4.16 | หน้าตั้งค่า `/train` (Target + Task Type + Training in Progress) | 88 |
-| 4.17 | TrainResultCard — Actual vs Predicted (RMSE 1,324,506) | 90 |
-| 4.18 | TrainResultCard — Feature Importance (Top 13) | 91 |
+| รูปที่ | คำอธิบาย                                                          | หน้า |
+| ------ | ----------------------------------------------------------------- | ---- |
+| 1.1    | ตัวอย่างขั้นตอน Data Science Lifecycle                            | 2    |
+| 1.2    | แผนภูมิ Gantt แสดงแผนการดำเนินงานโครงงาน PrepPilot ม.ค.–พ.ค. 2569 | 5    |
+| 2.1    | สถาปัตยกรรมของระบบ AI Agent โดยทั่วไป                             | 21   |
+| 2.2    | ขั้นตอน Cross-validation 5 Fold                                   | 18   |
+| 3.1    | ภาพรวมสถาปัตยกรรมของ PrepPilot                                    | 40   |
+| 3.2    | Use Case Diagram ของระบบ PrepPilot                                | 42   |
+| 3.3    | ขั้นตอนการสนทนาของผู้ใช้กับระบบ (User Flow)                       | 44   |
+| 3.4    | สถาปัตยกรรม Two-Stage Routing                                     | 55   |
+| 3.5    | Sequence Diagram ของวงจรการฝึกแบบจำลอง                            | 67   |
+| 4.1    | หน้า Landing Hero                                                 | 77   |
+| 4.2    | ส่วน "AI does the work" บนหน้า Landing                            | 77   |
+| 4.3    | ส่วน Solutions Grid ที่ครอบคลุม 6 แนวงาน                          | 78   |
+| 4.4    | ส่วน Testimonial และ Call-to-Action                               | 78   |
+| 4.5    | หน้าเข้าสู่ระบบด้วย Google OAuth                                  | 79   |
+| 4.6    | แท็บ Chat ใน Sidebar แสดงรายการสนทนา                              | 80   |
+| 4.7    | แท็บ Dataset ใน Sidebar                                           | 81   |
+| 4.8    | แถบ Dataset Picker และตัวเลือกโมเดล                               | 81   |
+| 4.9    | เมนู "Add data" สำหรับเชื่อมชุดข้อมูลเข้าสนทนา                    | 82   |
+| 4.10   | ตัวเลือก Multi-Provider LLM                                       | 82   |
+| 4.11   | ผลลัพธ์เปรียบเทียบ High/Low แบบ Inline Table                      | 84   |
+| 4.12   | ผลลัพธ์สัดส่วนห้องน้ำในรูปตาราง + ค่าอธิบาย                       | 85   |
+| 4.13   | Box Plot ของราคาบ้านตามจำนวนห้องนอน (Inline)                      | 86   |
+| 4.14   | Pie Chart "Distribution of Bathroom Counts" แบบ Fullscreen        | 87   |
+| 4.15   | Box Plot แบบ Fullscreen                                           | 87   |
+| 4.16   | หน้าตั้งค่า `/train` (Target + Task Type + Training in Progress)  | 88   |
+| 4.17   | TrainResultCard — Actual vs Predicted (RMSE 1,324,506)            | 90   |
+| 4.18   | TrainResultCard — Feature Importance (Top 13)                     | 91   |
 
 ---
 
 ## รายการสัญลักษณ์และคำย่อ
 
-| ตัวย่อ | ความหมาย |
-|---|---|
-| AI | Artificial Intelligence |
-| API | Application Programming Interface |
-| AutoML | Automated Machine Learning |
-| CI/CD | Continuous Integration / Continuous Deployment |
-| CV | Cross-Validation |
-| DS | Data Science |
-| EDA | Exploratory Data Analysis |
-| GPT | Generative Pre-trained Transformer |
-| HTTP | HyperText Transfer Protocol |
-| JSON | JavaScript Object Notation |
-| KNN | k-Nearest Neighbors |
-| LLM | Large Language Model |
-| MAE | Mean Absolute Error |
-| ML | Machine Learning |
-| NLP | Natural Language Processing |
-| OAuth | Open Authorization |
-| ORM | Object-Relational Mapping |
-| PCA | Principal Component Analysis |
-| RAG | Retrieval-Augmented Generation |
-| RFE | Recursive Feature Elimination |
-| RMSE | Root Mean Squared Error |
-| ROC | Receiver Operating Characteristic |
-| SDK | Software Development Kit |
-| SHAP | SHapley Additive exPlanations |
-| SMOTE | Synthetic Minority Over-sampling Technique |
-| SSR | Server-Side Rendering |
-| UI / UX | User Interface / User Experience |
+| ตัวย่อ  | ความหมาย                                       |
+| ------- | ---------------------------------------------- |
+| AI      | Artificial Intelligence                        |
+| API     | Application Programming Interface              |
+| AutoML  | Automated Machine Learning                     |
+| CI/CD   | Continuous Integration / Continuous Deployment |
+| CV      | Cross-Validation                               |
+| DS      | Data Science                                   |
+| EDA     | Exploratory Data Analysis                      |
+| GPT     | Generative Pre-trained Transformer             |
+| HTTP    | HyperText Transfer Protocol                    |
+| JSON    | JavaScript Object Notation                     |
+| KNN     | k-Nearest Neighbors                            |
+| LLM     | Large Language Model                           |
+| MAE     | Mean Absolute Error                            |
+| ML      | Machine Learning                               |
+| NLP     | Natural Language Processing                    |
+| OAuth   | Open Authorization                             |
+| ORM     | Object-Relational Mapping                      |
+| PCA     | Principal Component Analysis                   |
+| RAG     | Retrieval-Augmented Generation                 |
+| RFE     | Recursive Feature Elimination                  |
+| RMSE    | Root Mean Squared Error                        |
+| ROC     | Receiver Operating Characteristic              |
+| SDK     | Software Development Kit                       |
+| SHAP    | SHapley Additive exPlanations                  |
+| SMOTE   | Synthetic Minority Over-sampling Technique     |
+| SSR     | Server-Side Rendering                          |
+| UI / UX | User Interface / User Experience               |
 
 ---
 
@@ -348,20 +349,20 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 
 โครงงานนี้แบ่งออกเป็น 8 Sprint ซึ่งครอบคลุมตั้งแต่การวางพื้นฐานระบบ การเพิ่มความสามารถของ Agent ไปจนถึงการเตรียมพร้อมขึ้น Production แต่ละ Sprint ใช้เวลาประมาณ 2–4 สัปดาห์ ดังตารางต่อไปนี้
 
-| Sprint | กิจกรรม | ระยะเวลา (สัปดาห์) | สถานะ |
-|---|---|---|---|
-| 1 | ออกแบบ Pipeline เตรียมข้อมูล + Report Card | 3 | เสร็จ |
-| 2 | Plotly Interactive Chart + EDA Report + Fullscreen | 3 | เสร็จ |
-| 2.5 | AI-first Agent Rewrite: Planner-driven Routing | 2 | เสร็จ |
-| 2.7 | AI Auto-Clean, AI Auto-Prepare, Folder Card | 3 | เสร็จ |
-| 2.9 | 350 Handlers, Two-stage Routing, รองรับไฟล์ 20+ รูปแบบ | 4 | เสร็จ |
-| 2.95 | 396 Handlers, `/insights`, `/report`, Translate, Multi-format Export | 3 | เสร็จ |
-| 3 | เพิ่ม Handler 417 ตัว (SMOTE, Boruta, Rolling Window) | 3 | เสร็จ |
-| 4 | AI Auto ML Training Pipeline (`/train`) | 4 | เสร็จ |
-| 5 | Model Prediction และ Explainability (`/predict`) | 3 | กำลังพัฒนา |
-| 6 | Automated Tests (pytest + vitest) 80% coverage | 3 | แผน |
-| 7 | Production Hardening (Rate Limit, Sandbox Hardening, CORS) | 3 | แผน |
-| 8 | Production Deployment (MongoDB Atlas, S3/GCS, Multi-stage Docker) | 4 | แผน |
+| Sprint | กิจกรรม                                                              | ระยะเวลา (สัปดาห์) | สถานะ      |
+| ------ | -------------------------------------------------------------------- | ------------------ | ---------- |
+| 1      | ออกแบบ Pipeline เตรียมข้อมูล + Report Card                           | 3                  | เสร็จ      |
+| 2      | Plotly Interactive Chart + EDA Report + Fullscreen                   | 3                  | เสร็จ      |
+| 2.5    | AI-first Agent Rewrite: Planner-driven Routing                       | 2                  | เสร็จ      |
+| 2.7    | AI Auto-Clean, AI Auto-Prepare, Folder Card                          | 3                  | เสร็จ      |
+| 2.9    | 350 Handlers, Two-stage Routing, รองรับไฟล์ 20+ รูปแบบ               | 4                  | เสร็จ      |
+| 2.95   | 396 Handlers, `/insights`, `/report`, Translate, Multi-format Export | 3                  | เสร็จ      |
+| 3      | เพิ่ม Handler 417 ตัว (SMOTE, Boruta, Rolling Window)                | 3                  | เสร็จ      |
+| 4      | AI Auto ML Training Pipeline (`/train`)                              | 4                  | เสร็จ      |
+| 5      | Model Prediction และ Explainability (`/predict`)                     | 3                  | กำลังพัฒนา |
+| 6      | Automated Tests (pytest + vitest) 80% coverage                       | 3                  | แผน        |
+| 7      | Production Hardening (Rate Limit, Sandbox Hardening, CORS)           | 3                  | แผน        |
+| 8      | Production Deployment (MongoDB Atlas, S3/GCS, Multi-stage Docker)    | 4                  | กำลังพัฒนา |
 
 ![รูปที่ 1.2 แผนภูมิ Gantt แสดงแผนการดำเนินงานโครงงาน PrepPilot ตั้งแต่เดือนมกราคม จนถึงสัปดาห์ที่ 3 ของเดือนพฤษภาคม 2569 รวม 8 กิจกรรมหลักครอบคลุมการศึกษา ออกแบบ พัฒนา ทดสอบ และจัดทำรายงาน](element/gantt-plan.png)
 
@@ -407,15 +408,15 @@ Missing Value เป็นปัญหาที่พบบ่อยที่ส
 
 **ตารางที่ 2.1** เปรียบเทียบกลยุทธ์การจัดการ Missing Value
 
-| กลยุทธ์ | คำอธิบาย | เหมาะสำหรับ | ข้อควรระวัง |
-|---|---|---|---|
-| Drop Row | ลบแถวที่มี Null | ข้อมูลมีจำนวนมาก, Null น้อย | เสียข้อมูลถ้าทำกับชุดข้อมูลเล็ก |
-| Drop Column | ลบคอลัมน์ที่ Null สูง (>50%) | คอลัมน์ที่ไม่มีนัยสำคัญ | อาจตัดข้อมูลที่ยังใช้ได้ |
-| Mean / Median | เติมด้วยค่าเฉลี่ย/มัธยฐาน | ตัวเลขที่กระจายปกติ | Median เหมาะกว่าหาก Skewed |
-| Mode | เติมด้วยฐานนิยม | Categorical | ใช้ไม่ได้กับ Continuous |
-| Forward / Backward Fill | เติมต่อจากแถวก่อนหน้า/ถัดไป | Time-series | ไม่เหมาะกับข้อมูลแบบสุ่ม |
-| KNN Imputer | เติมโดยอ้างอิงเพื่อนบ้านที่ใกล้ที่สุด | Multi-variate | คำนวณช้ากับข้อมูลขนาดใหญ่ |
-| Iterative Imputer | เติมด้วยโมเดล Regression | ข้อมูลที่มี Correlation สูง | ต้อง Iterate หลายรอบ |
+| กลยุทธ์                 | คำอธิบาย                              | เหมาะสำหรับ                 | ข้อควรระวัง                     |
+| ----------------------- | ------------------------------------- | --------------------------- | ------------------------------- |
+| Drop Row                | ลบแถวที่มี Null                       | ข้อมูลมีจำนวนมาก, Null น้อย | เสียข้อมูลถ้าทำกับชุดข้อมูลเล็ก |
+| Drop Column             | ลบคอลัมน์ที่ Null สูง (>50%)          | คอลัมน์ที่ไม่มีนัยสำคัญ     | อาจตัดข้อมูลที่ยังใช้ได้        |
+| Mean / Median           | เติมด้วยค่าเฉลี่ย/มัธยฐาน             | ตัวเลขที่กระจายปกติ         | Median เหมาะกว่าหาก Skewed      |
+| Mode                    | เติมด้วยฐานนิยม                       | Categorical                 | ใช้ไม่ได้กับ Continuous         |
+| Forward / Backward Fill | เติมต่อจากแถวก่อนหน้า/ถัดไป           | Time-series                 | ไม่เหมาะกับข้อมูลแบบสุ่ม        |
+| KNN Imputer             | เติมโดยอ้างอิงเพื่อนบ้านที่ใกล้ที่สุด | Multi-variate               | คำนวณช้ากับข้อมูลขนาดใหญ่       |
+| Iterative Imputer       | เติมด้วยโมเดล Regression              | ข้อมูลที่มี Correlation สูง | ต้อง Iterate หลายรอบ            |
 
 ใน Pipeline ของ PrepPilot คอลัมน์ตัวเลขจะถูกเติมด้วย Median เป็นค่าตั้งต้น (เนื่องจากทนทานต่อ Outlier) ส่วนคอลัมน์ Categorical จะใช้ Mode ผู้ใช้สามารถปรับเปลี่ยนกลยุทธ์ได้ผ่าน Slash Command `/cleaning` ที่จะให้ AI Agent วิเคราะห์ก่อนแล้วเสนอแผนการแก้ไข
 
@@ -425,13 +426,13 @@ Missing Value เป็นปัญหาที่พบบ่อยที่ส
 
 **ตารางที่ 2.2** เทคนิคการเข้ารหัสที่ระบบรองรับ
 
-| เทคนิค | หลักการ | เหมาะสำหรับ |
-|---|---|---|
-| Label Encoding | จับคู่ค่าแต่ละค่ากับเลขจำนวนเต็ม | คอลัมน์ที่มีลำดับ (Ordinal) |
-| One-Hot Encoding | สร้างคอลัมน์ใหม่หนึ่งตัวต่อค่า | Categorical ที่มีค่าน้อย |
-| Target Encoding | แทนที่ด้วยค่าเฉลี่ยของ Target | Cardinality สูง |
+| เทคนิค              | หลักการ                           | เหมาะสำหรับ                        |
+| ------------------- | --------------------------------- | ---------------------------------- |
+| Label Encoding      | จับคู่ค่าแต่ละค่ากับเลขจำนวนเต็ม  | คอลัมน์ที่มีลำดับ (Ordinal)        |
+| One-Hot Encoding    | สร้างคอลัมน์ใหม่หนึ่งตัวต่อค่า    | Categorical ที่มีค่าน้อย           |
+| Target Encoding     | แทนที่ด้วยค่าเฉลี่ยของ Target     | Cardinality สูง                    |
 | Leave-One-Out (LOO) | คล้าย Target แต่ตัดแถวปัจจุบันออก | ลด Overfitting ของ Target Encoding |
-| Frequency Encoding | แทนที่ด้วยความถี่ของค่า | ใช้คู่กับ Tree-based Model |
+| Frequency Encoding  | แทนที่ด้วยความถี่ของค่า           | ใช้คู่กับ Tree-based Model         |
 
 ระบบจะเลือกเทคนิคให้อัตโนมัติเมื่อใช้คำสั่ง `/ml-prepare` โดยมีเกณฑ์คือ ถ้า Cardinality ≤ 10 ใช้ One-Hot, ถ้า > 10 และมี Target ที่เป็นตัวเลข ใช้ Target Encoding หรือ LOO มิฉะนั้นใช้ Frequency Encoding
 
@@ -450,13 +451,13 @@ Missing Value เป็นปัญหาที่พบบ่อยที่ส
 
 **ตารางที่ 2.3** อัลกอริทึมจัดการ Class Imbalance ที่ระบบรองรับ
 
-| อัลกอริทึม | กลุ่ม | หลักการ |
-|---|---|---|
-| Random Over-sampling | Over-sampling | สุ่มทำสำเนาคลาสที่น้อย |
-| SMOTE | Over-sampling (Synthetic) | สังเคราะห์ตัวอย่างใหม่จากเพื่อนบ้านที่ใกล้ |
-| ADASYN | Over-sampling | คล้าย SMOTE แต่เน้นบริเวณที่จำแนกยาก |
-| Random Under-sampling | Under-sampling | สุ่มลบคลาสที่มาก |
-| Class Weight | ไม่ปรับข้อมูล | ปรับน้ำหนัก Loss แทน |
+| อัลกอริทึม            | กลุ่ม                     | หลักการ                                    |
+| --------------------- | ------------------------- | ------------------------------------------ |
+| Random Over-sampling  | Over-sampling             | สุ่มทำสำเนาคลาสที่น้อย                     |
+| SMOTE                 | Over-sampling (Synthetic) | สังเคราะห์ตัวอย่างใหม่จากเพื่อนบ้านที่ใกล้ |
+| ADASYN                | Over-sampling             | คล้าย SMOTE แต่เน้นบริเวณที่จำแนกยาก       |
+| Random Under-sampling | Under-sampling            | สุ่มลบคลาสที่มาก                           |
+| Class Weight          | ไม่ปรับข้อมูล             | ปรับน้ำหนัก Loss แทน                       |
 
 ระบบจะเลือกแนวทางตามอัตราส่วนของคลาส โดยถ้าน้อยกว่า 1:3 จะใช้ Class Weight เป็นค่าตั้งต้น ถ้ามากกว่านั้นจะใช้ SMOTE เป็นหลัก เนื่องจากให้ผลที่เสถียรกว่าการสุ่มแบบธรรมดา
 
@@ -470,7 +471,6 @@ Feature Selection หมายถึง การคัดเลือกคอ�
 - **Recursive Feature Elimination (RFE)** ฝึกโมเดลซ้ำ ๆ และตัด Feature ที่สำคัญน้อยทีละตัว
 - **Boruta** เปรียบเทียบ Feature จริงกับ Shadow Feature (ที่ Shuffle แล้ว) เพื่อหา Feature ที่มีนัยสำคัญทางสถิติ
 
-
 ## 2.2 ทฤษฎีด้าน Machine Learning
 
 ### 2.2.1 ภาพรวมของ Machine Learning
@@ -483,20 +483,20 @@ Classification คือการพยากรณ์ Label ที่เป็�
 
 **ตารางที่ 2.4** อัลกอริทึม Classification ที่รองรับใน `/train`
 
-| อัลกอริทึม | กลุ่ม | จุดเด่น |
-|---|---|---|
-| Logistic Regression | Linear | เร็ว, ตีความได้ง่าย |
-| Decision Tree | Tree | ตีความได้ง่ายมาก |
-| Random Forest | Ensemble Tree | ทนทาน, ไม่ค่อย Overfit |
-| Extra Trees | Ensemble Tree | เร็วกว่า RF ในบางกรณี |
-| Gradient Boosting | Boosting | ผลดี, ต้อง Tune |
-| XGBoost | Boosting | มาตรฐานอุตสาหกรรม, รวดเร็ว |
-| LightGBM | Boosting | เร็วกว่า XGBoost บนข้อมูลใหญ่ |
-| CatBoost | Boosting | จัดการ Categorical ได้ดี |
-| Support Vector Machine | Margin-based | ดีกับ Feature Space สูง |
-| k-Nearest Neighbors | Instance-based | ไม่ต้องฝึก, ช้าตอนพยากรณ์ |
-| Naive Bayes | Probabilistic | เร็วมาก, เหมาะกับ Text |
-| MLP Classifier | Neural Net | ยืดหยุ่นสูง, ต้องการข้อมูลมาก |
+| อัลกอริทึม             | กลุ่ม          | จุดเด่น                       |
+| ---------------------- | -------------- | ----------------------------- |
+| Logistic Regression    | Linear         | เร็ว, ตีความได้ง่าย           |
+| Decision Tree          | Tree           | ตีความได้ง่ายมาก              |
+| Random Forest          | Ensemble Tree  | ทนทาน, ไม่ค่อย Overfit        |
+| Extra Trees            | Ensemble Tree  | เร็วกว่า RF ในบางกรณี         |
+| Gradient Boosting      | Boosting       | ผลดี, ต้อง Tune               |
+| XGBoost                | Boosting       | มาตรฐานอุตสาหกรรม, รวดเร็ว    |
+| LightGBM               | Boosting       | เร็วกว่า XGBoost บนข้อมูลใหญ่ |
+| CatBoost               | Boosting       | จัดการ Categorical ได้ดี      |
+| Support Vector Machine | Margin-based   | ดีกับ Feature Space สูง       |
+| k-Nearest Neighbors    | Instance-based | ไม่ต้องฝึก, ช้าตอนพยากรณ์     |
+| Naive Bayes            | Probabilistic  | เร็วมาก, เหมาะกับ Text        |
+| MLP Classifier         | Neural Net     | ยืดหยุ่นสูง, ต้องการข้อมูลมาก |
 
 ### 2.2.3 อัลกอริทึม Regression
 
@@ -504,19 +504,19 @@ Regression คือการพยากรณ์ค่าที่ต่อเ
 
 **ตารางที่ 2.5** อัลกอริทึม Regression ที่รองรับใน `/train`
 
-| อัลกอริทึม | จุดเด่น | ข้อจำกัด |
-|---|---|---|
-| Linear Regression | ตีความได้ตรงไปตรงมา | สมมติว่าเป็นความสัมพันธ์เชิงเส้น |
-| Ridge Regression | ลด Multicollinearity | ค่าสัมประสิทธิ์ตีความยากขึ้น |
-| Lasso Regression | คัดเลือก Feature ในตัว | อาจตัด Feature ที่ยังใช้ได้ |
-| ElasticNet | รวม Ridge + Lasso | Tune ยากขึ้นอีกหนึ่งพารามิเตอร์ |
-| Decision Tree Regressor | ตีความได้ดี | Overfit ง่าย |
-| Random Forest Regressor | ทนทาน | ใช้หน่วยความจำมาก |
-| Gradient Boosting Regressor | แม่นยำสูง | ฝึกช้า |
-| XGBoost Regressor | มาตรฐานอุตสาหกรรม | ต้อง Tune |
-| LightGBM Regressor | เร็วกับข้อมูลใหญ่ | อ่อนไหวกับ Imbalanced Target |
-| KNN Regressor | ไม่ต้องสมมติรูปแบบความสัมพันธ์ | ช้าตอนพยากรณ์ |
-| MLP Regressor | จับ Non-linear ได้ดี | ต้องการ Scaling ที่ดี |
+| อัลกอริทึม                  | จุดเด่น                        | ข้อจำกัด                         |
+| --------------------------- | ------------------------------ | -------------------------------- |
+| Linear Regression           | ตีความได้ตรงไปตรงมา            | สมมติว่าเป็นความสัมพันธ์เชิงเส้น |
+| Ridge Regression            | ลด Multicollinearity           | ค่าสัมประสิทธิ์ตีความยากขึ้น     |
+| Lasso Regression            | คัดเลือก Feature ในตัว         | อาจตัด Feature ที่ยังใช้ได้      |
+| ElasticNet                  | รวม Ridge + Lasso              | Tune ยากขึ้นอีกหนึ่งพารามิเตอร์  |
+| Decision Tree Regressor     | ตีความได้ดี                    | Overfit ง่าย                     |
+| Random Forest Regressor     | ทนทาน                          | ใช้หน่วยความจำมาก                |
+| Gradient Boosting Regressor | แม่นยำสูง                      | ฝึกช้า                           |
+| XGBoost Regressor           | มาตรฐานอุตสาหกรรม              | ต้อง Tune                        |
+| LightGBM Regressor          | เร็วกับข้อมูลใหญ่              | อ่อนไหวกับ Imbalanced Target     |
+| KNN Regressor               | ไม่ต้องสมมติรูปแบบความสัมพันธ์ | ช้าตอนพยากรณ์                    |
+| MLP Regressor               | จับ Non-linear ได้ดี           | ต้องการ Scaling ที่ดี            |
 
 ### 2.2.4 อัลกอริทึม Clustering
 
@@ -524,12 +524,12 @@ Clustering คือการจัดกลุ่มข้อมูลที่
 
 **ตารางที่ 2.6** อัลกอริทึม Clustering ที่รองรับ
 
-| อัลกอริทึม | หลักการ | จุดเด่น |
-|---|---|---|
-| KMeans | แบ่งกลุ่มโดยใช้จุดศูนย์กลาง | เข้าใจง่าย, เร็ว |
-| DBSCAN | จัดกลุ่มตามความหนาแน่น | จัดการ Outlier ได้ดี |
-| Agglomerative (Hierarchical) | รวมกลุ่มจากล่างขึ้นบน | สร้าง Dendrogram ดูได้ |
-| Gaussian Mixture Model | สมมติว่าเป็น Mixture ของ Gaussian | ให้ Soft Assignment |
+| อัลกอริทึม                   | หลักการ                           | จุดเด่น                |
+| ---------------------------- | --------------------------------- | ---------------------- |
+| KMeans                       | แบ่งกลุ่มโดยใช้จุดศูนย์กลาง       | เข้าใจง่าย, เร็ว       |
+| DBSCAN                       | จัดกลุ่มตามความหนาแน่น            | จัดการ Outlier ได้ดี   |
+| Agglomerative (Hierarchical) | รวมกลุ่มจากล่างขึ้นบน             | สร้าง Dendrogram ดูได้ |
+| Gaussian Mixture Model       | สมมติว่าเป็น Mixture ของ Gaussian | ให้ Soft Assignment    |
 
 ### 2.2.5 Cross-validation
 
@@ -549,19 +549,19 @@ Optuna [12] เป็นเฟรมเวิร์ค Hyperparameter Optimizati
 
 **ตารางที่ 2.7** ตัวชี้วัดประสิทธิภาพแบบจำลอง
 
-| ปัญหา | Metric | สูตร / ความหมาย |
-|---|---|---|
-| Classification | Accuracy | สัดส่วนทำนายถูก |
-| Classification | Precision / Recall / F1 | ความแม่น / ความครบ / ค่ากลาง |
-| Classification | ROC-AUC | พื้นที่ใต้กราฟ ROC |
-| Classification | Log Loss | ค่าเฉลี่ยของ Cross-entropy |
-| Regression | MAE | ค่าเฉลี่ยของ |y − ŷ| |
-| Regression | MSE | ค่าเฉลี่ยของ (y − ŷ)² |
-| Regression | RMSE | √MSE |
-| Regression | R² | สัดส่วนความแปรปรวนที่อธิบายได้ |
-| Regression | MAPE | ค่าเฉลี่ยของ |y − ŷ|/y |
-| Clustering | Silhouette Score | ความใกล้ในกลุ่มเทียบกับนอกกลุ่ม |
-| Clustering | Davies-Bouldin | อัตราส่วนการกระจายภายในต่อระยะระหว่างกลุ่ม |
+| ปัญหา          | Metric                  | สูตร / ความหมาย                            |
+| -------------- | ----------------------- | ------------------------------------------ | ----- | --- |
+| Classification | Accuracy                | สัดส่วนทำนายถูก                            |
+| Classification | Precision / Recall / F1 | ความแม่น / ความครบ / ค่ากลาง               |
+| Classification | ROC-AUC                 | พื้นที่ใต้กราฟ ROC                         |
+| Classification | Log Loss                | ค่าเฉลี่ยของ Cross-entropy                 |
+| Regression     | MAE                     | ค่าเฉลี่ยของ                               | y − ŷ |     |
+| Regression     | MSE                     | ค่าเฉลี่ยของ (y − ŷ)²                      |
+| Regression     | RMSE                    | √MSE                                       |
+| Regression     | R²                      | สัดส่วนความแปรปรวนที่อธิบายได้             |
+| Regression     | MAPE                    | ค่าเฉลี่ยของ                               | y − ŷ | /y  |
+| Clustering     | Silhouette Score        | ความใกล้ในกลุ่มเทียบกับนอกกลุ่ม            |
+| Clustering     | Davies-Bouldin          | อัตราส่วนการกระจายภายในต่อระยะระหว่างกลุ่ม |
 
 ## 2.3 ทฤษฎีด้าน Large Language Model และ AI Agent
 
@@ -617,7 +617,6 @@ Prompt Engineering คือศาสตร์และศิลป์ในก�
 PrepPilot ใช้กลยุทธ์ Sandbox แบบ Lightweight ในไฟล์ `api/sandbox.py` โดยจำกัด Namespace ให้มีเพียง `df`, `pd`, `np`, `plt`, `px` (Plotly Express), `go` (Plotly Graph Objects), `sklearn` และไลบรารีที่จำเป็น ไม่อนุญาตให้ import โมดูลที่ไม่อยู่ใน Whitelist ผลลัพธ์ stdout ถูกจับเก็บไว้ และ Chart ถูกแปลงเป็น Base64 PNG หรือ Plotly JSON เพื่อส่งกลับให้ Frontend
 
 แนวทางนี้เพียงพอสำหรับการพัฒนาในระดับ Prototype แต่สำหรับ Production จำเป็นต้องเพิ่ม Container-level Isolation, Resource Limit (CPU/Memory) และ Network Egress Control ซึ่งอยู่ในแผน Sprint 7
-
 
 ## 2.4 ทฤษฎีด้านการแสดงผลข้อมูลเชิงโต้ตอบ
 
@@ -703,7 +702,6 @@ Li และคณะ [7] เสนอวิธีใช้ LLM ในการ�
 
 ---
 
-
 # บทที่ 3 วิธีการดำเนินงาน
 
 บทนี้อธิบายขั้นตอนการพัฒนาระบบ PrepPilot ตั้งแต่ข้อกำหนดเบื้องต้น สถาปัตยกรรมโดยรวม การออกแบบส่วนติดต่อผู้ใช้ การออกแบบ Backend ระบบ AI Agent คลัง Handler ขั้นตอน Auto ML จนถึงโครงสร้างฐานข้อมูลและระบบ CI/CD
@@ -716,13 +714,13 @@ Li และคณะ [7] เสนอวิธีใช้ LLM ในการ�
 
 **ตารางที่ 3.1** ข้อกำหนดด้านฮาร์ดแวร์
 
-| ส่วนประกอบ | Development (ขั้นต่ำ) | Development (แนะนำ) | Production |
-|---|---|---|---|
-| CPU | 4 cores | 8 cores | 4 vCPU (Cloud Run / Fly.io) |
-| RAM | 8 GB | 16 GB | 4 GB (Backend), 1 GB (Frontend) |
-| Disk | 20 GB | 50 GB | 50 GB (Object Storage แนะนำ S3/GCS) |
-| GPU | ไม่จำเป็น | ไม่จำเป็น | ไม่จำเป็น (LLM ใช้ Cloud API) |
-| Network | 10 Mbps | 50 Mbps | 100 Mbps |
+| ส่วนประกอบ | Development (ขั้นต่ำ) | Development (แนะนำ) | Production                          |
+| ---------- | --------------------- | ------------------- | ----------------------------------- |
+| CPU        | 4 cores               | 8 cores             | 4 vCPU (Cloud Run / Fly.io)         |
+| RAM        | 8 GB                  | 16 GB               | 4 GB (Backend), 1 GB (Frontend)     |
+| Disk       | 20 GB                 | 50 GB               | 50 GB (Object Storage แนะนำ S3/GCS) |
+| GPU        | ไม่จำเป็น             | ไม่จำเป็น           | ไม่จำเป็น (LLM ใช้ Cloud API)       |
+| Network    | 10 Mbps               | 50 Mbps             | 100 Mbps                            |
 
 ระบบไม่จำเป็นต้องใช้ GPU เพราะการเรียก LLM ใช้ API ของ OpenAI/Anthropic ส่วน Machine Learning ใช้โมเดลเชิง Classical ที่ทำงานบน CPU ได้
 
@@ -730,34 +728,34 @@ Li และคณะ [7] เสนอวิธีใช้ LLM ในการ�
 
 **ตารางที่ 3.2** ข้อกำหนดด้านซอฟต์แวร์และไลบรารี
 
-| หมวด | ซอฟต์แวร์ / ไลบรารี | เวอร์ชัน |
-|---|---|---|
-| Runtime | Python | 3.13+ |
-| Runtime | Node.js | 20+ |
-| Frontend | Next.js | 16 |
-| Frontend | React | 19 |
-| Frontend | TypeScript | 5.6+ |
-| Frontend | MUI | 6 |
-| Frontend | Tailwind CSS | 4 |
-| Frontend | Plotly.js / react-plotly.js | 2.35 |
-| Backend | FastAPI | 0.115+ |
-| Backend | uvicorn | 0.32+ |
-| Backend | pandas | 2.2+ |
-| Backend | numpy | 2.1+ |
-| Backend | scikit-learn | 1.5+ |
-| Backend | xgboost | 3.2 |
-| Backend | lightgbm | 4.0+ |
-| Backend | catboost | 1.2+ |
-| Backend | optuna | 3.6+ |
-| Backend | imbalanced-learn | 0.12+ |
-| Backend | boruta | 0.3+ |
-| Backend | LangChain | 0.3+ |
-| Backend | langchain-openai | 0.2+ |
-| Backend | langchain-anthropic | 0.2+ |
-| Auth | NextAuth | 5 (beta) |
-| Database | Prisma | 6 |
-| Database | SQLite (Dev) / MongoDB (Prod) | — |
-| Container | Docker | 27+ |
+| หมวด      | ซอฟต์แวร์ / ไลบรารี           | เวอร์ชัน |
+| --------- | ----------------------------- | -------- |
+| Runtime   | Python                        | 3.13+    |
+| Runtime   | Node.js                       | 20+      |
+| Frontend  | Next.js                       | 16       |
+| Frontend  | React                         | 19       |
+| Frontend  | TypeScript                    | 5.6+     |
+| Frontend  | MUI                           | 6        |
+| Frontend  | Tailwind CSS                  | 4        |
+| Frontend  | Plotly.js / react-plotly.js   | 2.35     |
+| Backend   | FastAPI                       | 0.115+   |
+| Backend   | uvicorn                       | 0.32+    |
+| Backend   | pandas                        | 2.2+     |
+| Backend   | numpy                         | 2.1+     |
+| Backend   | scikit-learn                  | 1.5+     |
+| Backend   | xgboost                       | 3.2      |
+| Backend   | lightgbm                      | 4.0+     |
+| Backend   | catboost                      | 1.2+     |
+| Backend   | optuna                        | 3.6+     |
+| Backend   | imbalanced-learn              | 0.12+    |
+| Backend   | boruta                        | 0.3+     |
+| Backend   | LangChain                     | 0.3+     |
+| Backend   | langchain-openai              | 0.2+     |
+| Backend   | langchain-anthropic           | 0.2+     |
+| Auth      | NextAuth                      | 5 (beta) |
+| Database  | Prisma                        | 6        |
+| Database  | SQLite (Dev) / MongoDB (Prod) | —        |
+| Container | Docker                        | 27+      |
 
 ### 3.1.3 บริการภายนอก
 
@@ -786,7 +784,11 @@ Li และคณะ [7] เสนอวิธีใช้ LLM ในการ�
 
 ![รูปที่ 3.1 ภาพรวมสถาปัตยกรรมแบบ Layered Architecture ของระบบ PrepPilot ประกอบด้วย 5 Layer หลัก ได้แก่ Client (เว็บเบราว์เซอร์ของผู้ใช้), Frontend (Next.js 16 + React 19 + Plotly + NextAuth), API Gateway (Next.js API Routes ที่ทำหน้าที่ Thin Proxy + Auth Middleware + Prisma ORM), Backend (FastAPI ที่ประกอบด้วย Multi-Agent System 8 Agent, Handler Registry 417 ตัว และ Sandboxed exec()), และ Data Storage (Database + Dataset Blobs + Model Registry) โดยมี External Services อยู่ด้านขวาประกอบด้วย Anthropic Claude, OpenAI GPT, Google OAuth และ Hosting ของ Vercel กับ Fly.io](element/system_architecture.png)
 
-![รูปที่ 3.2 ขั้นตอนการสนทนาของผู้ใช้กับระบบ ตั้งแต่อัปโหลดชุดข้อมูล สนทนา ฝึกแบบจำลอง จนถึงดาวน์โหลดผลลัพธ์ (รายละเอียดดูที่ docs/element/user_flow_vertical.svg)](element/user_flow_vertical.png)
+เพื่อให้เห็นภาพชัดเจนว่าผู้ใช้สามารถทำอะไรกับระบบได้บ้าง ทีมพัฒนาจึงสรุปฟังก์ชันทั้งหมดในรูปแบบ Use Case Diagram ดังรูปที่ 3.2 โดยแบ่ง Actor ออกเป็น 4 ราย ได้แก่ ผู้ใช้งานหลัก (Data Scientist / Data Analyst), Google OAuth Provider สำหรับยืนยันตัวตน, LLM Provider (Anthropic Claude และ OpenAI GPT) สำหรับสร้างคำตอบ และ Hosting Platform (Vercel + Fly.io) สำหรับการนำขึ้นใช้งาน ส่วน Use Case แบ่งเป็น 5 กลุ่มหลักคือ Authentication, Conversation, Dataset Management, Analysis & Preparation และ Report & ML Training รวมทั้งสิ้น 20 Use Case
+
+![รูปที่ 3.2 Use Case Diagram แสดงปฏิสัมพันธ์ระหว่าง Actor หลัก (Data Scientist / Data Analyst) กับ Actor รอง (Google OAuth Provider, LLM Provider, Hosting Platform) และ Use Case ทั้งหมด 20 ตัว ใน 5 กลุ่ม ได้แก่ Authentication, Conversation, Dataset Management, Analysis & Preparation และ Report & ML Training](element/use_case_diagram.png)
+
+![รูปที่ 3.3 ขั้นตอนการสนทนาของผู้ใช้กับระบบ ตั้งแต่อัปโหลดชุดข้อมูล สนทนา ฝึกแบบจำลอง จนถึงดาวน์โหลดผลลัพธ์ (รายละเอียดดูที่ docs/element/user_flow_vertical.svg)](element/user_flow_vertical.png)
 
 ## 3.3 การออกแบบส่วน Frontend
 
@@ -862,21 +864,21 @@ export async function POST(req: NextRequest) {
 
 FastAPI Application นิยามใน `api/main.py` พร้อมระบุ CORS Policy และลงทะเบียน Router แต่ละตัว Endpoint หลักได้แก่
 
-| Endpoint | Method | คำอธิบาย |
-|---|---|---|
-| `/health` | GET | Health Check สำหรับ Load Balancer |
-| `/chat` | POST | สนทนากับ DS-Agent หรือ Coding-Agent |
-| `/prepare` | POST | Pipeline 10 ขั้นตอนพร้อม PrepConfig |
-| `/auto-clean` | POST | AI ทำความสะอาดข้อมูลอัตโนมัติ |
-| `/auto-prepare` | POST | AI เตรียมข้อมูลสำหรับ ML อัตโนมัติ |
-| `/eda-report` | POST | สร้าง EDA Report พร้อมกราฟ |
-| `/suggest-target` | POST | แนะนำ Target Column |
-| `/insights` | POST | AI Insights Report |
-| `/documents` | POST | EDA Document พร้อมกราฟ 6 ตัว |
-| `/models` | GET | รายชื่อ LLM ที่มีอยู่ |
-| `/train` | POST | Auto ML Training |
-| `/train/models/{id}/download` | GET | ดาวน์โหลด `.joblib` |
-| `/predict` | POST | พยากรณ์ด้วยโมเดลที่ฝึกไว้ |
+| Endpoint                      | Method | คำอธิบาย                            |
+| ----------------------------- | ------ | ----------------------------------- |
+| `/health`                     | GET    | Health Check สำหรับ Load Balancer   |
+| `/chat`                       | POST   | สนทนากับ DS-Agent หรือ Coding-Agent |
+| `/prepare`                    | POST   | Pipeline 10 ขั้นตอนพร้อม PrepConfig |
+| `/auto-clean`                 | POST   | AI ทำความสะอาดข้อมูลอัตโนมัติ       |
+| `/auto-prepare`               | POST   | AI เตรียมข้อมูลสำหรับ ML อัตโนมัติ  |
+| `/eda-report`                 | POST   | สร้าง EDA Report พร้อมกราฟ          |
+| `/suggest-target`             | POST   | แนะนำ Target Column                 |
+| `/insights`                   | POST   | AI Insights Report                  |
+| `/documents`                  | POST   | EDA Document พร้อมกราฟ 6 ตัว        |
+| `/models`                     | GET    | รายชื่อ LLM ที่มีอยู่               |
+| `/train`                      | POST   | Auto ML Training                    |
+| `/train/models/{id}/download` | GET    | ดาวน์โหลด `.joblib`                 |
+| `/predict`                    | POST   | พยากรณ์ด้วยโมเดลที่ฝึกไว้           |
 
 ### 3.4.2 LLM Provider Abstraction
 
@@ -901,7 +903,6 @@ FastAPI Application นิยามใน `api/main.py` พร้อมระบ
 
 หากเกิด Exception จะส่ง Error Message กลับให้ LLM พร้อมข้อมูล Schema และให้ LLM แก้ไขโค้ดอีกครั้งหนึ่ง (Auto-retry)
 
-
 ## 3.5 สถาปัตยกรรม Multi-Agent
 
 ระบบ PrepPilot ออกแบบในลักษณะ Multi-Agent โดยมี DS-Agent เป็น Orchestrator หลัก และมี Sub-Agent อื่น ๆ คอยช่วย ดังนี้
@@ -914,7 +915,7 @@ DS-Agent เก็บข้อมูลใน `api/agents/datascience.py` ซึ
 
 ### 3.5.2 Two-Stage Planner
 
-![รูปที่ 3.3 สถาปัตยกรรม Two-Stage Routing ของ DS-Agent ขั้นแรก Category Router จัดข้อความเข้า 1-3 หมวดจาก 7 หมวด ขั้นสอง Focused Planner เห็นเฉพาะ Handler ของหมวดที่ถูกเลือก จึงเหลือ Handler ที่ต้องพิจารณาจาก 417 เหลือเพียง 50-150](element/fig-3-3_two-stage-routing.png)
+![รูปที่ 3.4 สถาปัตยกรรม Two-Stage Routing ของ DS-Agent ขั้นแรก Category Router จัดข้อความเข้า 1-3 หมวดจาก 7 หมวด ขั้นสอง Focused Planner เห็นเฉพาะ Handler ของหมวดที่ถูกเลือก จึงเหลือ Handler ที่ต้องพิจารณาจาก 417 เหลือเพียง 50-150](element/fig-3-3_two-stage-routing.png)
 
 **Stage 1 — Category Router**
 
@@ -931,11 +932,11 @@ Focused Planner รับเฉพาะ Handler ที่อยู่ในห�
   "steps": [
     {
       "id": "step1",
-      "handler": {"id": "fill_nulls", "params": {"strategy": "median"}}
+      "handler": { "id": "fill_nulls", "params": { "strategy": "median" } }
     },
     {
       "id": "step2",
-      "codegen": {"task": "สร้าง Feature ใหม่ price_per_sqm = price / area"}
+      "codegen": { "task": "สร้าง Feature ใหม่ price_per_sqm = price / area" }
     }
   ],
   "output_type": "generate",
@@ -990,16 +991,16 @@ Handler เป็นฟังก์ชัน Python สำเร็จรูป�
 
 **ตารางที่ 3.3** จำนวน Handler แยกตามหมวดหมู่
 
-| หมวด | จำนวน | ตัวอย่าง Handler |
-|---|---|---|
-| stats | 56 | describe, correlation, chi2_test, t_test, anova |
-| clean | 60 | fill_nulls, drop_duplicates, smote, adasyn |
-| transform | 64 | filter, pivot, target_encode, stratified_sample |
-| viz | 56 | bar, pie, scatter, boxplot, correlation_heatmap |
-| feature | 63 | pca, rfe, boruta, rolling_window, mutual_info |
-| nlp | 56 | tokenize, translate, ner, sentiment, tfidf |
-| analysis | 62 | dbscan, data_drift, schema_validate, imbalance_report |
-| **รวม** | **417** | — |
+| หมวด      | จำนวน   | ตัวอย่าง Handler                                      |
+| --------- | ------- | ----------------------------------------------------- |
+| stats     | 56      | describe, correlation, chi2_test, t_test, anova       |
+| clean     | 60      | fill_nulls, drop_duplicates, smote, adasyn            |
+| transform | 64      | filter, pivot, target_encode, stratified_sample       |
+| viz       | 56      | bar, pie, scatter, boxplot, correlation_heatmap       |
+| feature   | 63      | pca, rfe, boruta, rolling_window, mutual_info         |
+| nlp       | 56      | tokenize, translate, ner, sentiment, tfidf            |
+| analysis  | 62      | dbscan, data_drift, schema_validate, imbalance_report |
+| **รวม**   | **417** | —                                                     |
 
 ### 3.6.2 โครงสร้างของ Handler
 
@@ -1022,77 +1023,77 @@ class BaseHandler:
 
 **ตารางที่ 3.4** ตัวอย่าง Handler หมวด clean
 
-| Handler ID | คำอธิบาย |
-|---|---|
-| fill_nulls | เติม Missing Value ตามกลยุทธ์ที่ระบุ |
-| drop_duplicates | ลบแถวที่ซ้ำ |
-| drop_nulls_columns | ลบคอลัมน์ที่ Null เกิน threshold |
-| smote | Over-sampling ด้วย SMOTE |
-| adasyn | Over-sampling ด้วย ADASYN |
-| random_oversample | สุ่มทำสำเนา |
-| random_undersample | สุ่มลบ |
-| auto_dtype_infer | เดาประเภทคอลัมน์ใหม่อัตโนมัติ |
-| trim_whitespace | ตัดช่องว่างหัวท้าย |
-| normalize_unicode | NFC Normalize |
-| remove_outliers_iqr | ตัด Outlier ด้วยช่วง IQR |
-| remove_outliers_zscore | ตัด Outlier ด้วย z-score |
+| Handler ID             | คำอธิบาย                             |
+| ---------------------- | ------------------------------------ |
+| fill_nulls             | เติม Missing Value ตามกลยุทธ์ที่ระบุ |
+| drop_duplicates        | ลบแถวที่ซ้ำ                          |
+| drop_nulls_columns     | ลบคอลัมน์ที่ Null เกิน threshold     |
+| smote                  | Over-sampling ด้วย SMOTE             |
+| adasyn                 | Over-sampling ด้วย ADASYN            |
+| random_oversample      | สุ่มทำสำเนา                          |
+| random_undersample     | สุ่มลบ                               |
+| auto_dtype_infer       | เดาประเภทคอลัมน์ใหม่อัตโนมัติ        |
+| trim_whitespace        | ตัดช่องว่างหัวท้าย                   |
+| normalize_unicode      | NFC Normalize                        |
+| remove_outliers_iqr    | ตัด Outlier ด้วยช่วง IQR             |
+| remove_outliers_zscore | ตัด Outlier ด้วย z-score             |
 
 ### 3.6.4 ตัวอย่าง Handler ในหมวด viz
 
 **ตารางที่ 3.5** ตัวอย่าง Handler หมวด viz
 
-| Handler ID | ประเภทกราฟ | เหมาะสำหรับ |
-|---|---|---|
-| bar | Bar Chart | Categorical Count |
-| pie | Pie Chart | สัดส่วน |
-| scatter | Scatter Plot | ความสัมพันธ์ระหว่างสองตัวเลข |
-| boxplot | Box Plot | การกระจายตามกลุ่ม |
-| histogram | Histogram | การแจกแจง |
-| correlation_heatmap | Heatmap | ความสัมพันธ์หลายตัวแปร |
-| line | Line Chart | Time-series |
-| density_heatmap | Density Heatmap | ความหนาแน่นสองตัวแปร |
-| slope | Slope Chart | เปรียบเทียบก่อน–หลัง |
-| sankey | Sankey Diagram | Flow ระหว่างกลุ่ม |
-| treemap | Treemap | Hierarchy |
-| sunburst | Sunburst | Hierarchy แบบกลม |
+| Handler ID          | ประเภทกราฟ      | เหมาะสำหรับ                  |
+| ------------------- | --------------- | ---------------------------- |
+| bar                 | Bar Chart       | Categorical Count            |
+| pie                 | Pie Chart       | สัดส่วน                      |
+| scatter             | Scatter Plot    | ความสัมพันธ์ระหว่างสองตัวเลข |
+| boxplot             | Box Plot        | การกระจายตามกลุ่ม            |
+| histogram           | Histogram       | การแจกแจง                    |
+| correlation_heatmap | Heatmap         | ความสัมพันธ์หลายตัวแปร       |
+| line                | Line Chart      | Time-series                  |
+| density_heatmap     | Density Heatmap | ความหนาแน่นสองตัวแปร         |
+| slope               | Slope Chart     | เปรียบเทียบก่อน–หลัง         |
+| sankey              | Sankey Diagram  | Flow ระหว่างกลุ่ม            |
+| treemap             | Treemap         | Hierarchy                    |
+| sunburst            | Sunburst        | Hierarchy แบบกลม             |
 
 ### 3.6.5 ตัวอย่าง Handler ในหมวด feature
 
 **ตารางที่ 3.6** ตัวอย่าง Handler หมวด feature
 
-| Handler ID | คำอธิบาย |
-|---|---|
-| pca | Principal Component Analysis |
-| rfe | Recursive Feature Elimination |
-| boruta | Boruta Feature Selection |
-| mutual_info_select | Mutual Information |
-| variance_threshold | ตัด Feature ที่ความแปรปรวนต่ำ |
-| correlation_select | ตัด Feature ที่ Correlate สูง |
-| rolling_window | Window Aggregation สำหรับ Time-series |
-| expanding_window | Window สะสม |
-| seasonal_features | สกัดสัญลักษณ์ฤดูกาล |
-| lag_features | สร้าง Feature ย้อนหลัง |
+| Handler ID         | คำอธิบาย                              |
+| ------------------ | ------------------------------------- |
+| pca                | Principal Component Analysis          |
+| rfe                | Recursive Feature Elimination         |
+| boruta             | Boruta Feature Selection              |
+| mutual_info_select | Mutual Information                    |
+| variance_threshold | ตัด Feature ที่ความแปรปรวนต่ำ         |
+| correlation_select | ตัด Feature ที่ Correlate สูง         |
+| rolling_window     | Window Aggregation สำหรับ Time-series |
+| expanding_window   | Window สะสม                           |
+| seasonal_features  | สกัดสัญลักษณ์ฤดูกาล                   |
+| lag_features       | สร้าง Feature ย้อนหลัง                |
 
 ## 3.7 ขั้นตอน Auto ML Training Pipeline
 
 ### 3.7.1 ภาพรวม Pipeline `/train`
 
-![รูปที่ 3.4 Sequence Diagram ของวงจรการฝึกแบบจำลอง /train ตั้งแต่ผู้ใช้คลิกปุ่ม /train ระบบส่งคำขอผ่าน Frontend, API Proxy, FastAPI ไปยัง TrainAgent ที่ทำหน้าที่ Detect Task Type, Preprocess ผ่าน Sandbox, Cross-Validation 5 Fold, Optuna Tuning, สร้าง Evaluation Charts จากนั้นบันทึก .joblib + .json metadata ใน Model Storage ก่อนคืน TrainResultCard ให้ผู้ใช้ดาวน์โหลด](element/fig-3-4_training-sequence-diagram.png)
+![รูปที่ 3.5 Sequence Diagram ของวงจรการฝึกแบบจำลอง /train ตั้งแต่ผู้ใช้คลิกปุ่ม /train ระบบส่งคำขอผ่าน Frontend, API Proxy, FastAPI ไปยัง TrainAgent ที่ทำหน้าที่ Detect Task Type, Preprocess ผ่าน Sandbox, Cross-Validation 5 Fold, Optuna Tuning, สร้าง Evaluation Charts จากนั้นบันทึก .joblib + .json metadata ใน Model Storage ก่อนคืน TrainResultCard ให้ผู้ใช้ดาวน์โหลด](element/fig-3-4_training-sequence-diagram.png)
 
 **ตารางที่ 3.7** ขั้นตอน Pipeline ของคำสั่ง `/train`
 
-| ลำดับ | ขั้นตอน | รายละเอียด |
-|---|---|---|
-| 1 | Analyze Dataset | ดู Schema, Null, Cardinality |
-| 2 | Detect Task Type | Classification / Regression / Clustering |
-| 3 | Suggest Target | หา Target Column ที่เหมาะสม (LLM) |
-| 4 | Preprocess | Encode, Scale, Split Train/Test |
-| 5 | Select Algorithms | เลือก 5–8 ตัวจาก Pool |
-| 6 | Cross-validate | 5-fold CV |
-| 7 | Hyperparameter Tune | Optuna 30 trials/algorithm |
-| 8 | Evaluate | คำนวณ Metric, สร้าง Chart 12 ประเภท |
-| 9 | Save Model | `.joblib` + `.json` metadata |
-| 10 | Return Result | TrainResultArtifact ส่งกลับ Frontend |
+| ลำดับ | ขั้นตอน             | รายละเอียด                               |
+| ----- | ------------------- | ---------------------------------------- |
+| 1     | Analyze Dataset     | ดู Schema, Null, Cardinality             |
+| 2     | Detect Task Type    | Classification / Regression / Clustering |
+| 3     | Suggest Target      | หา Target Column ที่เหมาะสม (LLM)        |
+| 4     | Preprocess          | Encode, Scale, Split Train/Test          |
+| 5     | Select Algorithms   | เลือก 5–8 ตัวจาก Pool                    |
+| 6     | Cross-validate      | 5-fold CV                                |
+| 7     | Hyperparameter Tune | Optuna 30 trials/algorithm               |
+| 8     | Evaluate            | คำนวณ Metric, สร้าง Chart 12 ประเภท      |
+| 9     | Save Model          | `.joblib` + `.json` metadata             |
+| 10    | Return Result       | TrainResultArtifact ส่งกลับ Frontend     |
 
 ### 3.7.2 อัลกอริทึมที่รองรับ
 
@@ -1127,20 +1128,20 @@ class BaseHandler:
 
 **ตารางที่ 3.8** โครงสร้างของไฟล์ Metadata `{uuid}.json`
 
-| Field | คำอธิบาย |
-|---|---|
-| model_id | UUID ของโมเดล |
-| user_id | เจ้าของโมเดล |
-| dataset_id | ชุดข้อมูลต้นทาง |
-| target | Target Column |
-| task_type | Classification / Regression / Clustering |
-| algorithm | ชื่ออัลกอริทึมที่เลือก |
-| metrics | RMSE, R², Accuracy, F1, ฯลฯ |
-| feature_importance | List ของ Feature + ค่า |
-| best_params | Hyperparameter ที่ได้จาก Optuna |
-| preprocessing_pipeline | Encoder, Scaler ที่ใช้ |
-| training_time_sec | เวลาที่ใช้ฝึก |
-| created_at | Timestamp |
+| Field                  | คำอธิบาย                                 |
+| ---------------------- | ---------------------------------------- |
+| model_id               | UUID ของโมเดล                            |
+| user_id                | เจ้าของโมเดล                             |
+| dataset_id             | ชุดข้อมูลต้นทาง                          |
+| target                 | Target Column                            |
+| task_type              | Classification / Regression / Clustering |
+| algorithm              | ชื่ออัลกอริทึมที่เลือก                   |
+| metrics                | RMSE, R², Accuracy, F1, ฯลฯ              |
+| feature_importance     | List ของ Feature + ค่า                   |
+| best_params            | Hyperparameter ที่ได้จาก Optuna          |
+| preprocessing_pipeline | Encoder, Scaler ที่ใช้                   |
+| training_time_sec      | เวลาที่ใช้ฝึก                            |
+| created_at             | Timestamp                                |
 
 ทั้งสองไฟล์เก็บใน `models/` (ในการ Deploy บน Cloud จะย้ายไปเก็บใน S3 หรือ GCS)
 
@@ -1148,15 +1149,15 @@ class BaseHandler:
 
 **ตารางที่ 3.9** ตารางในฐานข้อมูล (Prisma Schema)
 
-| ตาราง | คำอธิบาย | ฟิลด์สำคัญ |
-|---|---|---|
-| User | ผู้ใช้ระบบ | id, email, name, image |
-| Account | OAuth Account | provider, providerAccountId |
-| Session | Session ที่ใช้งานอยู่ | sessionToken, userId, expires |
-| Conversation | บทสนทนา | id, userId, title, activeDatasetId |
-| Message | ข้อความใน Conversation | id, conversationId, role, content, artifacts |
-| Dataset | ชุดข้อมูล | id, name, columns, rowsCount, source, conversationId |
-| Model | โมเดลที่ฝึกไว้ | id, userId, datasetId, metadata |
+| ตาราง        | คำอธิบาย               | ฟิลด์สำคัญ                                           |
+| ------------ | ---------------------- | ---------------------------------------------------- |
+| User         | ผู้ใช้ระบบ             | id, email, name, image                               |
+| Account      | OAuth Account          | provider, providerAccountId                          |
+| Session      | Session ที่ใช้งานอยู่  | sessionToken, userId, expires                        |
+| Conversation | บทสนทนา                | id, userId, title, activeDatasetId                   |
+| Message      | ข้อความใน Conversation | id, conversationId, role, content, artifacts         |
+| Dataset      | ชุดข้อมูล              | id, name, columns, rowsCount, source, conversationId |
+| Model        | โมเดลที่ฝึกไว้         | id, userId, datasetId, metadata                      |
 
 โครงสร้างรายละเอียดดูในภาคผนวก ค
 
@@ -1181,7 +1182,6 @@ class BaseHandler:
 
 ---
 
-
 # บทที่ 4 ผลการดำเนินงาน
 
 บทนี้นำเสนอผลการพัฒนาระบบ PrepPilot ตามที่ออกแบบไว้ในบทที่ 3 โดยรวบรวมหลักฐานเชิงภาพจากการใช้งานจริง การทดสอบกับชุดข้อมูล Housing_data และการประเมินประสิทธิภาพในแง่ต่าง ๆ
@@ -1192,15 +1192,15 @@ class BaseHandler:
 
 **ตารางที่ 4.1** คุณสมบัติของชุดข้อมูล Housing_data
 
-| คุณสมบัติ | ค่า |
-|---|---|
-| จำนวนแถว | 545 |
-| จำนวนคอลัมน์ | 13 |
-| Target | price |
-| Numeric Columns | price, area, bedrooms, bathrooms, stories, parking |
+| คุณสมบัติ           | ค่า                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------- |
+| จำนวนแถว            | 545                                                                                         |
+| จำนวนคอลัมน์        | 13                                                                                          |
+| Target              | price                                                                                       |
+| Numeric Columns     | price, area, bedrooms, bathrooms, stories, parking                                          |
 | Categorical Columns | mainroad, guestroom, basement, hotwaterheating, airconditioning, prefarea, furnishingstatus |
-| Missing Value | ไม่มี |
-| ประเภทปัญหา | Regression |
+| Missing Value       | ไม่มี                                                                                       |
+| ประเภทปัญหา         | Regression                                                                                  |
 
 สภาพแวดล้อมที่ใช้ทดสอบ
 
@@ -1290,12 +1290,12 @@ class BaseHandler:
 
 **ตารางที่ 4.2** ผลการเปรียบเทียบราคา High/Low ตามคอลัมน์
 
-| Category | Highest Price | Lowest Price |
-|---|---|---|
-| Bedrooms | 4 | 2 |
-| Bathrooms | 2 | 1 |
-| Stories | 3 | 1 |
-| Parking | 2 | 0 |
+| Category  | Highest Price | Lowest Price |
+| --------- | ------------- | ------------ |
+| Bedrooms  | 4             | 2            |
+| Bathrooms | 2             | 1            |
+| Stories   | 3             | 1            |
+| Parking   | 2             | 0            |
 
 ### 4.8.2 ทดสอบคำสั่ง "เปอร์เซ็นต์ของแต่ละห้องน้ำ"
 
@@ -1308,11 +1308,11 @@ class BaseHandler:
 **ตารางที่ 4.3** สัดส่วนของบ้านตามจำนวนห้องน้ำ
 
 | Bathrooms | Percentage |
-|---|---|
-| 1 | 73.58% |
-| 2 | 24.40% |
-| 3 | 1.83% |
-| 4 | 0.18% |
+| --------- | ---------- |
+| 1         | 73.58%     |
+| 2         | 24.40%     |
+| 3         | 1.83%      |
+| 4         | 0.18%      |
 
 ### 4.8.3 ทดสอบคำสั่งสร้างกราฟ Box Plot
 
@@ -1359,16 +1359,16 @@ class BaseHandler:
 
 **ตารางที่ 4.4** ผลลัพธ์ Model Comparison ของ `/train` บน Housing_data
 
-| Algorithm | RMSE | R² | เวลา (s) |
-|---|---|---|---|
-| Linear Regression (Best) | 1,324,506 | 0.6529 | 0.9 |
-| Ridge Regression | 1,326,890 | 0.6517 | 1.1 |
-| Lasso Regression | 1,331,254 | 0.6494 | 1.0 |
-| Random Forest | 1,389,012 | 0.6188 | 2.3 |
-| Gradient Boosting | 1,355,891 | 0.6360 | 3.2 |
-| XGBoost | 1,371,402 | 0.6276 | 2.8 |
-| LightGBM | 1,365,234 | 0.6309 | 1.7 |
-| Decision Tree | 1,725,003 | 0.4117 | 0.6 |
+| Algorithm                | RMSE      | R²     | เวลา (s) |
+| ------------------------ | --------- | ------ | -------- |
+| Linear Regression (Best) | 1,324,506 | 0.6529 | 0.9      |
+| Ridge Regression         | 1,326,890 | 0.6517 | 1.1      |
+| Lasso Regression         | 1,331,254 | 0.6494 | 1.0      |
+| Random Forest            | 1,389,012 | 0.6188 | 2.3      |
+| Gradient Boosting        | 1,355,891 | 0.6360 | 3.2      |
+| XGBoost                  | 1,371,402 | 0.6276 | 2.8      |
+| LightGBM                 | 1,365,234 | 0.6309 | 1.7      |
+| Decision Tree            | 1,725,003 | 0.4117 | 0.6      |
 
 จากผลจะเห็นว่าแม้จะเป็นปัญหา Regression ที่นิยมใช้ Tree-based Model แต่ในชุดข้อมูลนี้ Linear Regression กลับให้ผลที่ดีที่สุด เนื่องจาก Feature หลัก ๆ มีความสัมพันธ์เชิงเส้นกับ Target ค่อนข้างชัดเจน
 
@@ -1398,18 +1398,18 @@ class BaseHandler:
 
 **ตารางที่ 4.5** เวลาเฉลี่ยที่ใช้ในแต่ละขั้นตอน (วัดจาก 30 รอบ)
 
-| ขั้นตอน | เวลาเฉลี่ย (วินาที) | SD |
-|---|---|---|
-| Stage 1 — Category Router | 0.48 | 0.12 |
-| Stage 2 — Focused Planner | 1.20 | 0.35 |
-| Step Executor (Handler) | 0.05–0.30 | — |
-| Step Executor (Codegen) | 2.10 | 0.62 |
-| Result Interpreter | 1.80 | 0.45 |
-| Critique + Replanner (ถ้ามี) | 1.50 | 0.50 |
-| `/train` (Housing_data) | 20.8 | 2.3 |
-| `/predict` (1,000 rows) | 1.2 | 0.3 |
-| `/insights` | 8.5 | 1.8 |
-| `/report` | 15.3 | 3.1 |
+| ขั้นตอน                      | เวลาเฉลี่ย (วินาที) | SD   |
+| ---------------------------- | ------------------- | ---- |
+| Stage 1 — Category Router    | 0.48                | 0.12 |
+| Stage 2 — Focused Planner    | 1.20                | 0.35 |
+| Step Executor (Handler)      | 0.05–0.30           | —    |
+| Step Executor (Codegen)      | 2.10                | 0.62 |
+| Result Interpreter           | 1.80                | 0.45 |
+| Critique + Replanner (ถ้ามี) | 1.50                | 0.50 |
+| `/train` (Housing_data)      | 20.8                | 2.3  |
+| `/predict` (1,000 rows)      | 1.2                 | 0.3  |
+| `/insights`                  | 8.5                 | 1.8  |
+| `/report`                    | 15.3                | 3.1  |
 
 จากการทดสอบ การสนทนาทั่วไป (Question → Answer) ใช้เวลาเฉลี่ย 3.5 วินาที ถือว่าอยู่ในเกณฑ์ที่ผู้ใช้ทั่วไปยอมรับได้
 
@@ -1421,17 +1421,17 @@ class BaseHandler:
 
 **ตารางที่ 4.6** เปรียบเทียบ PrepPilot กับเครื่องมือใกล้เคียง
 
-| ฟีเจอร์ | PrepPilot | OpenAI Code Interpreter | H2O Driverless AI | DataRobot |
-|---|---|---|---|---|
-| Chat Interface | ✅ | ✅ | ❌ | บางส่วน |
-| Multi-Provider LLM | ✅ | ❌ (OpenAI เท่านั้น) | ❌ | ❌ |
-| รองรับภาษาไทย | ✅ | ✅ | ❌ | ❌ |
-| Auto ML Training | ✅ | บางส่วน | ✅ | ✅ |
-| Feature Engineering อัตโนมัติ | บางส่วน | บางส่วน | ✅ | ✅ |
-| Export โมเดล `.joblib` | ✅ | ❌ | ✅ | ✅ |
-| Interactive Plotly Chart | ✅ | บางส่วน | บางส่วน | ✅ |
-| ใช้ฟรี / Open Source | ✅ (Open Source) | ต้องสมัคร ChatGPT Plus | จ่ายเป็น Subscription | จ่าย Enterprise |
-| Customizable | ✅ | ❌ | บางส่วน | ❌ |
+| ฟีเจอร์                       | PrepPilot        | OpenAI Code Interpreter | H2O Driverless AI     | DataRobot       |
+| ----------------------------- | ---------------- | ----------------------- | --------------------- | --------------- |
+| Chat Interface                | ✅               | ✅                      | ❌                    | บางส่วน         |
+| Multi-Provider LLM            | ✅               | ❌ (OpenAI เท่านั้น)    | ❌                    | ❌              |
+| รองรับภาษาไทย                 | ✅               | ✅                      | ❌                    | ❌              |
+| Auto ML Training              | ✅               | บางส่วน                 | ✅                    | ✅              |
+| Feature Engineering อัตโนมัติ | บางส่วน          | บางส่วน                 | ✅                    | ✅              |
+| Export โมเดล `.joblib`        | ✅               | ❌                      | ✅                    | ✅              |
+| Interactive Plotly Chart      | ✅               | บางส่วน                 | บางส่วน               | ✅              |
+| ใช้ฟรี / Open Source          | ✅ (Open Source) | ต้องสมัคร ChatGPT Plus  | จ่ายเป็น Subscription | จ่าย Enterprise |
+| Customizable                  | ✅               | ❌                      | บางส่วน               | ❌              |
 
 จะเห็นว่า PrepPilot มีจุดเด่นเรื่อง Multi-Provider, รองรับภาษาไทย, และเป็น Open Source ที่สามารถปรับแต่งได้ ส่วนข้อจำกัดเทียบกับเครื่องมือเชิงพาณิชย์คือ ยังไม่มี Feature Engineering อัตโนมัติในระดับที่ DataRobot หรือ H2O ทำได้ ซึ่งอยู่ในแผนการพัฒนาในอนาคต
 
@@ -1441,13 +1441,13 @@ class BaseHandler:
 
 **ตารางที่ 4.7** เปรียบเทียบเวลาที่ใช้ระหว่างการทำงานแบบ Manual กับ PrepPilot
 
-| Task | Manual | PrepPilot | Δ (ประหยัดเวลา) |
-|---|---|---|---|
-| Data Profiling & EDA | 45–60 นาที | < 2 นาที | 97% |
-| Data Cleaning Pipeline | 1–2 ชั่วโมง | < 5 นาที | 95% |
-| Feature Engineering | 30–60 นาที | < 3 นาที | 93% |
-| Visualization (56 chart types) | 30–45 นาที | < 1 นาที | 97% |
-| ML Training + Tuning (27 algorithms) | 2–4 ชั่วโมง | < 10 นาที | 92% |
+| Task                                 | Manual      | PrepPilot | Δ (ประหยัดเวลา) |
+| ------------------------------------ | ----------- | --------- | --------------- |
+| Data Profiling & EDA                 | 45–60 นาที  | < 2 นาที  | 97%             |
+| Data Cleaning Pipeline               | 1–2 ชั่วโมง | < 5 นาที  | 95%             |
+| Feature Engineering                  | 30–60 นาที  | < 3 นาที  | 93%             |
+| Visualization (56 chart types)       | 30–45 นาที  | < 1 นาที  | 97%             |
+| ML Training + Tuning (27 algorithms) | 2–4 ชั่วโมง | < 10 นาที | 92%             |
 
 จากตารางที่ 4.7 จะเห็นว่า PrepPilot สามารถลดเวลาในการทำงานลงได้ระหว่าง 92%–97% ในทุกประเภทของงานที่ทดสอบ โดยงานที่ลดเวลาได้มากที่สุดคือ Data Profiling & EDA และ Visualization ซึ่งเป็นงานที่ต้องเขียนโค้ดซ้ำ ๆ ในขณะที่ ML Training + Tuning ยังคงเป็นงานที่ใช้เวลามากที่สุดของระบบ (ประมาณ 10 นาที) เนื่องจากต้องรัน Cross-Validation 5-Fold และ Optuna Hyperparameter Tuning หลายรอบสำหรับอัลกอริทึมแต่ละตัว
 
@@ -1455,11 +1455,11 @@ class BaseHandler:
 
 **ตารางที่ 4.8** สรุปคะแนนความพึงพอใจของผู้ใช้ต่อระบบ
 
-| มิติการประเมิน | คะแนนเฉลี่ย (เต็ม 5) | ระดับ |
-|---|---|---|
-| ประสิทธิภาพโดยรวมของระบบ | — | ดีมาก |
-| ความพึงพอใจในประสิทธิภาพ | 4.56 | พึงพอใจมาก |
-| ความใช้งานง่าย (Usability) | 4.64 | ใช้งานง่ายมาก |
+| มิติการประเมิน             | คะแนนเฉลี่ย (เต็ม 5) | ระดับ         |
+| -------------------------- | -------------------- | ------------- |
+| ประสิทธิภาพโดยรวมของระบบ   | —                    | ดีมาก         |
+| ความพึงพอใจในประสิทธิภาพ   | 4.56                 | พึงพอใจมาก    |
+| ความใช้งานง่าย (Usability) | 4.64                 | ใช้งานง่ายมาก |
 
 จากผลการประเมิน ผู้ใช้ให้คะแนนระบบในระดับสูงทุกมิติ โดยเฉพาะด้านความใช้งานง่าย (4.64/5) ซึ่งสะท้อนว่าการออกแบบ Chat Interface และการรองรับภาษาไทยช่วยให้ผู้ใช้ที่มีประสบการณ์การเขียนโค้ดน้อยสามารถใช้งานระบบได้โดยไม่ต้องเรียนรู้คำสั่งเฉพาะทาง สอดคล้องกับเป้าหมายที่กำหนดในบทที่ 1 ที่ต้องการลดอุปสรรคในการเข้าถึงเครื่องมือ Data Science
 
@@ -1478,7 +1478,6 @@ class BaseHandler:
 ผลทั้งหมดยืนยันว่า ระบบบรรลุวัตถุประสงค์ที่กำหนดไว้ในบทที่ 1 และพร้อมที่จะต่อยอดในเฟส Sprint 5–8 ตามที่อธิบายในแผนการพัฒนา
 
 ---
-
 
 # บทที่ 5 สรุปผล อภิปรายผล และข้อเสนอแนะ
 
@@ -1618,7 +1617,6 @@ class BaseHandler:
 
 ---
 
-
 # ภาคผนวก ก คู่มือการติดตั้งและใช้งานระบบ
 
 ## ก.1 ข้อกำหนดเบื้องต้น
@@ -1704,14 +1702,14 @@ npm run dev
 
 นอกจากการพิมพ์ภาษาธรรมชาติ ระบบมีคำสั่งพิเศษ
 
-| คำสั่ง | คำอธิบาย |
-|---|---|
-| `/cleaning` | AI ทำความสะอาดข้อมูลให้อัตโนมัติ |
-| `/ml-prepare` | AI เตรียมข้อมูลครบวงจรสำหรับ ML |
-| `/train` | ฝึกแบบจำลอง Machine Learning |
-| `/predict` | พยากรณ์ด้วยโมเดลที่ฝึกไว้ |
-| `/insights` | สร้างรายงาน Insights พร้อม Action Plan |
-| `/report` | สร้างเอกสาร EDA แบบครบถ้วน |
+| คำสั่ง        | คำอธิบาย                               |
+| ------------- | -------------------------------------- |
+| `/cleaning`   | AI ทำความสะอาดข้อมูลให้อัตโนมัติ       |
+| `/ml-prepare` | AI เตรียมข้อมูลครบวงจรสำหรับ ML        |
+| `/train`      | ฝึกแบบจำลอง Machine Learning           |
+| `/predict`    | พยากรณ์ด้วยโมเดลที่ฝึกไว้              |
+| `/insights`   | สร้างรายงาน Insights พร้อม Action Plan |
+| `/report`     | สร้างเอกสาร EDA แบบครบถ้วน             |
 
 ### ก.4.5 การ Export ผลลัพธ์
 
@@ -1749,6 +1747,7 @@ git push origin main
 **Input:** "อยากดูข้อมูลโดยรวมของชุดข้อมูลนี้"
 
 **Output:**
+
 - ระบบเรียก Handler `describe` ในหมวด `stats`
 - คืนตารางที่มี count, mean, std, min, 25%, 50%, 75%, max ของทุกคอลัมน์ Numeric
 - สำหรับ Categorical คืน Value Counts ของแต่ละค่า
@@ -1759,6 +1758,7 @@ git push origin main
 **Input:** "วาด Correlation Heatmap ของทุก Numeric Feature"
 
 **Output:**
+
 - ระบบเรียก Handler `correlation_heatmap`
 - คืน Plotly Heatmap แบบเชิงโต้ตอบ
 - คำอธิบาย: "Correlation สูงสุดคือระหว่าง price กับ area (r=0.54) ต่ำสุดคือระหว่าง parking กับ bedrooms (r=0.14)"
@@ -1768,6 +1768,7 @@ git push origin main
 **Input:** "สร้างคอลัมน์ใหม่ price_per_sqm = price / area"
 
 **Output:**
+
 - ระบบเรียก Codegen เพราะเป็นการคำนวณเฉพาะ
 - LLM เขียนโค้ด `df["price_per_sqm"] = df["price"] / df["area"]`
 - รันใน Sandbox สำเร็จ
@@ -1783,6 +1784,7 @@ git push origin main
 **รอบที่ 2 — Input:** "เปลี่ยนเป็น Violin Plot แทน"
 
 **Output:**
+
 - ระบบเข้าใจว่ายังพูดถึงเรื่องเดิม (จาก Conversation History)
 - เปลี่ยนเป็น Violin Plot ที่ตัวแปรเดิม
 - คำอธิบาย: "Violin Plot แสดงให้เห็นความหนาแน่นของราคาในแต่ละกลุ่มห้องนอนชัดเจนกว่า Box Plot"
@@ -1792,6 +1794,7 @@ git push origin main
 **Input:** `/train`
 
 **Output (ย่อ):**
+
 - ระบบแสดง Train Config Panel
 - AI แนะนำ Target = price, Task = Regression
 - ผู้ใช้กด Start Training
@@ -1916,39 +1919,38 @@ model Model {
 
 ## ผู้จัดทำคนที่ 1
 
-| | |
-|---|---|
-| ชื่อ–สกุล | นายธัญพิสิษฐ์ บัวประคอง |
-| รหัสประจำตัว | 64090500404 |
-| วัน เดือน ปีเกิด | (โปรดระบุ) |
-| ประวัติการศึกษา | |
-| – ระดับมัธยมศึกษา | (โปรดระบุ) |
-| – ระดับปริญญาตรี | วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์ ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (ปีการศึกษา 2568) |
-| ผลงานที่ได้รับการเผยแพร่ | PrepPilot Open Source Project (2568) |
-| ความสนใจทางวิชาการ | AI Agent, Large Language Model, Data Engineering, Backend Architecture |
-| อีเมล | thanyapisit.bua@gmail.com |
+|                          |                                                                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| ชื่อ–สกุล                | นายธัญพิสิษฐ์ บัวประคอง                                                                                                                       |
+| รหัสประจำตัว             | 64090500404                                                                                                                                   |
+| วัน เดือน ปีเกิด         | (โปรดระบุ)                                                                                                                                    |
+| ประวัติการศึกษา          |                                                                                                                                               |
+| – ระดับมัธยมศึกษา        | (โปรดระบุ)                                                                                                                                    |
+| – ระดับปริญญาตรี         | วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์ ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (ปีการศึกษา 2568) |
+| ผลงานที่ได้รับการเผยแพร่ | PrepPilot Open Source Project (2568)                                                                                                          |
+| ความสนใจทางวิชาการ       | AI Agent, Large Language Model, Data Engineering, Backend Architecture                                                                        |
+| อีเมล                    | thanyapisit.bua@gmail.com                                                                                                                     |
 
 ## ผู้จัดทำคนที่ 2
 
-| | |
-|---|---|
-| ชื่อ–สกุล | นายนันทวัฒน์ สุกก่ำ |
-| รหัสประจำตัว | 64090500436 |
-| วัน เดือน ปีเกิด | (โปรดระบุ) |
-| ประวัติการศึกษา | |
-| – ระดับมัธยมศึกษา | (โปรดระบุ) |
-| – ระดับปริญญาตรี | วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์ ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (ปีการศึกษา 2568) |
-| ความสนใจทางวิชาการ | Machine Learning, AutoML, Statistics, Data Visualization |
+|                    |                                                                                                                                               |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| ชื่อ–สกุล          | นายนันทวัฒน์ สุกก่ำ                                                                                                                           |
+| รหัสประจำตัว       | 64090500436                                                                                                                                   |
+| วัน เดือน ปีเกิด   | (โปรดระบุ)                                                                                                                                    |
+| ประวัติการศึกษา    |                                                                                                                                               |
+| – ระดับมัธยมศึกษา  | (โปรดระบุ)                                                                                                                                    |
+| – ระดับปริญญาตรี   | วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์ ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (ปีการศึกษา 2568) |
+| ความสนใจทางวิชาการ | Machine Learning, AutoML, Statistics, Data Visualization                                                                                      |
 
 ## ผู้จัดทำคนที่ 3
 
-| | |
-|---|---|
-| ชื่อ–สกุล | นายกรพันธ์ มณีทะ |
-| รหัสประจำตัว | 65090500428 |
-| วัน เดือน ปีเกิด | (โปรดระบุ) |
-| ประวัติการศึกษา | |
-| – ระดับมัธยมศึกษา | (โปรดระบุ) |
-| – ระดับปริญญาตรี | วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์ ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (ปีการศึกษา 2568) |
-| ความสนใจทางวิชาการ | Frontend Engineering, UI/UX, Web Application Performance |
-
+|                    |                                                                                                                                               |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| ชื่อ–สกุล          | นายกรพันธ์ มณีทะ                                                                                                                              |
+| รหัสประจำตัว       | 65090500428                                                                                                                                   |
+| วัน เดือน ปีเกิด   | (โปรดระบุ)                                                                                                                                    |
+| ประวัติการศึกษา    |                                                                                                                                               |
+| – ระดับมัธยมศึกษา  | (โปรดระบุ)                                                                                                                                    |
+| – ระดับปริญญาตรี   | วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์ ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (ปีการศึกษา 2568) |
+| ความสนใจทางวิชาการ | Frontend Engineering, UI/UX, Web Application Performance                                                                                      |
