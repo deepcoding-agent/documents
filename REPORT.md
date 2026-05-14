@@ -219,7 +219,7 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 | รูปที่ | คำอธิบาย | หน้า |
 |---|---|---|
 | 1.1 | ตัวอย่างขั้นตอน Data Science Lifecycle | 2 |
-| 1.2 | แผนภูมิ Gantt ของแผนการดำเนินงาน | 5 |
+| 1.2 | แผนภูมิ Gantt แสดงแผนการดำเนินงานโครงงาน PrepPilot ม.ค.–พ.ค. 2569 | 5 |
 | 2.1 | สถาปัตยกรรมของระบบ AI Agent โดยทั่วไป | 21 |
 | 2.2 | ขั้นตอน Cross-validation 5 Fold | 18 |
 | 3.1 | ภาพรวมสถาปัตยกรรมของ PrepPilot | 40 |
@@ -360,7 +360,7 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 | 7 | Production Hardening (Rate Limit, Sandbox Hardening, CORS) | 3 | แผน |
 | 8 | Production Deployment (MongoDB Atlas, S3/GCS, Multi-stage Docker) | 4 | แผน |
 
-> **[ภาพประกอบ — โปรดเพิ่มภายหลัง]** รูปที่ 1.2 แผนภูมิ Gantt ของแผนการดำเนินงาน 8 Sprint ตั้งแต่เดือนมกราคม 2568 จนถึงเดือนเมษายน 2569
+![รูปที่ 1.2 แผนภูมิ Gantt แสดงแผนการดำเนินงานโครงงาน PrepPilot ตั้งแต่เดือนมกราคม จนถึงสัปดาห์ที่ 3 ของเดือนพฤษภาคม 2569 รวม 8 กิจกรรมหลักครอบคลุมการศึกษา ออกแบบ พัฒนา ทดสอบ และจัดทำรายงาน](element/gantt-plan.png)
 
 ## 1.6 นิยามศัพท์เฉพาะ
 
