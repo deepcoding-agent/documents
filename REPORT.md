@@ -248,6 +248,14 @@ Tested on a 545-row × 13-column housing dataset, PrepPilot produced an interact
 | 4.16   | หน้าตั้งค่า `/train` (Target + Task Type + Training in Progress)  | 88   |
 | 4.17   | TrainResultCard — Actual vs Predicted (RMSE 1,324,506)            | 90   |
 | 4.18   | TrainResultCard — Feature Importance (Top 13)                     | 91   |
+| 4.19   | ผลลัพธ์ NLP — Word Frequency Inline พร้อม Inline Table             | 92   |
+| 4.20   | NLP — Table Preview Modal (Top 10 Words)                          | 92   |
+| 4.21   | NLP — Bar Chart Top 10 Words แบบ Fullscreen                       | 93   |
+| 4.22   | NLP — ชุดข้อมูล text_embedding_per_sentence                       | 93   |
+| 4.23   | `/insights` — Interesting Columns + Target + Top Correlations     | 94   |
+| 4.24   | `/insights` — Weaknesses & Blind Spots (4 ปัญหา)                  | 95   |
+| 4.25   | `/insights` — Recommendations 5 ข้อเรียงตาม Priority              | 95   |
+| 4.26   | `/report` — Market Analysis + Promotion & Marketing Strategies    | 96   |
 
 ---
 
@@ -1331,6 +1339,48 @@ class BaseHandler:
 ในการสนทนาเดียวกัน ผู้ใช้ทดสอบพิมพ์คำสั่งต่อเนื่องว่า "ตัด area ออกไป อยากดูการเปรียบเทียบของราคาต่ำสุดกับสูงสุด" หากระบบไม่จำบริบทก่อนหน้า จะเข้าใจคำสั่งนี้ไม่ได้ เพราะคำว่า "ตัด area ออกไป" ต้องอ้างถึงตารางที่ระบบสร้างในรอบก่อนหน้า
 
 ผลการทดสอบ ระบบสามารถเข้าใจคำสั่งและสร้างตารางเปรียบเทียบใหม่ที่ไม่มีคอลัมน์ area ได้ถูกต้อง โดย Planner ได้รับประวัติการสนทนา 6 รอบล่าสุด และตีความว่า "area" หมายถึงคอลัมน์ที่ผู้ใช้พูดถึงในตารางก่อนหน้า การทำงานนี้ยืนยันว่า Conversation History Threading ที่อธิบายในหัวข้อ 3.4.3 ทำงานได้จริง
+
+### 4.8.5 ทดสอบการวิเคราะห์ข้อความ (NLP / Text Analysis)
+
+นอกเหนือจากชุดข้อมูล Housing_data ทีมพัฒนายังทดสอบความสามารถของระบบในการประมวลผลข้อมูลข้อความ (Text Data) โดยใช้ชุดข้อมูลที่มีคอลัมน์ `response` ซึ่งเก็บประโยคภาษาอังกฤษจำนวน 17,028 แถว ผู้ใช้พิมพ์คำสั่งว่า "หาคำที่ใช้บ่อยที่สุดในคอลัมน์ response 10 อันดับแรก" ระบบจึงเลือก Handler จากหมวด `nlp` (โดยเฉพาะ `word_frequency`) ผสมกับ Handler หมวด `viz` (เพื่อสร้าง Bar Chart) ผลลัพธ์แสดงให้เห็นว่าคำว่า "would" ปรากฏ 105,922 ครั้ง คิดเป็น 8% ของจำนวนคำทั้งหมด 1,323,267 คำ ตามมาด้วย "could" (82,308 ครั้ง, 6.22%), "travel" (76,071 ครั้ง, 5.75%), "time" (66,731 ครั้ง, 5.04%) และคำอื่น ๆ ดังรูปที่ 4.19
+
+![รูปที่ 4.19 ผลลัพธ์ของคำสั่งวิเคราะห์ความถี่ของคำในคอลัมน์ response แบบ Inline ในช่องสนทนา ระบบให้คำอธิบายสรุปเป็นภาษาไทยอย่างละเอียดและแนบ Inline Table 10 แถว ที่มีคอลัมน์ Word, Count และ Percentage](screenshot/fig-4-19_nlp-word-frequency-inline.png)
+
+ผู้ใช้สามารถคลิก "Full Preview" เพื่อเปิดตารางขนาดเต็มในรูปแบบ Modal ดังรูปที่ 4.20 ตารางแสดงรายการคำทั้ง 10 คำพร้อมจำนวนและสัดส่วน ทุกแถวมีปุ่ม Export ที่มุมขวาบนเพื่อส่งออกเป็นไฟล์ CSV, XLSX, JSON, TSV หรือ XML
+
+![รูปที่ 4.20 หน้า Table Preview แบบ Modal แสดงข้อมูล Top 10 Words จำนวน 10 แถว 3 คอลัมน์ พร้อมปุ่ม Export ที่มุมขวาบน](screenshot/fig-4-20_nlp-word-table-preview.png)
+
+ในขณะเดียวกัน ระบบสร้าง Bar Chart โดยอัตโนมัติให้สามารถดูแบบเต็มจอได้ดังรูปที่ 4.21 กราฟใช้ Plotly จึงสนับสนุน Interaction อาทิเช่น Hover เพื่อดูค่า, Zoom, Pan และดาวน์โหลดเป็น PNG โดยตรง
+
+![รูปที่ 4.21 Bar Chart แสดง 10 อันดับคำที่พบบ่อยที่สุดในคอลัมน์ response แบบ Fullscreen แสดงค่าที่ปลายแท่งแต่ละแท่ง พร้อมแถบเครื่องมือ Plotly มุมขวาบนสำหรับ Zoom, Pan และ Export](screenshot/fig-4-21_nlp-word-bar-chart-fullscreen.png)
+
+นอกจากการวิเคราะห์ความถี่ของคำ ระบบยังรองรับการสร้าง Text Embedding สำหรับงาน ML ขั้นสูง โดยผู้ใช้พิมพ์คำสั่งว่า "สร้าง embedding ของประโยคในคอลัมน์ response" ระบบจะเรียก Handler จากหมวด `nlp` เพื่อแปลงประโยคแต่ละประโยคให้เป็นเวกเตอร์ตัวเลข ผลลัพธ์เป็นชุดข้อมูลใหม่ชื่อ `text_embedding_per_sentence` ที่มี 17,028 แถว และ 3 คอลัมน์ ได้แก่ Response (ประโยคต้นฉบับ), Response Encoded (เวกเตอร์ของประโยค) และ Response Vocab Size (4,084) ดังรูปที่ 4.22 ผลลัพธ์นี้สามารถนำไปใช้เป็น Input สำหรับโมเดล ML เช่น Classification หรือ Clustering ได้ทันที
+
+![รูปที่ 4.22 ชุดข้อมูล text_embedding_per_sentence ที่ระบบสร้างขึ้นโดยอัตโนมัติ แสดงประโยคต้นฉบับ เวกเตอร์ของประโยค (Response Encoded) และขนาด Vocabulary 4,084 ของชุดข้อมูล](screenshot/fig-4-22_nlp-text-embedding-dataset.png)
+
+### 4.8.6 ทดสอบคำสั่ง `/insights` — AI Insights Report
+
+คำสั่ง `/insights` เรียกใช้ Insights Agent (`api/agents/insights_agent.py`) ซึ่งทำการวิเคราะห์ข้อมูลแบบเชิงลึก (Deterministic) ผสมกับการสร้างคำบรรยายเชิงเข้าใจง่ายด้วย LLM ผลลัพธ์เป็น Report Card แบบ Collapsible ที่ประกอบด้วย 6 ส่วนหลัก ได้แก่ Quality Score, Key Findings, Interesting Columns, Potential Target Variables, Top Correlations, Weaknesses & Blind Spots และ Recommendations
+
+ผู้ใช้พิมพ์ `/insights` บนชุดข้อมูล Housing_data ระบบใช้เวลาประมาณ 8.5 วินาทีในการสร้างรายงาน ส่วน Interesting Columns ระบุว่าคอลัมน์ `area` และ `furnishingstatus` เป็นคอลัมน์ที่น่าสนใจเป็นพิเศษ ส่วน Potential Target Variables ระบุชัดว่าคอลัมน์ `price` เป็น Target หลักสำหรับงาน Regression พร้อมคำอธิบายว่า "Price is the primary target for regression analysis to predict property values" และส่วน Top Correlations แสดง 8 คู่ของคอลัมน์ที่มีความสัมพันธ์ระดับ Moderate (+0.353 ถึง +0.536) ดังรูปที่ 4.23
+
+![รูปที่ 4.23 ส่วน Interesting Columns, Potential Target Variables และ Top Correlations ของรายงาน /insights ระบบระบุคอลัมน์ price เป็น Target สำหรับ Regression และจัดอันดับคู่ความสัมพันธ์ที่สูงที่สุด 8 คู่ พร้อมป้าย Strength ที่ระบุระดับว่า Moderate](screenshot/fig-4-23_insights-correlations-recommendations.png)
+
+จุดเด่นของรายงานคือส่วน **Weaknesses & Blind Spots** ที่ระบบตรวจจับปัญหาในข้อมูลโดยอัตโนมัติ ในกรณีของ Housing_data ระบบพบ 4 ปัญหา ได้แก่ (1) Skewness ของคอลัมน์ `price` ที่ระดับ 1.21 (CRITICAL — แนะนำให้ Log Transform), (2) Outliers ของคอลัมน์ `price` พบ 41 แถว (7.5% ของข้อมูล — CRITICAL — แนะนำให้ตัด หรือ Cap ด้วย IQR), (3) Potential Multicollinearity ระหว่างคอลัมน์ Numeric (WARNING — แนะนำให้ลบ Feature ที่ Correlation สูง), และ (4) Limited Cardinality ของคอลัมน์ Categorical (INFO — แนะนำให้ทำ One-Hot Encoding) ดังรูปที่ 4.24 แต่ละ Finding มีระดับความรุนแรง (CRITICAL / WARNING / INFO) และคำแนะนำการแก้ไขที่ชัดเจน
+
+![รูปที่ 4.24 ส่วน Weaknesses & Blind Spots ของรายงาน /insights ระบบตรวจพบ 4 ปัญหาในชุดข้อมูล ได้แก่ Skewness ของ price, Outliers, Potential Multicollinearity และ Limited Cardinality พร้อมระบุระดับความรุนแรงและแนวทางการแก้ไข](screenshot/fig-4-24_insights-weaknesses-blindspots.png)
+
+ส่วนสุดท้ายคือ **Recommendations** ที่ระบบจัดลำดับสิ่งที่ผู้ใช้ควรทำต่อโดยใช้ Priority แบบ Quick Win → Strategic ดังรูปที่ 4.25 ระบบสร้าง 5 ข้อเสนอแนะที่ครอบคลุมทั้งระยะสั้น (Quick Win 2 สัปดาห์) ระยะกลาง (Short-term 1-3 เดือน) และระยะยาว (Strategic 6 เดือน, 6-12 เดือน) ความสามารถนี้ช่วยให้ผู้ใช้ที่อาจไม่ใช่ Data Scientist สามารถตัดสินใจได้ทันที โดยไม่ต้องตีความ Statistics เอง
+
+![รูปที่ 4.25 ส่วน Recommendations ของรายงาน /insights แสดง 5 ข้อเสนอแนะที่จัดลำดับตาม Priority ตั้งแต่ Quick Win (2 สัปดาห์) ไปจนถึง Strategic (6-12 เดือน) พร้อมคำอธิบายว่าควรทำอะไรในแต่ละช่วงเวลา](screenshot/fig-4-25_insights-recommendations-priorities.png)
+
+### 4.8.7 ทดสอบคำสั่ง `/report` — EDA Document Report
+
+คำสั่ง `/report` เรียกใช้ Document Agent (`api/agents/document_agent.py`) ซึ่งสร้างเอกสาร EDA ฉบับสมบูรณ์ที่ครอบคลุมทั้ง Statistical Summary และ Business Intelligence โดยตอบคำถามที่ไม่ใช่แค่ "ข้อมูลเป็นยังไง" แต่รวมถึง "ข้อมูลนี้บอกอะไรเชิงธุรกิจ" ระบบสร้าง 6 Plotly Charts (Distribution, Correlation Heatmap, Box Plot, Scatter Matrix, ฯลฯ) และเขียนคำบรรยายเชิงธุรกิจให้ทุกส่วนแบบ AI Narrative
+
+ผลลัพธ์ส่วนที่น่าสนใจที่สุดของรายงานคือ **Market Analysis** และ **Promotion & Marketing Strategies** ที่ระบบสร้างขึ้นจากข้อมูลที่มี ดังรูปที่ 4.26 ในส่วน Market Analysis ระบบสรุปว่า "The data reveals a market with significant demand for larger properties, particularly those with more stories and bathrooms. Price sensitivity appears moderate, with higher prices correlating with desirable features..." ส่วน Promotion & Marketing Strategies ให้ 3 กลยุทธ์ที่นำไปใช้ได้ทันที เช่น "Target the 95 properties with 4+ stories (17% of inventory) with premium staging services — averaging 45% higher prices" ความสามารถนี้ทำให้ระบบไม่ใช่แค่เครื่องมือทาง Data Science แต่เป็นเครื่องมือสนับสนุนการตัดสินใจทางธุรกิจ (Decision Support) อีกด้วย รายงานทั้งฉบับสามารถส่งออกได้ในรูปแบบ Markdown, HTML และ PDF
+
+![รูปที่ 4.26 ส่วน Market Analysis และ Promotion & Marketing Strategies ของรายงาน /report ระบบสรุปแนวโน้มตลาดและข้อเสนอกลยุทธ์การตลาด 3 ข้อจากข้อมูล Housing_data โดยอัตโนมัติ](screenshot/fig-4-26_document-business-analysis.png)
 
 ## 4.9 ผลการฝึกแบบจำลองด้วย `/train`
 
