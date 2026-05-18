@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrepPilot — Tech Stack (Sprint 5.7)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root { --o: #E8500A; --ink: #0A0A0A; --line: #E5E4E1; --bg: #FAFAFA; }
+    html, body { margin: 0; padding: 0; background: var(--bg); font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--ink); }
+    .frame { width: 1920px; margin: 0 auto; background: #FFFFFF; }
+    @media print { @page { size: 1920px 1080px landscape; margin: 0; } body { background: #fff; } }
+    svg { display: block; width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+<div class="frame">
+
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot tech stack">
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.06"/>
+    </filter>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8500A"/>
+      <stop offset="100%" stop-color="#FF6B2B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="6" height="120" fill="url(#titleAccent)"/>
+  <text x="60" y="62" font-size="36" font-weight="700" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — Technology Stack</text>
+  <text x="60" y="94" font-size="15" font-weight="500" fill="#6B6B6B">Senior project · Next.js 16 · FastAPI · 8 LLM models · 417 handlers · Sprint 5.7 (2026-05-18)</text>
+  <text x="1860" y="62" font-size="13" font-weight="500" fill="#6B6B6B" text-anchor="end">github.com/deepcoding-agent</text>
+  <text x="1860" y="84" font-size="11" fill="#9B9B9B" text-anchor="end">web-app · ml-datascience · documents · installation-core</text>
+
+  <line x1="40" y1="130" x2="1880" y2="130" stroke="#E5E4E1" stroke-width="1"/>
+
+  <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+       ║  ROW 1 (Y 152–586): Frontend · Backend · AI/LLM                            ║
+       ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+
+  <!-- ── FRONTEND card ── -->
+  <g transform="translate(40, 152)">
+    <rect width="592" height="434" rx="16" fill="#FFFAF7" stroke="#FCE0D2" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="592" height="48" rx="16" fill="#FFE8D9"/>
+    <rect x="0" y="36" width="592" height="12" fill="#FFE8D9"/>
+    <text x="24" y="31" font-size="14" font-weight="700" fill="#E8500A" letter-spacing="1.5">FRONTEND · web-app</text>
+    <text x="568" y="31" font-size="11" fill="#9B9B9B" text-anchor="end" font-style="italic">deployed on Vercel</text>
+
+    <!-- Framework -->
+    <text x="24" y="78" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">FRAMEWORK</text>
+    <g transform="translate(24, 88)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Next.js 16</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">App Router · Server Components · Edge runtime</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">react 19 · typescript 5 strict</text>
+    </g>
+    <g transform="translate(298, 88)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Tailwind CSS v4</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">@plugin "@tailwindcss/typography"</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">via @import "tailwindcss"</text>
+    </g>
+
+    <!-- Auth + DB -->
+    <text x="24" y="172" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">AUTH · ORM</text>
+    <g transform="translate(24, 182)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">NextAuth v5</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Google OAuth · session cookies</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">PrismaAdapter</text>
+    </g>
+    <g transform="translate(298, 182)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Prisma 6</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">schema-first · multi-provider</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">sqlite (dev) → mongo (prod)</text>
+    </g>
+
+    <!-- UI / Markdown -->
+    <text x="24" y="266" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">UI · MARKDOWN · VIZ</text>
+    <g transform="translate(24, 276)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">react-markdown + remark-gfm</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">.chat-md · MD table → widget</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">tables · code · blockquotes</text>
+    </g>
+    <g transform="translate(298, 276)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">react-plotly.js</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Dynamic import · SSR-safe · fullscreen</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">memoized · PrepPilot theme</text>
+    </g>
+
+    <!-- File parsers + Icons -->
+    <text x="24" y="360" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">FILE I/O · ICONS</text>
+    <g transform="translate(24, 370)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">SheetJS (xlsx)</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">20+ formats · csv/json/xlsx/yaml/xml</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">client-side parsing</text>
+    </g>
+    <g transform="translate(298, 370)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">@mui/icons-material</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Outlined set · Stop/Reply/Send/etc</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#E8500A">tree-shaken per icon</text>
+    </g>
+  </g>
+
+  <!-- ── BACKEND card ── -->
+  <g transform="translate(664, 152)">
+    <rect width="592" height="434" rx="16" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="592" height="48" rx="16" fill="#D1FAE5"/>
+    <rect x="0" y="36" width="592" height="12" fill="#D1FAE5"/>
+    <text x="24" y="31" font-size="14" font-weight="700" fill="#059669" letter-spacing="1.5">BACKEND · ml-datascience</text>
+    <text x="568" y="31" font-size="11" fill="#9B9B9B" text-anchor="end" font-style="italic">Render · Fly · Docker</text>
+
+    <text x="24" y="78" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">CORE</text>
+    <g transform="translate(24, 88)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">FastAPI</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">async routes · Pydantic v2 models</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">uvicorn · Python 3.13</text>
+    </g>
+    <g transform="translate(298, 88)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">LangChain</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">langchain-anthropic + langchain-openai</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">cached factory · history truncate</text>
+    </g>
+
+    <text x="24" y="172" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">DATAFRAME · NUMERIC</text>
+    <g transform="translate(24, 182)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">pandas · NumPy</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">DataFrame I/O · vectorized ops</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">core of every handler</text>
+    </g>
+    <g transform="translate(298, 182)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">pyarrow 22</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">parquet · feather · arrow</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">/parse-file route</text>
+    </g>
+
+    <text x="24" y="266" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">ML · MODELING</text>
+    <g transform="translate(24, 276)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">scikit-learn · LightGBM · XGBoost</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">27 algorithms (12 clf · 11 reg · 4 cluster)</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">joblib persistence</text>
+    </g>
+    <g transform="translate(298, 276)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Optuna · imbalanced-learn · Boruta</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Hyperparam tuning · SMOTE/ADASYN</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">RFE feature selection</text>
+    </g>
+
+    <text x="24" y="360" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">VIZ · SANDBOX</text>
+    <g transform="translate(24, 370)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Plotly · seaborn · missingno</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Interactive charts + matplotlib fallback</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">Thai font · PrepPilot theme</text>
+    </g>
+    <g transform="translate(298, 370)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#BBF7D0"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Sandboxed exec()</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">restricted ns · 30s timeout</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#059669">_figure_has_data() guard</text>
+    </g>
+  </g>
+
+  <!-- ── AI / LLM card ── -->
+  <g transform="translate(1288, 152)">
+    <rect width="592" height="434" rx="16" fill="#FDF2F8" stroke="#FBCFE8" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="592" height="48" rx="16" fill="#FCE7F3"/>
+    <rect x="0" y="36" width="592" height="12" fill="#FCE7F3"/>
+    <text x="24" y="31" font-size="14" font-weight="700" fill="#BE185D" letter-spacing="1.5">AI · LLM PROVIDERS</text>
+    <text x="568" y="31" font-size="11" fill="#9B9B9B" text-anchor="end" font-style="italic">via langchain · cached</text>
+
+    <!-- OpenAI -->
+    <text x="24" y="78" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">OPENAI GPT</text>
+    <g transform="translate(24, 88)">
+      <rect width="544" height="100" rx="10" fill="#FFFFFF" stroke="#FBCFE8"/>
+      <g transform="translate(16, 0)">
+        <rect x="0" y="12" width="170" height="76" rx="8" fill="#FFF1F8" stroke="#FBCFE8"/>
+        <text x="12" y="32" font-size="12" font-weight="600" fill="#0A0A0A">GPT-5</text>
+        <text x="12" y="48" font-size="9" fill="#6B6B6B">Powerful · reasoning</text>
+        <text x="12" y="64" font-size="9" font-family="JetBrains Mono" fill="#BE185D">no temperature</text>
+        <text x="12" y="78" font-size="9" font-family="JetBrains Mono" fill="#BE185D">id: gpt-5</text>
+      </g>
+      <g transform="translate(202, 0)">
+        <rect x="0" y="12" width="170" height="76" rx="8" fill="#FFF1F8" stroke="#FBCFE8"/>
+        <text x="12" y="32" font-size="12" font-weight="600" fill="#0A0A0A">GPT-5 mini</text>
+        <text x="12" y="48" font-size="9" fill="#6B6B6B">Smart · mid-tier</text>
+        <text x="12" y="64" font-size="9" font-family="JetBrains Mono" fill="#BE185D">no temperature</text>
+        <text x="12" y="78" font-size="9" font-family="JetBrains Mono" fill="#BE185D">id: gpt-5-mini</text>
+      </g>
+      <g transform="translate(388, 0)">
+        <rect x="0" y="12" width="170" height="76" rx="8" fill="#FFE9F2" stroke="#F472B6" stroke-width="1.5"/>
+        <text x="12" y="32" font-size="12" font-weight="600" fill="#0A0A0A">GPT-5.4 nano ★</text>
+        <text x="12" y="48" font-size="9" fill="#6B6B6B">Fast · DEFAULT</text>
+        <text x="12" y="64" font-size="9" font-family="JetBrains Mono" fill="#BE185D">no temperature</text>
+        <text x="12" y="78" font-size="9" font-family="JetBrains Mono" fill="#BE185D">id: gpt-5.4-nano</text>
+      </g>
+    </g>
+
+    <g transform="translate(24, 198)">
+      <rect width="544" height="50" rx="10" fill="#FFFFFF" stroke="#FBCFE8"/>
+      <text x="16" y="22" font-size="11" font-weight="600" fill="#0A0A0A">Legacy GPT-4o family</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">gpt-4o (Smart) · gpt-4o-mini (Fast) — accepts temperature param</text>
+    </g>
+
+    <!-- Anthropic -->
+    <text x="24" y="280" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">ANTHROPIC CLAUDE</text>
+    <g transform="translate(24, 290)">
+      <rect width="544" height="100" rx="10" fill="#FFFFFF" stroke="#FBCFE8"/>
+      <g transform="translate(16, 0)">
+        <rect x="0" y="12" width="170" height="76" rx="8" fill="#FFF1F8" stroke="#FBCFE8"/>
+        <text x="12" y="32" font-size="12" font-weight="600" fill="#0A0A0A">Opus 4.7</text>
+        <text x="12" y="48" font-size="9" fill="#6B6B6B">Powerful · reasoning</text>
+        <text x="12" y="64" font-size="9" font-family="JetBrains Mono" fill="#BE185D">no temperature</text>
+        <text x="12" y="78" font-size="9" font-family="JetBrains Mono" fill="#BE185D">id: claude-opus-4-7</text>
+      </g>
+      <g transform="translate(202, 0)">
+        <rect x="0" y="12" width="170" height="76" rx="8" fill="#FFF1F8" stroke="#FBCFE8"/>
+        <text x="12" y="32" font-size="12" font-weight="600" fill="#0A0A0A">Sonnet 4.6</text>
+        <text x="12" y="48" font-size="9" fill="#6B6B6B">Smart · balanced</text>
+        <text x="12" y="64" font-size="9" font-family="JetBrains Mono" fill="#BE185D">no temperature</text>
+        <text x="12" y="78" font-size="9" font-family="JetBrains Mono" fill="#BE185D">id: claude-sonnet-4-6</text>
+      </g>
+      <g transform="translate(388, 0)">
+        <rect x="0" y="12" width="170" height="76" rx="8" fill="#FFF1F8" stroke="#FBCFE8"/>
+        <text x="12" y="32" font-size="12" font-weight="600" fill="#0A0A0A">Haiku 4.5</text>
+        <text x="12" y="48" font-size="9" fill="#6B6B6B">Fast · cheap</text>
+        <text x="12" y="64" font-size="9" font-family="JetBrains Mono" fill="#BE185D">accepts temperature</text>
+        <text x="12" y="78" font-size="9" font-family="JetBrains Mono" fill="#BE185D">id: claude-haiku-4-5</text>
+      </g>
+    </g>
+
+    <g transform="translate(24, 400)">
+      <text x="0" y="0" font-size="10" fill="#6B6B6B" font-style="italic">★ default · "no temperature" = NO_TEMPERATURE_MODELS guard in api/llm.py</text>
+      <text x="0" y="16" font-size="10" fill="#6B6B6B" font-style="italic">User can switch model via picker; 4-5 family kept in whitelist for backward compat.</text>
+    </g>
+  </g>
+
+  <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+       ║  ROW 2 (Y 606–1018): Data · Hosting · Dev Tooling                          ║
+       ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+
+  <!-- ── DATA card ── -->
+  <g transform="translate(40, 606)">
+    <rect width="592" height="412" rx="16" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="592" height="48" rx="16" fill="#FEF3C7"/>
+    <rect x="0" y="36" width="592" height="12" fill="#FEF3C7"/>
+    <text x="24" y="31" font-size="14" font-weight="700" fill="#B45309" letter-spacing="1.5">DATA · STORAGE</text>
+    <text x="568" y="31" font-size="11" fill="#9B9B9B" text-anchor="end" font-style="italic">SQLite dev · MongoDB prod</text>
+
+    <text x="24" y="78" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">RELATIONAL · DOCUMENT</text>
+    <g transform="translate(24, 88)">
+      <rect width="262" height="76" rx="10" fill="#FFFFFF" stroke="#FDE68A"/>
+      <text x="16" y="24" font-size="14" font-weight="600" fill="#0A0A0A">SQLite</text>
+      <text x="16" y="42" font-size="10" fill="#6B6B6B">file:./prisma/dev.db</text>
+      <text x="16" y="56" font-size="10" fill="#6B6B6B">Local dev · NextAuth sessions</text>
+      <text x="16" y="68" font-size="9" font-family="JetBrains Mono" fill="#B45309">via Prisma</text>
+    </g>
+    <g transform="translate(298, 88)">
+      <rect width="270" height="76" rx="10" fill="#FFFFFF" stroke="#FDE68A"/>
+      <text x="16" y="24" font-size="14" font-weight="600" fill="#0A0A0A">MongoDB Atlas</text>
+      <text x="16" y="42" font-size="10" fill="#6B6B6B">Production multi-tenant</text>
+      <text x="16" y="56" font-size="10" fill="#6B6B6B">Same Prisma schema · provider swap</text>
+      <text x="16" y="68" font-size="9" font-family="JetBrains Mono" fill="#B45309">MONGODB_URI env</text>
+    </g>
+
+    <text x="24" y="186" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">SCHEMA · BLOB</text>
+    <g transform="translate(24, 196)">
+      <rect width="262" height="76" rx="10" fill="#FFFFFF" stroke="#FDE68A"/>
+      <text x="16" y="24" font-size="14" font-weight="600" fill="#0A0A0A">Prisma ORM</text>
+      <text x="16" y="42" font-size="10" fill="#6B6B6B">Users · Sessions · Conversations</text>
+      <text x="16" y="56" font-size="10" fill="#6B6B6B">Dataset table · chat-local artifacts</text>
+      <text x="16" y="68" font-size="9" font-family="JetBrains Mono" fill="#B45309">prisma/schema.prisma</text>
+    </g>
+    <g transform="translate(298, 196)">
+      <rect width="270" height="76" rx="10" fill="#FFFFFF" stroke="#FDE68A"/>
+      <text x="16" y="24" font-size="14" font-weight="600" fill="#0A0A0A">Object Store (Sprint 8)</text>
+      <text x="16" y="42" font-size="10" fill="#6B6B6B">dev: local fs (ml-datascience/models/)</text>
+      <text x="16" y="56" font-size="10" fill="#6B6B6B">prod: S3 / GCS for .joblib + datasets</text>
+      <text x="16" y="68" font-size="9" font-family="JetBrains Mono" fill="#B45309">MODELS_DIR env</text>
+    </g>
+
+    <text x="24" y="294" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">FILE FORMATS SUPPORTED (UPLOAD)</text>
+    <g transform="translate(24, 304)">
+      <rect width="544" height="88" rx="10" fill="#FFFFFF" stroke="#FDE68A"/>
+      <text x="16" y="24" font-size="10" font-weight="500" fill="#0A0A0A">Text:</text>
+      <text x="58" y="24" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">csv · tsv · json · jsonl · ndjson · yaml · yml · txt · md · xml · html</text>
+      <text x="16" y="44" font-size="10" font-weight="500" fill="#0A0A0A">Spreadsheet:</text>
+      <text x="116" y="44" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">xlsx · xls · xlsb · ods  (SheetJS, client-side)</text>
+      <text x="16" y="64" font-size="10" font-weight="500" fill="#0A0A0A">Columnar:</text>
+      <text x="100" y="64" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">parquet · pq · feather · arrow  (pyarrow, backend)</text>
+      <text x="16" y="80" font-size="9" fill="#9B9B9B" font-style="italic">100 MB upload cap · client/backend split keeps proxy thin</text>
+    </g>
+  </g>
+
+  <!-- ── HOSTING card ── -->
+  <g transform="translate(664, 606)">
+    <rect width="592" height="412" rx="16" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="592" height="48" rx="16" fill="#DBEAFE"/>
+    <rect x="0" y="36" width="592" height="12" fill="#DBEAFE"/>
+    <text x="24" y="31" font-size="14" font-weight="700" fill="#2563EB" letter-spacing="1.5">HOSTING · DEPLOYMENT</text>
+    <text x="568" y="31" font-size="11" fill="#9B9B9B" text-anchor="end" font-style="italic">multi-region · autoDeploy on main</text>
+
+    <text x="24" y="78" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">FRONTEND HOSTING</text>
+    <g transform="translate(24, 88)">
+      <rect width="544" height="56" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Vercel</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Edge functions for API proxy · global CDN · preview deployments per PR</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#2563EB">ML_BACKEND_URL · NEXTAUTH_URL · DATABASE_URL · MONGODB_URI</text>
+    </g>
+
+    <text x="24" y="172" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">BACKEND HOSTING</text>
+    <g transform="translate(24, 182)">
+      <rect width="262" height="76" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Render (primary)</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Docker · starter plan · Singapore</text>
+      <text x="16" y="54" font-size="10" fill="#6B6B6B">Persistent disk for .joblib</text>
+      <text x="16" y="68" font-size="9" font-family="JetBrains Mono" fill="#2563EB">render.yaml Blueprint</text>
+    </g>
+    <g transform="translate(298, 182)">
+      <rect width="270" height="76" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Fly.io (alternate)</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Same Docker image · Singapore VM</text>
+      <text x="16" y="54" font-size="10" fill="#6B6B6B">auto_stop_machines · 1 GB RAM</text>
+      <text x="16" y="68" font-size="9" font-family="JetBrains Mono" fill="#2563EB">fly.toml</text>
+    </g>
+
+    <text x="24" y="280" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">CONTAINERS · LOCAL</text>
+    <g transform="translate(24, 290)">
+      <rect width="544" height="56" rx="10" fill="#FFFFFF" stroke="#BFDBFE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Docker + Docker Compose</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Single-command local boot: `python run.py --docker` (installation-core/)</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#2563EB">Dockerfile · docker-compose.yml · run.py launcher</text>
+    </g>
+
+    <g transform="translate(24, 360)">
+      <text x="0" y="0" font-size="10" fill="#6B6B6B" font-style="italic">Branch flow:  feat/* → PR → main → autoDeploy (Render) · `fly deploy` (Fly) · Vercel rebuilds frontend</text>
+    </g>
+  </g>
+
+  <!-- ── DEV TOOLING card ── -->
+  <g transform="translate(1288, 606)">
+    <rect width="592" height="412" rx="16" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="592" height="48" rx="16" fill="#EDE9FE"/>
+    <rect x="0" y="36" width="592" height="12" fill="#EDE9FE"/>
+    <text x="24" y="31" font-size="14" font-weight="700" fill="#6D28D9" letter-spacing="1.5">DEV TOOLING · QUALITY</text>
+    <text x="568" y="31" font-size="11" fill="#9B9B9B" text-anchor="end" font-style="italic">Git/GitHub · TypeScript strict</text>
+
+    <text x="24" y="78" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">VERSION CONTROL · CI</text>
+    <g transform="translate(24, 88)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#DDD6FE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">Git + GitHub</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">4 independent repos · PR-based merges</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#6D28D9">conventional commits</text>
+    </g>
+    <g transform="translate(298, 88)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#DDD6FE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">GitHub Actions (Sprint 6)</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">pytest + vitest gate · 80% coverage</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#6D28D9">.github/workflows/ci.yml (planned)</text>
+    </g>
+
+    <text x="24" y="172" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">TYPE · LINT</text>
+    <g transform="translate(24, 182)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#DDD6FE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">TypeScript 5 strict</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">zero `any` · explicit prop types</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#6D28D9">tsc --noEmit on every commit</text>
+    </g>
+    <g transform="translate(298, 182)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#DDD6FE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">ESLint + Prettier</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Next.js core-web-vitals preset</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#6D28D9">.eslintrc · format-on-save</text>
+    </g>
+
+    <text x="24" y="266" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">TESTING (planned Sprint 6)</text>
+    <g transform="translate(24, 276)">
+      <rect width="262" height="56" rx="10" fill="#FFFFFF" stroke="#DDD6FE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">pytest</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">FastAPI routes + agents + sandbox</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#6D28D9">backend coverage gate</text>
+    </g>
+    <g transform="translate(298, 276)">
+      <rect width="270" height="56" rx="10" fill="#FFFFFF" stroke="#DDD6FE"/>
+      <text x="16" y="22" font-size="14" font-weight="600" fill="#0A0A0A">vitest</text>
+      <text x="16" y="40" font-size="10" fill="#6B6B6B">Next.js API routes + hooks</text>
+      <text x="16" y="52" font-size="9" font-family="JetBrains Mono" fill="#6D28D9">frontend coverage gate</text>
+    </g>
+
+    <text x="24" y="360" font-size="11" font-weight="700" fill="#6B6B6B" letter-spacing="1">DEAD-CODE AUDIT</text>
+    <g transform="translate(24, 370)">
+      <rect width="544" height="32" rx="8" fill="#FFFFFF" stroke="#DDD6FE"/>
+      <text x="16" y="20" font-size="11" font-family="JetBrains Mono" fill="#6D28D9">depcheck · ts-prune · pipreqs</text>
+      <text x="290" y="20" font-size="10" fill="#6B6B6B">— run before each sprint</text>
+    </g>
+  </g>
+
+  <!-- ── Legend / footer ── -->
+  <g transform="translate(40, 1052)">
+    <text x="0" y="0" font-size="10" font-weight="600" fill="#6B6B6B" letter-spacing="1">CATEGORIES</text>
+    <rect x="92" y="-9" width="12" height="12" rx="3" fill="#FFFAF7" stroke="#FCE0D2"/>
+    <text x="110" y="0" font-size="10" fill="#6B6B6B">Frontend</text>
+    <rect x="174" y="-9" width="12" height="12" rx="3" fill="#F0FDF4" stroke="#BBF7D0"/>
+    <text x="192" y="0" font-size="10" fill="#6B6B6B">Backend</text>
+    <rect x="254" y="-9" width="12" height="12" rx="3" fill="#FDF2F8" stroke="#FBCFE8"/>
+    <text x="272" y="0" font-size="10" fill="#6B6B6B">AI / LLM</text>
+    <rect x="334" y="-9" width="12" height="12" rx="3" fill="#FFFBEB" stroke="#FDE68A"/>
+    <text x="352" y="0" font-size="10" fill="#6B6B6B">Data · Storage</text>
+    <rect x="450" y="-9" width="12" height="12" rx="3" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="468" y="0" font-size="10" fill="#6B6B6B">Hosting</text>
+    <rect x="528" y="-9" width="12" height="12" rx="3" fill="#F5F3FF" stroke="#DDD6FE"/>
+    <text x="546" y="0" font-size="10" fill="#6B6B6B">Dev Tooling</text>
+    <text x="1840" y="0" font-size="10" fill="#9B9B9B" text-anchor="end" font-style="italic">© PrepPilot · senior project · drawn 2026-05-18</text>
+  </g>
+
+</svg>
+
+</div>
+</body>
+</html>
