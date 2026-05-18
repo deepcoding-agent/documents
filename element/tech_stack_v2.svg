@@ -79,18 +79,23 @@
     <rect x="230" y="-16" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
     <text x="290" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">AI / LLM</text>
 
-    <g transform="translate(70, 48)">
-      <image href="https://cdn.simpleicons.org/openai/412991" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">OpenAI</text>
-      <text x="34" y="114" font-size="10" fill="#E8500A" text-anchor="middle" font-weight="600">GPT-5.4 nano ★</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">+5 / +mini / 4o</text>
+    <!-- OpenAI: simpleicons removed the slug (brand policy). Wordmark instead. -->
+    <g transform="translate(50, 56)">
+      <rect width="120" height="60" rx="10" fill="#0A0A0A"/>
+      <text x="60" y="40" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">OpenAI</text>
+      <text x="60" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">GPT-5 family</text>
+      <text x="60" y="110" font-size="10" fill="#E8500A" text-anchor="middle" font-weight="600">GPT-5.4 nano ★ default</text>
+      <text x="60" y="126" font-size="9" fill="#6B6B6B" text-anchor="middle">+ mini · + 4o · + 4o-mini</text>
     </g>
-    <g transform="translate(220, 60)">
-      <text x="0" y="32" font-size="32" font-weight="700" fill="#CC9B7A">A</text>
-      <text x="20" y="32" font-size="16" font-weight="700" fill="#0A0A0A">nthropic</text>
-      <text x="0" y="58" font-size="14" font-weight="600" fill="#0A0A0A">Claude</text>
-      <text x="0" y="76" font-size="10" fill="#6B6B6B">Opus 4.7  ·  Sonnet 4.6  ·  Haiku 4.5</text>
+
+    <!-- Anthropic: simpleicons has the logo, use it properly -->
+    <g transform="translate(220, 48)">
+      <image href="https://cdn.simpleicons.org/anthropic/191919" width="68" height="68" x="0" y="0"/>
+      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Anthropic</text>
+      <text x="34" y="114" font-size="10" fill="#E8500A" text-anchor="middle" font-weight="600">Claude family</text>
+      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">Opus 4.7 · Sonnet 4.6 · Haiku 4.5</text>
     </g>
+
     <g transform="translate(420, 48)">
       <image href="https://cdn.simpleicons.org/langchain/1C3C3C" width="68" height="68" x="0" y="0"/>
       <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">LangChain</text>
