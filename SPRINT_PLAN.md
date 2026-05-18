@@ -1,10 +1,10 @@
-# SPRINT_PLAN.md — PrepPilot Development Roadmap (v1)
+# SPRINT_PLAN.md — PrepPilot Development Roadmap (v2)
 
-> Last updated: 2026-03-27
+> Last updated: 2026-05-18
 
 ---
 
-## Current State (Sprint 2.95 Completed)
+## Current State (Sprint 5.7 Completed)
 
 | Sprint | Status | Deliverable |
 |--------|--------|-------------|
@@ -13,30 +13,28 @@
 | 2.5 | ✅ Done | AI-first agent rewrite: planner-driven routing |
 | 2.7 | ✅ Done | AI Auto-Clean, AI Auto-Prepare, folder card, landing page redesign |
 | 2.9 | ✅ Done | 350 handlers (7 categories x 50), two-stage routing, NLP/Analysis, 20+ file formats |
-| 2.95 | ✅ Done | 396 handlers (modular packages), /insights, /report, translate, multi-format export |
+| 2.95 | ✅ Done | 396 handlers (modular packages), translate, multi-format export |
+| 3 | ✅ Done | 417 handlers (+21): SMOTE/ADASYN, RFE/Boruta, rolling windows, target/LOO encoding, drift detection |
+| 4 | ✅ Done | AI Auto ML training pipeline `/train` — 27 algorithms, Optuna tuning, eval charts, .joblib download |
+| 5 | ✅ Done | Model prediction `/predict` — saved-model picker, schema validation, PredictionResultCard |
+| 5.5 | ✅ Done | `/insights` + `/report` retired and replaced by focused `/eda` (technical) + `/biz-report` (strategy) sharing one DocumentReportCard renderer |
+| 5.6 | ✅ Done | UX polish: Stop button (AbortController), Reply pill (ChatGPT-style), Claude.ai chat markdown (.chat-md), Markdown-table → inline_table widget, parquet upload, smart chart decision (data-suitability gate) |
+| 5.7 | ✅ Done | Model picker refreshed (GPT-5 family + Opus 4.7 + Sonnet 4.6), default → `gpt-5.4-nano`, NO_TEMPERATURE_MODELS guard for reasoning models |
 
 ### What We Have Today
 
-**396 handlers across 7 categories:**
+**417 handlers across 7 categories** (see ml-datascience/api/handlers/ for the per-category breakdown — modular package layout, one handler per file).
 
-| Category | Count | Highlights |
-|----------|-------|------------|
-| Stats | 56 | Descriptive, hypothesis tests, correlation, distribution, chi2, ANOVA |
-| Clean | 54 | Null handling, dedup, normalize, anonymize, parse, trim |
-| Transform | 59 | Encoding (one-hot, ordinal, label), scaling, pivot, merge, date ops |
-| Viz | 57 | 57 Plotly chart types (bar, scatter, heatmap, sankey, candlestick, ...) |
-| Feature | 54 | PCA, SVD, WoE, binning, interaction, polynomial, cumulative |
-| NLP | 57 | Tokenize, sentiment, NER, translate, TF-IDF, n-gram, stopwords |
-| Analysis | 59 | Clustering, profiling, time series, Granger, market basket, lift |
-
-**4 slash commands:**
+**6 slash commands:**
 
 | Command | Purpose |
 |---------|---------|
 | `/cleaning` | AI Auto-Clean — analyze + plan + execute clean handlers |
 | `/ml-prepare` | AI Auto-Prepare — AI picks PrepConfig, 10-step pipeline, outputs X_train/X_test/y_train/y_test |
-| `/insights` | Technical insights — weaknesses, possible analyses, action plan |
-| `/report` | Business EDA — use cases, market analysis, promotion strategies |
+| `/train` | Auto ML training — 27 algorithms, CV, Optuna tune, eval charts, .joblib download |
+| `/predict` | Predict with a saved model — schema validate, batch prediction, PredictionResultCard |
+| `/eda` | Technical EDA narrator — distributions, correlations, outliers, ML readiness, analytical directions |
+| `/biz-report` | Business strategy narrator — context, segments, opportunities, risks, KPIs, 30/90/365-day roadmap |
 
 **Architecture:**
 - Two-stage AI routing (category router 150 tokens -> focused planner)
@@ -997,27 +995,27 @@ For long-running training jobs:
 
 ---
 
-## Complete Slash Command Reference (After Sprint 5)
+## Complete Slash Command Reference (After Sprint 5.7)
 
 | Command | Sprint | Purpose | Output |
 |---------|--------|---------|--------|
 | `/cleaning` | 2.7 ✅ | AI auto-clean dataset | Cleaned dataset + report |
 | `/ml-prepare` | 2.7 ✅ | Auto ML data preparation | X_train, X_test, y_train, y_test folder |
-| `/insights` | 2.95 ✅ | Technical analysis + weaknesses + action plan | InsightsReportCard |
-| `/report` | 2.95 ✅ | Business EDA + use cases + market analysis | DocumentReportCard |
-| `/train` | 4 🔲 | Auto ML model training + evaluation | TrainResultCard |
-| `/predict` | 5 🔲 | Predict with trained model on new data | PredictionResultCard |
+| `/train` | 4 ✅ | Auto ML model training + evaluation | TrainResultCard (.joblib download) |
+| `/predict` | 5 ✅ | Predict with a saved model on new data | PredictionResultCard |
+| `/eda` | 5.5 ✅ | Technical EDA narrator (replaces /insights+/report's technical role) | DocumentReportCard variant="eda" |
+| `/biz-report` | 5.5 ✅ | Business strategy narrator (replaces /report's business role) | DocumentReportCard variant="biz" |
 
-## End-to-End User Journey (After Sprint 5)
+## End-to-End User Journey (After Sprint 5.7)
 
 ```
-1. Upload dataset (drag & drop, 20+ formats)
+1. Upload dataset (drag & drop, 20+ formats including parquet/feather/arrow)
       ↓
-2. /insights → Understand data quality, weaknesses, what analyses are possible
+2. /eda → Technical EDA: distributions, correlations, outliers, ML readiness, analytical directions
       ↓
 3. /cleaning → AI auto-cleans the data (nulls, duplicates, types)
       ↓
-4. /report → Full business EDA report with charts and strategies
+4. /biz-report → Business strategy report: segments, opportunities, risks, KPIs, 30/90/365-day roadmap
       ↓
 5. /ml-prepare → Prepare train/test split with proper encoding/scaling
       ↓
@@ -1025,7 +1023,7 @@ For long-running training jobs:
       ↓
 7. Upload new dataset → /predict → Predictions in chat, export as CSV
       ↓
-8. "explain why row 5 is predicted as churn?" → SHAP waterfall + explanation
+8. "explain why row 5 is predicted as churn?" → SHAP waterfall + explanation (Sprint 5.x follow-up)
 ```
 
 ## Dependency Summary
