@@ -1,17 +1,51 @@
 # PrepPilot — System Architecture
 
-> Companion to `docs/system_architecture.svg` (the rendered image diagram).
-> This file holds the editable Mermaid source so the diagram can be regenerated.
+> Companion to `system_architecture_v2.{html,svg,png,pdf}` — the slide-ready
+> diagram reflecting Sprint 5.7 (May 2026). The older `system_architecture.svg`
+> snapshot is retained for historical reference.
 
 ---
 
-## Visual diagram
+## Slide-ready diagram (v2 · Sprint 5.7)
 
-![PrepPilot System Architecture](./system_architecture.svg)
+| File | Use case |
+|---|---|
+| `system_architecture_v2.html` | Open in browser for full interactive view. Cmd+P → save as PDF for an exact-fidelity slide export. |
+| `system_architecture_v2.png` | 1920×1080 raster · drop straight into Google Slides / Keynote / PowerPoint |
+| `system_architecture_v2.pdf` | Vector PDF · scales cleanly when zoomed on a projector |
+| `system_architecture_v2.svg` | Vector source · embed directly in markdown/HTML or edit in Figma/Illustrator |
 
-The SVG above mirrors the reference style: grouped boxes for **Services** (LLMs),
-**Web** (Next.js), **Backend** (FastAPI + agents), **Storage**, **CI/CD** and
-**Hosting**, with a 7-step user flow strip across the bottom.
+![PrepPilot System Architecture v2](./system_architecture_v2.png)
+
+The diagram is organized in five horizontal layers (User → Frontend → API Proxy
+→ Backend → Data + External LLM) with arrows showing the request-response flow.
+The right-side legend covers colour conventions and arrow styles. Layout is
+locked to 1920×1080 (16:9), suitable for slide ratios without cropping.
+
+### What the diagram captures
+
+- **Frontend** (`web-app`): ChatClient → ChatPanel (Send/Stop morph + Reply pill)
+  → ChatMessageItem (`.chat-md` styling + MD table widget) → DocumentReportCard
+  (variant-aware eda/biz) → PlotlyChart/DynamicTable. State managed by
+  `useChatPage` (replyContext, stopGeneration, AbortController per turn).
+- **API proxy** (Next.js routes): thin auth-gated forwarders to FastAPI.
+  Routes: `/api/chat`, `/api/eda`, `/api/biz-report`, `/api/auto-clean`,
+  `/api/auto-prepare`, `/api/train`, `/api/predict`, `/api/parse-file`,
+  `/api/datasets`, `/api/models`. NextAuth v5 session guard.
+- **Backend** (`ml-datascience`, FastAPI):
+  - **DS-Agent** for free-form chat: Router → Planner (data-suitability gate)
+    → Executor (handler.id → codegen fallback) → Interpreter (Markdown rules).
+  - **Slash command agents**: `/cleaning`, `/ml-prepare`, `/train`, `/predict`,
+    `/eda`, `/biz-report` — each bypasses the DS-Agent and runs its own
+    purpose-built pipeline.
+  - **417 handlers** across 7 categories (stats / clean / transform / viz /
+    feature / nlp / analysis). Sandboxed Python exec with `_figure_has_data`
+    guard that drops empty Plotly figures.
+- **Data**: SQLite (dev) / MongoDB (prod) via Prisma ORM; object store for
+  `.joblib` model artifacts (Sprint 8 → S3/GCS).
+- **External LLM** (`api/llm.py`): cached factory with `NO_TEMPERATURE_MODELS`
+  guard. Picker exposes Anthropic Opus 4-7 / Sonnet 4-6 / Haiku 4-5 and OpenAI
+  GPT-5 / GPT-5 mini / GPT-5.4 nano (default) / GPT-4o / GPT-4o mini.
 
 ---
 

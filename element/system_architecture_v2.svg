@@ -1,0 +1,353 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot system architecture">
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,8 L10,4 z" fill="#9B9B9B"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,8 L10,4 z" fill="#E8500A"/>
+    </marker>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8500A"/>
+      <stop offset="100%" stop-color="#FF6B2B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Page background ── -->
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- ── Title ── -->
+  <rect x="0" y="0" width="6" height="120" fill="url(#titleAccent)"/>
+  <text x="60" y="62" font-size="36" font-weight="700" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — System Architecture</text>
+  <text x="60" y="94" font-size="15" font-weight="500" fill="#6B6B6B">AI-powered data science chat platform · Next.js 16 + FastAPI · Sprint 5.7 (2026-05-18)</text>
+  <text x="1860" y="62" font-size="13" font-weight="500" fill="#6B6B6B" text-anchor="end">github.com/deepcoding-agent · branch: feat/layout</text>
+  <text x="1860" y="84" font-size="11" fill="#9B9B9B" text-anchor="end">417 handlers · 6 slash commands · 8 LLMs · 20+ file formats</text>
+  <text x="1860" y="100" font-size="11" fill="#9B9B9B" text-anchor="end">Multi-tenant chat · sandboxed Python · stop/reply UX</text>
+
+  <line x1="40" y1="130" x2="1880" y2="130" stroke="#E5E4E1" stroke-width="1"/>
+
+  <!-- ╔═════════════════════════════════════════════════════════════════════════════╗
+       ║  LAYER 1 — USER                                                              ║
+       ╚═════════════════════════════════════════════════════════════════════════════╝ -->
+  <g transform="translate(0, 150)">
+    <text x="60" y="34" font-size="12" font-weight="700" fill="#9B9B9B" letter-spacing="2">USER</text>
+    <line x1="60" y1="44" x2="240" y2="44" stroke="#E5E4E1" stroke-width="1"/>
+
+    <g transform="translate(840, 14)">
+      <rect width="240" height="62" rx="14" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5" filter="url(#shadow)"/>
+      <text x="22" y="28" font-size="14" font-weight="600" fill="#2563EB">👤  End User</text>
+      <text x="22" y="48" font-size="11" fill="#6B6B6B">Browser · upload, chat, view</text>
+    </g>
+  </g>
+
+  <!-- Arrow user → frontend -->
+  <line x1="960" y1="226" x2="960" y2="248" stroke="#9B9B9B" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ╔═════════════════════════════════════════════════════════════════════════════╗
+       ║  LAYER 2 — FRONTEND (web-app)                                                ║
+       ╚═════════════════════════════════════════════════════════════════════════════╝ -->
+  <g transform="translate(0, 258)">
+    <!-- Layer band background -->
+    <rect x="40" y="0" width="1840" height="160" rx="16" fill="#FFFAF7" stroke="#FCE0D2" stroke-width="1"/>
+
+    <text x="60" y="28" font-size="13" font-weight="700" fill="#E8500A" letter-spacing="2">FRONTEND ·  Next.js 16 + TypeScript · Vercel</text>
+    <text x="60" y="48" font-size="11" font-weight="500" fill="#9B9B9B">web-app · React 19 · Tailwind v4 · NextAuth v5 · Prisma · react-markdown + remark-gfm</text>
+
+    <!-- Components row 1: chat surface -->
+    <g transform="translate(60, 64)">
+      <rect width="220" height="80" rx="10" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="16" y="24" font-size="13" font-weight="600" fill="#0A0A0A">ChatClient</text>
+      <text x="16" y="44" font-size="10" fill="#6B6B6B">Main UI · routing · split / chat-only</text>
+      <text x="16" y="60" font-size="10" fill="#6B6B6B">max-w-[920px] for prose readability</text>
+      <text x="16" y="74" font-size="9" font-family="JetBrains Mono" fill="#E8500A">app/chatpage/ChatClient.tsx</text>
+    </g>
+
+    <g transform="translate(296, 64)">
+      <rect width="220" height="80" rx="10" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="16" y="24" font-size="13" font-weight="600" fill="#0A0A0A">ChatPanel</text>
+      <text x="16" y="44" font-size="10" fill="#6B6B6B">Input · Send / Stop morph button</text>
+      <text x="16" y="60" font-size="10" fill="#6B6B6B">Reply pill (ChatGPT-style)</text>
+      <text x="16" y="74" font-size="9" font-family="JetBrains Mono" fill="#E8500A">components/ChatPanel.tsx</text>
+    </g>
+
+    <g transform="translate(532, 64)">
+      <rect width="220" height="80" rx="10" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="16" y="24" font-size="13" font-weight="600" fill="#0A0A0A">ChatMessageItem</text>
+      <text x="16" y="44" font-size="10" fill="#6B6B6B">Markdown · .chat-md styling</text>
+      <text x="16" y="60" font-size="10" fill="#6B6B6B">MD tables → inline_table widget</text>
+      <text x="16" y="74" font-size="9" font-family="JetBrains Mono" fill="#E8500A">components/ChatMessageItem.tsx</text>
+    </g>
+
+    <g transform="translate(768, 64)">
+      <rect width="220" height="80" rx="10" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="16" y="24" font-size="13" font-weight="600" fill="#0A0A0A">DocumentReportCard</text>
+      <text x="16" y="44" font-size="10" fill="#6B6B6B">Variant-aware (eda / biz)</text>
+      <text x="16" y="60" font-size="10" fill="#6B6B6B">Export MD / HTML / PDF</text>
+      <text x="16" y="74" font-size="9" font-family="JetBrains Mono" fill="#E8500A">components/DocumentReportCard.tsx</text>
+    </g>
+
+    <g transform="translate(1004, 64)">
+      <rect width="220" height="80" rx="10" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="16" y="24" font-size="13" font-weight="600" fill="#0A0A0A">PlotlyChart · DynamicTable</text>
+      <text x="16" y="44" font-size="10" fill="#6B6B6B">Interactive viz · paginated tables</text>
+      <text x="16" y="60" font-size="10" fill="#6B6B6B">PrepFolderCard · TrainResultCard</text>
+      <text x="16" y="74" font-size="9" font-family="JetBrains Mono" fill="#E8500A">components/*</text>
+    </g>
+
+    <g transform="translate(1240, 64)">
+      <rect width="220" height="80" rx="10" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="16" y="24" font-size="13" font-weight="600" fill="#0A0A0A">useChatPage hook</text>
+      <text x="16" y="44" font-size="10" fill="#6B6B6B">replyContext · stopGeneration</text>
+      <text x="16" y="60" font-size="10" fill="#6B6B6B">AbortController per turn</text>
+      <text x="16" y="74" font-size="9" font-family="JetBrains Mono" fill="#E8500A">hooks/useChatPage.ts</text>
+    </g>
+
+    <g transform="translate(1476, 64)">
+      <rect width="344" height="80" rx="10" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="16" y="24" font-size="13" font-weight="600" fill="#0A0A0A">apiClient + NextAuth v5</text>
+      <text x="16" y="44" font-size="10" fill="#6B6B6B">Typed fetch wrappers · session cookie · PrismaAdapter</text>
+      <text x="16" y="60" font-size="10" fill="#6B6B6B">setActiveAbortSignal() threads cancellation into POST/PATCH</text>
+      <text x="16" y="74" font-size="9" font-family="JetBrains Mono" fill="#E8500A">lib/apiClient.ts · auth.ts</text>
+    </g>
+  </g>
+
+  <!-- Arrow frontend → API proxy -->
+  <line x1="960" y1="420" x2="960" y2="448" stroke="#9B9B9B" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="975" y="436" font-size="10" fill="#6B6B6B" font-style="italic">fetch · POST /api/*</text>
+
+  <!-- ╔═════════════════════════════════════════════════════════════════════════════╗
+       ║  LAYER 3 — API PROXY (Next.js routes)                                        ║
+       ╚═════════════════════════════════════════════════════════════════════════════╝ -->
+  <g transform="translate(0, 458)">
+    <rect x="40" y="0" width="1840" height="110" rx="16" fill="#FAF5FF" stroke="#E9D5FF" stroke-width="1"/>
+    <text x="60" y="28" font-size="13" font-weight="700" fill="#7C3AED" letter-spacing="2">API PROXY ·  Next.js Edge / Node Functions</text>
+    <text x="60" y="48" font-size="11" fill="#9B9B9B">Thin proxies: auth-gate the request, fetch DB rows if needed, forward to FastAPI. Zero ML/data logic in TS.</text>
+
+    <g transform="translate(60, 60)">
+      <rect width="178" height="40" rx="8" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED" font-family="JetBrains Mono">/api/chat</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">conversation msg send/load</text>
+    </g>
+    <g transform="translate(254, 60)">
+      <rect width="178" height="40" rx="8" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED" font-family="JetBrains Mono">/api/eda</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">/eda slash command</text>
+    </g>
+    <g transform="translate(448, 60)">
+      <rect width="178" height="40" rx="8" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED" font-family="JetBrains Mono">/api/biz-report</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">/biz-report slash command</text>
+    </g>
+    <g transform="translate(642, 60)">
+      <rect width="178" height="40" rx="8" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED" font-family="JetBrains Mono">/api/auto-clean · auto-prepare</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">/cleaning · /ml-prepare</text>
+    </g>
+    <g transform="translate(836, 60)">
+      <rect width="178" height="40" rx="8" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED" font-family="JetBrains Mono">/api/train · predict</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">AutoML + saved-model predict</text>
+    </g>
+    <g transform="translate(1030, 60)">
+      <rect width="178" height="40" rx="8" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED" font-family="JetBrains Mono">/api/parse-file</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">parquet/feather/arrow</text>
+    </g>
+    <g transform="translate(1224, 60)">
+      <rect width="178" height="40" rx="8" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED" font-family="JetBrains Mono">/api/datasets · models</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">CRUD via Prisma</text>
+    </g>
+    <g transform="translate(1418, 60)">
+      <rect width="402" height="40" rx="8" fill="#F3E8FF" stroke="#E9D5FF" stroke-width="1.2"/>
+      <text x="14" y="18" font-size="11" font-weight="600" fill="#7C3AED">Auth guard (NextAuth v5 session)</text>
+      <text x="14" y="34" font-size="9" fill="#6B6B6B">Google OAuth · Prisma session store · session in cookie</text>
+    </g>
+  </g>
+
+  <!-- Arrow proxy → backend -->
+  <line x1="960" y1="568" x2="960" y2="596" stroke="#9B9B9B" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="975" y="584" font-size="10" fill="#6B6B6B" font-style="italic">HTTP · forwarded payload</text>
+
+  <!-- ╔═════════════════════════════════════════════════════════════════════════════╗
+       ║  LAYER 4 — BACKEND (FastAPI)                                                 ║
+       ╚═════════════════════════════════════════════════════════════════════════════╝ -->
+  <g transform="translate(0, 606)">
+    <rect x="40" y="0" width="1840" height="284" rx="16" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
+    <text x="60" y="28" font-size="13" font-weight="700" fill="#059669" letter-spacing="2">BACKEND ·  FastAPI (Python 3.13) · Render / Fly</text>
+    <text x="60" y="48" font-size="11" fill="#9B9B9B">ml-datascience · pandas · sklearn · plotly · pyarrow · langchain · 417 handlers across 7 categories</text>
+
+    <!-- Sub-region: DS-Agent flow (left) -->
+    <g transform="translate(60, 64)">
+      <rect width="690" height="206" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="20" y="24" font-size="12" font-weight="700" fill="#059669" letter-spacing="1">DS-AGENT  ·  free-form chat orchestrator</text>
+
+      <!-- Pipeline boxes inside -->
+      <g transform="translate(20, 44)">
+        <rect width="155" height="50" rx="8" fill="#ECFDF5" stroke="#BBF7D0"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">① Router</text>
+        <text x="12" y="36" font-size="9" fill="#6B6B6B">7 categories · 150 tok</text>
+      </g>
+      <g transform="translate(185, 44)">
+        <rect width="155" height="50" rx="8" fill="#ECFDF5" stroke="#BBF7D0"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">② Planner</text>
+        <text x="12" y="36" font-size="9" fill="#6B6B6B">focused · suitability gate</text>
+      </g>
+      <g transform="translate(350, 44)">
+        <rect width="155" height="50" rx="8" fill="#ECFDF5" stroke="#BBF7D0"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">③ Executor</text>
+        <text x="12" y="36" font-size="9" fill="#6B6B6B">handler.id → codegen fallback</text>
+      </g>
+      <g transform="translate(515, 44)">
+        <rect width="155" height="50" rx="8" fill="#ECFDF5" stroke="#BBF7D0"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">④ Interpreter</text>
+        <text x="12" y="36" font-size="9" fill="#6B6B6B">Markdown · format rules</text>
+      </g>
+      <!-- pipeline arrows -->
+      <line x1="195" y1="69" x2="205" y2="69" stroke="#9B9B9B" stroke-width="1.4" marker-end="url(#arrow)"/>
+      <line x1="360" y1="69" x2="370" y2="69" stroke="#9B9B9B" stroke-width="1.4" marker-end="url(#arrow)"/>
+      <line x1="525" y1="69" x2="535" y2="69" stroke="#9B9B9B" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+      <!-- Sub-row: handlers + sandbox -->
+      <g transform="translate(20, 110)">
+        <rect width="320" height="86" rx="8" fill="#FAFAFA" stroke="#E5E4E1"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">Handlers · 417 across 7 categories</text>
+        <text x="12" y="38" font-size="9" fill="#6B6B6B">stats 56 · clean 60 · transform 64 · viz 56</text>
+        <text x="12" y="52" font-size="9" fill="#6B6B6B">feature 63 · nlp 56 · analysis 62</text>
+        <text x="12" y="72" font-size="9" font-family="JetBrains Mono" fill="#059669">api/handlers/{stats,clean,transform,…}/</text>
+      </g>
+      <g transform="translate(350, 110)">
+        <rect width="320" height="86" rx="8" fill="#FAFAFA" stroke="#E5E4E1"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">Sandbox  ·  restricted exec()</text>
+        <text x="12" y="38" font-size="9" fill="#6B6B6B">pandas / sklearn / plotly / seaborn / missingno</text>
+        <text x="12" y="52" font-size="9" fill="#6B6B6B">_figure_has_data() drops empty Plotly</text>
+        <text x="12" y="72" font-size="9" font-family="JetBrains Mono" fill="#059669">api/sandbox.py · 30s timeout</text>
+      </g>
+    </g>
+
+    <!-- Sub-region: Slash command agents (right) -->
+    <g transform="translate(770, 64)">
+      <rect width="630" height="206" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="20" y="24" font-size="12" font-weight="700" fill="#059669" letter-spacing="1">SLASH COMMAND AGENTS  ·  bypass DS-Agent</text>
+
+      <g transform="translate(20, 44)">
+        <rect width="186" height="50" rx="8" fill="#ECFDF5" stroke="#BBF7D0"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">/cleaning · /ml-prepare</text>
+        <text x="12" y="36" font-size="9" fill="#6B6B6B">auto_cleaner · auto_prepare</text>
+      </g>
+      <g transform="translate(216, 44)">
+        <rect width="186" height="50" rx="8" fill="#ECFDF5" stroke="#BBF7D0"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">/train · /predict</text>
+        <text x="12" y="36" font-size="9" fill="#6B6B6B">27 algos · Optuna · .joblib</text>
+      </g>
+      <g transform="translate(412, 44)">
+        <rect width="198" height="50" rx="8" fill="#ECFDF5" stroke="#BBF7D0"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">/eda · /biz-report</text>
+        <text x="12" y="36" font-size="9" fill="#6B6B6B">DocumentReportCard variants</text>
+      </g>
+
+      <!-- LLM wrapper -->
+      <g transform="translate(20, 110)">
+        <rect width="590" height="86" rx="8" fill="#FAFAFA" stroke="#E5E4E1"/>
+        <text x="12" y="20" font-size="11" font-weight="600" fill="#0A0A0A">api/llm.py  ·  multi-provider factory + cache</text>
+        <text x="12" y="38" font-size="9" fill="#6B6B6B">get_llm(model_id, temperature, max_tokens) · lru_cache · history truncation</text>
+        <text x="12" y="52" font-size="9" fill="#6B6B6B">NO_TEMPERATURE_MODELS guard: omits temp for GPT-5 family + Opus 4-6/4-7 + Sonnet 4-6</text>
+        <text x="12" y="72" font-size="9" font-family="JetBrains Mono" fill="#059669">api/llm.py · api/routes/models.py (picker list)</text>
+      </g>
+    </g>
+
+    <!-- Right column: routes index -->
+    <g transform="translate(1420, 64)">
+      <rect width="400" height="206" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#shadow)"/>
+      <text x="20" y="24" font-size="12" font-weight="700" fill="#059669" letter-spacing="1">FASTAPI ROUTERS</text>
+      <text x="20" y="46" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">POST /chat        DS-Agent main</text>
+      <text x="20" y="62" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">POST /eda         /biz-report</text>
+      <text x="20" y="78" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">POST /auto-clean  /auto-prepare</text>
+      <text x="20" y="94" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">POST /train       /predict</text>
+      <text x="20" y="110" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">POST /parse-file  (pyarrow)</text>
+      <text x="20" y="126" font-size="10" font-family="JetBrains Mono" fill="#6B6B6B">GET  /models      /train/progress</text>
+
+      <text x="20" y="156" font-size="11" font-weight="600" fill="#059669">UX integrations</text>
+      <text x="20" y="172" font-size="9" fill="#6B6B6B">• Markdown response format rules</text>
+      <text x="20" y="186" font-size="9" fill="#6B6B6B">• Empty-figure drop guard (sandbox)</text>
+    </g>
+  </g>
+
+  <!-- Arrow backend → LLM (right side) -->
+  <line x1="1420" y1="780" x2="1500" y2="970" stroke="#E8500A" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+  <!-- Arrow backend → DB (left side) -->
+  <line x1="500" y1="884" x2="500" y2="940" stroke="#9B9B9B" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ╔═════════════════════════════════════════════════════════════════════════════╗
+       ║  LAYER 5 — DATA (left) + EXTERNAL LLM (right)                                ║
+       ╚═════════════════════════════════════════════════════════════════════════════╝ -->
+  <g transform="translate(0, 920)">
+    <!-- DATA -->
+    <rect x="40" y="0" width="900" height="120" rx="16" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+    <text x="60" y="28" font-size="13" font-weight="700" fill="#B45309" letter-spacing="2">DATA  ·  Persistence + Object Store</text>
+
+    <g transform="translate(60, 46)">
+      <rect width="266" height="62" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2"/>
+      <text x="14" y="22" font-size="12" font-weight="600" fill="#0A0A0A">SQLite dev / MongoDB prod</text>
+      <text x="14" y="40" font-size="10" fill="#6B6B6B">Users · Sessions · Conversations</text>
+      <text x="14" y="54" font-size="10" fill="#6B6B6B">Datasets · activeDatasetId</text>
+    </g>
+    <g transform="translate(338, 46)">
+      <rect width="266" height="62" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2"/>
+      <text x="14" y="22" font-size="12" font-weight="600" fill="#0A0A0A">Prisma ORM</text>
+      <text x="14" y="40" font-size="10" fill="#6B6B6B">schema.prisma · CRUD via NextAuth</text>
+      <text x="14" y="54" font-size="10" fill="#6B6B6B">chat-local datasets linked to convs</text>
+    </g>
+    <g transform="translate(616, 46)">
+      <rect width="266" height="62" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2"/>
+      <text x="14" y="22" font-size="12" font-weight="600" fill="#0A0A0A">Object store (Sprint 8)</text>
+      <text x="14" y="40" font-size="10" fill="#6B6B6B">.joblib model files · datasets</text>
+      <text x="14" y="54" font-size="10" fill="#6B6B6B">dev: local fs · prod: S3 / GCS</text>
+    </g>
+
+    <!-- EXTERNAL LLM -->
+    <rect x="960" y="0" width="920" height="120" rx="16" fill="#FDF2F8" stroke="#FBCFE8" stroke-width="1"/>
+    <text x="980" y="28" font-size="13" font-weight="700" fill="#BE185D" letter-spacing="2">EXTERNAL LLM  ·  via langchain · cached factory</text>
+
+    <g transform="translate(980, 46)">
+      <rect width="436" height="62" rx="10" fill="#FFFFFF" stroke="#FBCFE8" stroke-width="1.2"/>
+      <text x="14" y="22" font-size="12" font-weight="600" fill="#0A0A0A">Anthropic Claude</text>
+      <text x="14" y="40" font-size="10" fill="#6B6B6B">Opus 4-7 (Powerful) · Sonnet 4-6 (Smart) · Haiku 4-5 (Fast)</text>
+      <text x="14" y="54" font-size="10" fill="#6B6B6B">4-5 family kept in whitelist for backward compat</text>
+    </g>
+    <g transform="translate(1428, 46)">
+      <rect width="436" height="62" rx="10" fill="#FFFFFF" stroke="#FBCFE8" stroke-width="1.2"/>
+      <text x="14" y="22" font-size="12" font-weight="600" fill="#0A0A0A">OpenAI GPT</text>
+      <text x="14" y="40" font-size="10" fill="#6B6B6B">GPT-5 (Powerful) · GPT-5 mini (Smart) · GPT-5.4 nano (default)</text>
+      <text x="14" y="54" font-size="10" fill="#6B6B6B">GPT-4o · GPT-4o mini also available</text>
+    </g>
+  </g>
+
+  <!-- ── Legend / footer ── -->
+  <g transform="translate(40, 1052)">
+    <text x="0" y="0" font-size="10" font-weight="600" fill="#6B6B6B" letter-spacing="1">LEGEND</text>
+    <rect x="62" y="-9" width="12" height="12" rx="3" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="80" y="0" font-size="10" fill="#6B6B6B">User</text>
+    <rect x="122" y="-9" width="12" height="12" rx="3" fill="#FFFAF7" stroke="#FCE0D2"/>
+    <text x="140" y="0" font-size="10" fill="#6B6B6B">Frontend</text>
+    <rect x="200" y="-9" width="12" height="12" rx="3" fill="#FAF5FF" stroke="#E9D5FF"/>
+    <text x="218" y="0" font-size="10" fill="#6B6B6B">API proxy / Auth</text>
+    <rect x="316" y="-9" width="12" height="12" rx="3" fill="#F0FDF4" stroke="#BBF7D0"/>
+    <text x="334" y="0" font-size="10" fill="#6B6B6B">Backend (FastAPI)</text>
+    <rect x="450" y="-9" width="12" height="12" rx="3" fill="#FFFBEB" stroke="#FDE68A"/>
+    <text x="468" y="0" font-size="10" fill="#6B6B6B">Data / Storage</text>
+    <rect x="568" y="-9" width="12" height="12" rx="3" fill="#FDF2F8" stroke="#FBCFE8"/>
+    <text x="586" y="0" font-size="10" fill="#6B6B6B">External LLM</text>
+
+    <line x1="700" y1="-3" x2="720" y2="-3" stroke="#9B9B9B" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="730" y="0" font-size="10" fill="#6B6B6B">Internal HTTP / function call</text>
+    <line x1="880" y1="-3" x2="900" y2="-3" stroke="#E8500A" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+    <text x="910" y="0" font-size="10" fill="#6B6B6B">External LLM call</text>
+
+    <text x="1860" y="0" font-size="10" fill="#9B9B9B" text-anchor="end" font-style="italic">© PrepPilot · senior project · drawn 2026-05-18</text>
+  </g>
+
+</svg>
