@@ -1,203 +1,246 @@
-<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="PrepPilot tech stack with logos">
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot tech stack with logos">
 
   <defs>
     <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#E8500A"/>
       <stop offset="100%" stop-color="#FF6B2B"/>
     </linearGradient>
-    <!-- Reusable card style: dashed orange border, soft shadow, white fill -->
-    <symbol id="card-bg">
-      <rect rx="20" ry="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
-    </symbol>
   </defs>
 
   <rect width="1920" height="1080" fill="#FFFFFF"/>
 
   <!-- Title -->
-  <rect x="0" y="0" width="6" height="110" fill="url(#titleAccent)"/>
-  <text x="60" y="58" font-size="34" font-weight="700" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — Technology Stack</text>
-  <text x="60" y="86" font-size="14" font-weight="500" fill="#6B6B6B">Senior project · Next.js 16 · FastAPI · 8 LLM models · Sprint 5.7 (2026-05-18)</text>
-  <text x="1860" y="58" font-size="13" font-weight="500" fill="#6B6B6B" text-anchor="end">github.com/deepcoding-agent</text>
-  <text x="1860" y="80" font-size="11" fill="#9B9B9B" text-anchor="end">All logos © their respective owners · brand-color from simpleicons.org</text>
-
-  <line x1="40" y1="120" x2="1880" y2="120" stroke="#E5E4E1" stroke-width="1"/>
+  <rect x="0" y="0" width="6" height="100" fill="url(#titleAccent)"/>
+  <text x="60" y="50" font-size="32" font-weight="700" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — Technology Stack</text>
+  <text x="60" y="76" font-size="14" font-weight="500" fill="#6B6B6B">Senior project · 33 libraries across 6 layers · Sprint 5.7 (2026-05-18)</text>
+  <text x="1860" y="50" font-size="13" font-weight="500" fill="#6B6B6B" text-anchor="end">github.com/deepcoding-agent</text>
+  <text x="1860" y="72" font-size="11" fill="#9B9B9B" text-anchor="end">Logos via simpleicons.org (CC0) · OpenAI/SheetJS/seaborn/xgboost as wordmark</text>
+  <line x1="40" y1="110" x2="1880" y2="110" stroke="#E5E4E1" stroke-width="1"/>
 
   <!-- ╔════════════════════════════════════════════════════════════════════════════╗
-       ║ FRONTEND  (full-width, top row)                                             ║
+       ║ FRONTEND  (full-width, 9 items)                                             ║
        ╚════════════════════════════════════════════════════════════════════════════╝ -->
-  <g transform="translate(40, 140)">
-    <rect width="1840" height="170" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
-    <!-- Label badge sitting on top edge -->
+  <g transform="translate(40, 128)">
+    <rect width="1840" height="160" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
     <rect x="850" y="-16" width="140" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
     <text x="920" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">Frontend</text>
 
-    <!-- 7 logos evenly spaced -->
-    <g transform="translate(120, 38)">
-      <image href="https://cdn.simpleicons.org/nextdotjs/000000" width="64" height="64" x="0" y="0"/>
-      <text x="32" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Next.js 16</text>
-      <text x="32" y="108" font-size="10" fill="#6B6B6B" text-anchor="middle">App Router</text>
+    <g transform="translate(80, 30)">
+      <image href="https://cdn.simpleicons.org/nextdotjs/000000" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Next.js 16</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">App Router</text>
     </g>
-    <g transform="translate(360, 38)">
-      <image href="https://cdn.simpleicons.org/react/61DAFB" width="64" height="64" x="0" y="0"/>
-      <text x="32" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">React 19</text>
-      <text x="32" y="108" font-size="10" fill="#6B6B6B" text-anchor="middle">Server + Client</text>
+    <g transform="translate(280, 30)">
+      <image href="https://cdn.simpleicons.org/react/61DAFB" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">React 19</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">RSC + Client</text>
     </g>
-    <g transform="translate(600, 38)">
-      <image href="https://cdn.simpleicons.org/typescript/3178C6" width="64" height="64" x="0" y="0"/>
-      <text x="32" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">TypeScript 5</text>
-      <text x="32" y="108" font-size="10" fill="#6B6B6B" text-anchor="middle">strict mode</text>
+    <g transform="translate(480, 30)">
+      <image href="https://cdn.simpleicons.org/typescript/3178C6" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">TypeScript 5</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">strict mode</text>
     </g>
-    <g transform="translate(840, 38)">
-      <image href="https://cdn.simpleicons.org/tailwindcss/06B6D4" width="64" height="64" x="0" y="0"/>
-      <text x="32" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Tailwind v4</text>
-      <text x="32" y="108" font-size="10" fill="#6B6B6B" text-anchor="middle">+ typography</text>
+    <g transform="translate(680, 30)">
+      <image href="https://cdn.simpleicons.org/tailwindcss/06B6D4" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Tailwind v4</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">+ typography</text>
     </g>
-    <g transform="translate(1080, 38)">
-      <image href="https://cdn.simpleicons.org/prisma/2D3748" width="64" height="64" x="0" y="0"/>
-      <text x="32" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Prisma 6</text>
-      <text x="32" y="108" font-size="10" fill="#6B6B6B" text-anchor="middle">+ NextAuth v5</text>
+    <g transform="translate(880, 30)">
+      <image href="https://cdn.simpleicons.org/prisma/2D3748" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Prisma 6</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">ORM client</text>
     </g>
-    <g transform="translate(1320, 38)">
-      <image href="https://cdn.simpleicons.org/mui/007FFF" width="64" height="64" x="0" y="0"/>
-      <text x="32" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">MUI Icons</text>
-      <text x="32" y="108" font-size="10" fill="#6B6B6B" text-anchor="middle">outlined set</text>
+    <g transform="translate(1080, 36)">
+      <rect width="80" height="44" rx="8" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5"/>
+      <text x="40" y="20" font-size="10" font-weight="700" fill="#E8500A" text-anchor="middle">Auth.js</text>
+      <text x="40" y="36" font-size="9" fill="#6B6B6B" text-anchor="middle">NextAuth v5</text>
+      <text x="40" y="72" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">NextAuth</text>
+      <text x="40" y="88" font-size="9" fill="#6B6B6B" text-anchor="middle">Google OAuth</text>
     </g>
-    <g transform="translate(1560, 38)">
-      <image href="https://cdn.simpleicons.org/plotly/3F4F75" width="64" height="64" x="0" y="0"/>
-      <text x="32" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Plotly</text>
-      <text x="32" y="108" font-size="10" fill="#6B6B6B" text-anchor="middle">react-plotly.js</text>
+    <g transform="translate(1280, 30)">
+      <image href="https://cdn.simpleicons.org/markdown/000000" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">react-markdown</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">+ remark-gfm</text>
+    </g>
+    <g transform="translate(1500, 30)">
+      <image href="https://cdn.simpleicons.org/mui/007FFF" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">MUI Icons</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">outlined</text>
+    </g>
+    <g transform="translate(1700, 30)">
+      <image href="https://cdn.simpleicons.org/plotly/3F4F75" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Plotly</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">react-plotly.js</text>
     </g>
   </g>
 
   <!-- ╔════════════════════════════════════════════════════════════════════════════╗
-       ║ ROW 2:  AI / LLM (left, narrow)  |  Data Persistence (right, wider)        ║
+       ║ ROW 2:  AI / LLM (narrow)  |  Data + Storage (wider)                        ║
        ╚════════════════════════════════════════════════════════════════════════════╝ -->
 
   <!-- AI / LLM -->
-  <g transform="translate(40, 340)">
-    <rect width="580" height="200" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
-    <rect x="230" y="-16" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
-    <text x="290" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">AI / LLM</text>
+  <g transform="translate(40, 318)">
+    <rect width="560" height="190" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
+    <rect x="220" y="-16" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
+    <text x="280" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">AI / LLM</text>
 
-    <!-- OpenAI: simpleicons removed the slug (brand policy). Wordmark instead. -->
-    <g transform="translate(50, 56)">
-      <rect width="120" height="60" rx="10" fill="#0A0A0A"/>
-      <text x="60" y="40" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">OpenAI</text>
-      <text x="60" y="92" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">GPT-5 family</text>
-      <text x="60" y="110" font-size="10" fill="#E8500A" text-anchor="middle" font-weight="600">GPT-5.4 nano ★ default</text>
-      <text x="60" y="126" font-size="9" fill="#6B6B6B" text-anchor="middle">+ mini · + 4o · + 4o-mini</text>
+    <g transform="translate(30, 44)">
+      <rect width="120" height="58" rx="10" fill="#0A0A0A"/>
+      <text x="60" y="38" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">OpenAI</text>
+      <text x="60" y="90" font-size="13" font-weight="600" fill="#0A0A0A" text-anchor="middle">GPT-5 family</text>
+      <text x="60" y="106" font-size="10" fill="#E8500A" text-anchor="middle" font-weight="600">GPT-5.4 nano ★</text>
+      <text x="60" y="122" font-size="9" fill="#6B6B6B" text-anchor="middle">+ mini · 4o · 4o-mini</text>
     </g>
-
-    <!-- Anthropic: simpleicons has the logo, use it properly -->
-    <g transform="translate(220, 48)">
-      <image href="https://cdn.simpleicons.org/anthropic/191919" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Anthropic</text>
-      <text x="34" y="114" font-size="10" fill="#E8500A" text-anchor="middle" font-weight="600">Claude family</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">Opus 4.7 · Sonnet 4.6 · Haiku 4.5</text>
+    <g transform="translate(200, 44)">
+      <image href="https://cdn.simpleicons.org/anthropic/191919" width="64" height="64" x="0" y="0"/>
+      <text x="32" y="90" font-size="13" font-weight="600" fill="#0A0A0A" text-anchor="middle">Anthropic</text>
+      <text x="32" y="106" font-size="10" fill="#E8500A" text-anchor="middle" font-weight="600">Claude family</text>
+      <text x="32" y="122" font-size="9" fill="#6B6B6B" text-anchor="middle">Opus 4.7 · Sonnet 4.6</text>
     </g>
-
-    <g transform="translate(420, 48)">
-      <image href="https://cdn.simpleicons.org/langchain/1C3C3C" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">LangChain</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">cached factory</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">+history truncate</text>
+    <g transform="translate(380, 44)">
+      <image href="https://cdn.simpleicons.org/langchain/1C3C3C" width="64" height="64" x="0" y="0"/>
+      <text x="32" y="90" font-size="13" font-weight="600" fill="#0A0A0A" text-anchor="middle">LangChain</text>
+      <text x="32" y="106" font-size="10" fill="#6B6B6B" text-anchor="middle">multi-provider</text>
+      <text x="32" y="122" font-size="9" fill="#6B6B6B" text-anchor="middle">cached factory</text>
     </g>
   </g>
 
-  <!-- Data Persistence -->
-  <g transform="translate(640, 340)">
-    <rect width="1240" height="200" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
-    <rect x="540" y="-16" width="160" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
-    <text x="620" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">Data · Persistence</text>
+  <!-- Data + Storage -->
+  <g transform="translate(620, 318)">
+    <rect width="1260" height="190" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
+    <rect x="540" y="-16" width="180" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
+    <text x="630" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">Data · I/O · Storage</text>
 
-    <g transform="translate(80, 48)">
-      <image href="https://cdn.simpleicons.org/mongodb/47A248" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">MongoDB</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">prod · Atlas</text>
+    <g transform="translate(40, 44)">
+      <image href="https://cdn.simpleicons.org/mongodb/47A248" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">MongoDB</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">prod · Atlas</text>
     </g>
-    <g transform="translate(280, 48)">
-      <image href="https://cdn.simpleicons.org/sqlite/003B57" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">SQLite</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">dev · file</text>
+    <g transform="translate(200, 44)">
+      <image href="https://cdn.simpleicons.org/sqlite/003B57" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">SQLite</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">dev · file</text>
     </g>
-    <g transform="translate(480, 48)">
-      <image href="https://cdn.simpleicons.org/prisma/2D3748" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Prisma ORM</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">multi-provider</text>
+    <g transform="translate(360, 44)">
+      <image href="https://cdn.simpleicons.org/pandas/150458" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">pandas 2.3</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">DataFrame</text>
     </g>
-    <g transform="translate(680, 48)">
-      <image href="https://cdn.simpleicons.org/pandas/150458" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">pandas</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">+ NumPy</text>
+    <g transform="translate(520, 44)">
+      <image href="https://cdn.simpleicons.org/numpy/013243" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">NumPy 2.4</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">numeric kernel</text>
     </g>
-    <g transform="translate(880, 48)">
-      <image href="https://cdn.simpleicons.org/apachearrow/E10098" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">pyarrow 22</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">parquet/feather</text>
+    <g transform="translate(680, 44)">
+      <image href="https://cdn.simpleicons.org/apachearrow/E10098" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">pyarrow 22</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">parquet/feather</text>
     </g>
-    <g transform="translate(1080, 56)">
-      <rect width="140" height="52" rx="8" fill="#FEF3C7" stroke="#FDE68A"/>
-      <text x="70" y="22" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">S3 / GCS</text>
-      <text x="70" y="40" font-size="10" fill="#6B6B6B" text-anchor="middle">.joblib · Sprint 8</text>
-      <text x="70" y="80" font-size="10" font-weight="600" fill="#0A0A0A" text-anchor="middle">Object Store</text>
-      <text x="70" y="96" font-size="10" fill="#6B6B6B" text-anchor="middle">model artifacts</text>
+    <g transform="translate(840, 50)">
+      <rect width="100" height="48" rx="8" fill="#1F9D55"/>
+      <text x="50" y="20" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">SheetJS</text>
+      <text x="50" y="36" font-size="9" fill="#FFFFFF" text-anchor="middle">xlsx · csv · tsv</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">SheetJS</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">20+ formats (client)</text>
+    </g>
+    <g transform="translate(980, 50)">
+      <rect width="100" height="48" rx="8" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+      <text x="50" y="22" font-size="12" font-weight="700" fill="#B45309" text-anchor="middle">S3 / GCS</text>
+      <text x="50" y="38" font-size="9" fill="#92400E" text-anchor="middle">Sprint 8</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Object Store</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">.joblib · datasets</text>
+    </g>
+    <g transform="translate(1120, 44)">
+      <image href="https://cdn.simpleicons.org/prisma/2D3748" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Prisma ORM</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">multi-provider</text>
     </g>
   </g>
 
   <!-- ╔════════════════════════════════════════════════════════════════════════════╗
-       ║ ROW 3:  Backend (full width)                                                ║
+       ║ ROW 3:  Backend  (full width, 2 rows of 6 logos = 12)                       ║
        ╚════════════════════════════════════════════════════════════════════════════╝ -->
-  <g transform="translate(40, 570)">
-    <rect width="1840" height="200" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
-    <rect x="870" y="-16" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
-    <text x="930" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">Backend</text>
+  <g transform="translate(40, 538)">
+    <rect width="1840" height="280" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
+    <rect x="860" y="-16" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
+    <text x="920" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">Backend</text>
 
-    <g transform="translate(100, 50)">
-      <image href="https://cdn.simpleicons.org/fastapi/009688" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">FastAPI</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">async routes</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">Pydantic v2</text>
+    <!-- Backend Row 1: Core + numeric/ML -->
+    <g transform="translate(80, 34)">
+      <image href="https://cdn.simpleicons.org/fastapi/009688" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">FastAPI</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">async routes</text>
     </g>
-    <g transform="translate(330, 50)">
-      <image href="https://cdn.simpleicons.org/python/3776AB" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Python 3.13</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">uvicorn</text>
+    <g transform="translate(360, 34)">
+      <image href="https://cdn.simpleicons.org/python/3776AB" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Python 3.13</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">uvicorn ASGI</text>
     </g>
-    <g transform="translate(560, 50)">
-      <image href="https://cdn.simpleicons.org/scikitlearn/F7931E" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">scikit-learn</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">27 algorithms</text>
+    <g transform="translate(640, 34)">
+      <image href="https://cdn.simpleicons.org/pydantic/E92063" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Pydantic v2</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">request/response</text>
     </g>
-    <g transform="translate(790, 50)">
-      <image href="https://cdn.simpleicons.org/numpy/013243" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">NumPy</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">vectorized ops</text>
+    <g transform="translate(920, 34)">
+      <image href="https://cdn.simpleicons.org/scikitlearn/F7931E" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">scikit-learn 1.8</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">27 algorithms</text>
     </g>
-    <g transform="translate(1020, 50)">
-      <rect width="84" height="68" rx="8" fill="#0D9F6E"/>
-      <text x="42" y="44" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">LGBM</text>
-      <text x="42" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">LightGBM</text>
-      <text x="42" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">+ XGBoost</text>
+    <g transform="translate(1200, 38)">
+      <rect width="100" height="52" rx="8" fill="#0D9F6E"/>
+      <text x="50" y="24" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">LGBM</text>
+      <text x="50" y="42" font-size="9" fill="#FFFFFF" text-anchor="middle">leaf-wise</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">LightGBM 4</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">gradient boost</text>
     </g>
-    <g transform="translate(1240, 50)">
-      <image href="https://cdn.simpleicons.org/optuna/2C5DC2" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Optuna</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">hyperparam tune</text>
+    <g transform="translate(1480, 38)">
+      <rect width="100" height="52" rx="8" fill="#1B7AED"/>
+      <text x="50" y="24" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">XGBoost</text>
+      <text x="50" y="42" font-size="9" fill="#FFFFFF" text-anchor="middle">3.2 · GPU-able</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">XGBoost</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">gradient boost</text>
     </g>
-    <g transform="translate(1470, 50)">
-      <rect width="84" height="68" rx="8" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
-      <text x="42" y="30" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle">imbalanced</text>
-      <text x="42" y="46" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle">-learn</text>
-      <text x="42" y="62" font-size="9" fill="#6B6B6B" text-anchor="middle">SMOTE</text>
-      <text x="42" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Sampling</text>
-      <text x="42" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">+ Boruta</text>
+
+    <!-- Backend Row 2: tuning + sampling + viz + sandbox -->
+    <g transform="translate(80, 168)">
+      <image href="https://cdn.simpleicons.org/optuna/2C5DC2" width="60" height="60"/>
+      <text x="30" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Optuna</text>
+      <text x="30" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">hyperparam tune</text>
     </g>
-    <g transform="translate(1690, 50)">
-      <rect width="84" height="68" rx="8" fill="#1F2937"/>
-      <text x="42" y="32" font-size="13" font-weight="700" fill="#10B981" text-anchor="middle">{ }</text>
-      <text x="42" y="50" font-size="10" fill="#FFFFFF" text-anchor="middle">exec()</text>
-      <text x="42" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Sandbox</text>
-      <text x="42" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">30s timeout</text>
+    <g transform="translate(360, 172)">
+      <rect width="100" height="52" rx="8" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
+      <text x="50" y="22" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle">imbalanced</text>
+      <text x="50" y="38" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle">-learn</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">SMOTE / ADASYN</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">over/undersample</text>
+    </g>
+    <g transform="translate(640, 172)">
+      <rect width="100" height="52" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+      <text x="50" y="22" font-size="11" font-weight="700" fill="#7C3AED" text-anchor="middle">Boruta</text>
+      <text x="50" y="38" font-size="9" fill="#6B6B6B" text-anchor="middle">RFE wrapper</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Boruta · RFE</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">feature selection</text>
+    </g>
+    <g transform="translate(920, 172)">
+      <rect width="100" height="52" rx="8" fill="#4C72B0"/>
+      <text x="50" y="22" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">seaborn</text>
+      <text x="50" y="38" font-size="9" fill="#E0E7FF" text-anchor="middle">statistical viz</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">seaborn</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">+ missingno</text>
+    </g>
+    <g transform="translate(1200, 172)">
+      <rect width="100" height="52" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="2"/>
+      <text x="50" y="22" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">joblib</text>
+      <text x="50" y="38" font-size="9" fill="#6B6B6B" text-anchor="middle">.joblib I/O</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">joblib</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">model serialize</text>
+    </g>
+    <g transform="translate(1480, 168)">
+      <rect width="100" height="60" rx="8" fill="#1F2937"/>
+      <text x="50" y="30" font-size="14" font-weight="700" fill="#10B981" text-anchor="middle">{ }</text>
+      <text x="50" y="48" font-size="10" fill="#FFFFFF" text-anchor="middle">exec()</text>
+      <text x="50" y="84" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Sandbox</text>
+      <text x="50" y="100" font-size="9" fill="#6B6B6B" text-anchor="middle">30s timeout</text>
     </g>
   </g>
 
@@ -206,81 +249,87 @@
        ╚════════════════════════════════════════════════════════════════════════════╝ -->
 
   <!-- Hosting -->
-  <g transform="translate(40, 800)">
-    <rect width="900" height="200" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
-    <rect x="390" y="-16" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
-    <text x="450" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">Hosting</text>
+  <g transform="translate(40, 848)">
+    <rect width="780" height="180" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
+    <rect x="330" y="-16" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
+    <text x="390" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">Hosting</text>
 
-    <g transform="translate(80, 48)">
-      <image href="https://cdn.simpleicons.org/vercel/000000" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Vercel</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">frontend</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">edge functions</text>
+    <g transform="translate(50, 30)">
+      <image href="https://cdn.simpleicons.org/vercel/000000" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Vercel</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">frontend · edge</text>
     </g>
-    <g transform="translate(260, 48)">
-      <image href="https://cdn.simpleicons.org/render/46E3B7" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Render</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">backend primary</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">render.yaml</text>
+    <g transform="translate(200, 30)">
+      <image href="https://cdn.simpleicons.org/render/46E3B7" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Render</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">backend primary</text>
     </g>
-    <g transform="translate(440, 48)">
-      <image href="https://cdn.simpleicons.org/flydotio/24175B" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Fly.io</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">backend alt</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">fly.toml</text>
+    <g transform="translate(350, 30)">
+      <image href="https://cdn.simpleicons.org/flydotio/24175B" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Fly.io</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">backend alt</text>
     </g>
-    <g transform="translate(620, 48)">
-      <image href="https://cdn.simpleicons.org/docker/2496ED" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Docker</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">+ Compose</text>
-      <text x="34" y="128" font-size="9" fill="#6B6B6B" text-anchor="middle">local + prod</text>
+    <g transform="translate(500, 30)">
+      <image href="https://cdn.simpleicons.org/docker/2496ED" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Docker</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">+ Compose</text>
     </g>
-    <g transform="translate(800, 60)">
-      <rect width="84" height="68" rx="8" fill="#1A1A1A"/>
-      <text x="42" y="40" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Singapore</text>
-      <text x="42" y="56" font-size="9" fill="#9CA3AF" text-anchor="middle">region</text>
-      <text x="42" y="96" font-size="11" font-weight="600" fill="#0A0A0A" text-anchor="middle">Region</text>
-      <text x="42" y="112" font-size="10" fill="#6B6B6B" text-anchor="middle">closest to TH</text>
+    <g transform="translate(640, 38)">
+      <rect width="100" height="48" rx="8" fill="#1A1A1A"/>
+      <text x="50" y="22" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Singapore</text>
+      <text x="50" y="38" font-size="9" fill="#9CA3AF" text-anchor="middle">region · sin</text>
+      <text x="50" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Region</text>
+      <text x="50" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">closest to TH</text>
     </g>
   </g>
 
   <!-- DevOps -->
-  <g transform="translate(960, 800)">
-    <rect width="920" height="200" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
-    <rect x="380" y="-16" width="160" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
-    <text x="460" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">DevOps · Quality</text>
+  <g transform="translate(840, 848)">
+    <rect width="1040" height="180" rx="20" fill="#FFFFFF" stroke="#E8500A" stroke-width="2.2" stroke-dasharray="6,4"/>
+    <rect x="440" y="-16" width="160" height="32" rx="16" fill="#FFFFFF" stroke="#E8500A" stroke-width="2"/>
+    <text x="520" y="6" font-size="16" font-weight="700" fill="#E8500A" text-anchor="middle">DevOps · Quality</text>
 
-    <g transform="translate(70, 48)">
-      <image href="https://cdn.simpleicons.org/github/181717" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">GitHub</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">4 repos</text>
+    <g transform="translate(40, 30)">
+      <image href="https://cdn.simpleicons.org/github/181717" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">GitHub</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">4 repos</text>
     </g>
-    <g transform="translate(250, 48)">
-      <image href="https://cdn.simpleicons.org/git/F05032" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">Git</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">conventional</text>
+    <g transform="translate(180, 30)">
+      <image href="https://cdn.simpleicons.org/git/F05032" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Git</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">conventional</text>
     </g>
-    <g transform="translate(430, 48)">
-      <image href="https://cdn.simpleicons.org/githubactions/2088FF" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">GH Actions</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">CI · planned</text>
+    <g transform="translate(320, 30)">
+      <image href="https://cdn.simpleicons.org/githubactions/2088FF" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">GH Actions</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">CI · planned</text>
     </g>
-    <g transform="translate(610, 48)">
-      <image href="https://cdn.simpleicons.org/eslint/4B32C3" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">ESLint</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">+ Prettier</text>
+    <g transform="translate(470, 30)">
+      <image href="https://cdn.simpleicons.org/eslint/4B32C3" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">ESLint</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">strict rules</text>
     </g>
-    <g transform="translate(790, 48)">
-      <image href="https://cdn.simpleicons.org/pytest/0A9EDC" width="68" height="68" x="0" y="0"/>
-      <text x="34" y="96" font-size="14" font-weight="600" fill="#0A0A0A" text-anchor="middle">pytest</text>
-      <text x="34" y="114" font-size="10" fill="#6B6B6B" text-anchor="middle">+ vitest · Sp.6</text>
+    <g transform="translate(610, 30)">
+      <image href="https://cdn.simpleicons.org/prettier/F7B93E" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">Prettier</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">format-on-save</text>
+    </g>
+    <g transform="translate(760, 30)">
+      <image href="https://cdn.simpleicons.org/pytest/0A9EDC" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">pytest</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">backend tests</text>
+    </g>
+    <g transform="translate(910, 30)">
+      <image href="https://cdn.simpleicons.org/vitest/6E9F18" width="56" height="56"/>
+      <text x="28" y="78" font-size="12" font-weight="600" fill="#0A0A0A" text-anchor="middle">vitest</text>
+      <text x="28" y="94" font-size="9" fill="#6B6B6B" text-anchor="middle">frontend tests</text>
     </g>
   </g>
 
   <!-- Footer -->
-  <g transform="translate(60, 1050)">
-    <text x="0" y="0" font-size="11" fill="#9B9B9B" font-style="italic">PrepPilot · senior project · 417 handlers · 6 slash commands · GPT-5.4 nano default · drawn 2026-05-18</text>
-    <text x="1800" y="0" font-size="11" fill="#9B9B9B" text-anchor="end">★ default model · logos via simpleicons.org (CC0)</text>
+  <g transform="translate(60, 1058)">
+    <text x="0" y="0" font-size="11" fill="#9B9B9B" font-style="italic">PrepPilot · 33 libraries · 417 handlers · 6 slash commands · GPT-5.4 nano default · drawn 2026-05-18</text>
+    <text x="1800" y="0" font-size="11" fill="#9B9B9B" text-anchor="end">★ default model · text-box items have no simpleicons slug (used as wordmark only)</text>
   </g>
 
 </svg>
