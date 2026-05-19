@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrepPilot — /train Sequence Diagram</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FAFAFA; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0A0A0A; }
+    .frame { width: 1920px; margin: 0 auto; padding: 0; background: #FFFFFF; }
+    @media print { @page { size: 1920px 1080px landscape; margin: 0; } body { background: #fff; } }
+    svg { display: block; width: 100%; height: auto; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+  </style>
+</head>
+<body>
+<div class="frame">
+
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot /train sequence diagram">
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.07"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,10 L11,5 z" fill="#E8500A"/>
+    </marker>
+    <marker id="arrowRev" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M11,0 L0,5 L11,10 Z" fill="#E8500A" opacity="0"/>
+      <path d="M0,1 L11,5 L0,9" fill="none" stroke="#E8500A" stroke-width="2"/>
+    </marker>
+    <marker id="arrowResp" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,4 L0,8" fill="none" stroke="#E8500A" stroke-width="2"/>
+    </marker>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8500A"/>
+      <stop offset="100%" stop-color="#FF6B2B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="6" height="100" fill="url(#titleAccent)"/>
+  <text x="60" y="56" font-size="34" font-weight="800" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — Auto ML Training · Sequence Diagram</text>
+  <text x="60" y="82" font-size="14" font-weight="500" fill="#6B6B6B"><tspan class="mono">/train</tspan> end-to-end · 7 actors · 17 messages</text>
+  <text x="1860" y="68" font-size="12" fill="#9B9B9B" text-anchor="end">2026-05-19 · Sprint 5.7</text>
+
+  <line x1="40" y1="105" x2="1880" y2="105" stroke="#E5E4E1" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       7 ACTOR HEADER BOXES                                                            -->
+
+  <!-- A1 · User -->
+  <g transform="translate(92, 130)">
+    <rect width="200" height="68" rx="12" fill="#E8500A" filter="url(#shadow)"/>
+    <text x="100" y="32" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">User</text>
+    <text x="100" y="52" font-size="10" font-weight="500" fill="#FFFFFF" opacity="0.85" text-anchor="middle">browser</text>
+  </g>
+
+  <!-- A2 · Frontend -->
+  <g transform="translate(348, 130)">
+    <rect width="200" height="68" rx="12" fill="#FFF3EE" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="32" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Frontend</text>
+    <text x="100" y="52" font-size="10" font-weight="500" fill="#6B6B6B" text-anchor="middle" class="mono">Next.js</text>
+  </g>
+
+  <!-- A3 · API Proxy -->
+  <g transform="translate(604, 130)">
+    <rect width="200" height="68" rx="12" fill="#FFF3EE" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="32" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">API Proxy</text>
+    <text x="100" y="52" font-size="10" font-weight="500" fill="#6B6B6B" text-anchor="middle" class="mono">/api/train/route.ts</text>
+  </g>
+
+  <!-- A4 · FastAPI -->
+  <g transform="translate(860, 130)">
+    <rect width="200" height="68" rx="12" fill="#FFF3EE" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="32" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">FastAPI</text>
+    <text x="100" y="52" font-size="10" font-weight="500" fill="#6B6B6B" text-anchor="middle" class="mono">routes/train.py</text>
+  </g>
+
+  <!-- A5 · TrainAgent -->
+  <g transform="translate(1116, 130)">
+    <rect width="200" height="68" rx="12" fill="#FFF3EE" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="32" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">TrainAgent</text>
+    <text x="100" y="52" font-size="10" font-weight="500" fill="#6B6B6B" text-anchor="middle" class="mono">train_agent.py</text>
+  </g>
+
+  <!-- A6 · Sandbox -->
+  <g transform="translate(1372, 130)">
+    <rect width="200" height="68" rx="12" fill="#FFF3EE" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="32" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Sandbox</text>
+    <text x="100" y="52" font-size="10" font-weight="500" fill="#6B6B6B" text-anchor="middle" class="mono">isolated Python</text>
+  </g>
+
+  <!-- A7 · Model Storage -->
+  <g transform="translate(1628, 130)">
+    <rect width="200" height="68" rx="12" fill="#FFF3EE" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <text x="100" y="32" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Model Storage</text>
+    <text x="100" y="52" font-size="10" font-weight="500" fill="#6B6B6B" text-anchor="middle" class="mono">/app/models</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       7 LIFELINES (dashed vertical lines from each actor)                            -->
+  <g stroke="#C9C7C2" stroke-width="1.5" stroke-dasharray="6 5">
+    <line x1="192"  y1="200" x2="192"  y2="960"/>
+    <line x1="448"  y1="200" x2="448"  y2="960"/>
+    <line x1="704"  y1="200" x2="704"  y2="960"/>
+    <line x1="960"  y1="200" x2="960"  y2="960"/>
+    <line x1="1216" y1="200" x2="1216" y2="960"/>
+    <line x1="1472" y1="200" x2="1472" y2="960"/>
+    <line x1="1728" y1="200" x2="1728" y2="960"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       17 MESSAGES                                                                     -->
+
+  <!-- 1. User → Frontend · request -->
+  <line x1="192" y1="240" x2="446" y2="240" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="319" y="232" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">1.</tspan>  Click <tspan class="mono">/train</tspan> · pick target column</text>
+
+  <!-- 2. Frontend → API Proxy · request -->
+  <line x1="448" y1="285" x2="702" y2="285" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="575" y="277" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">2.</tspan>  POST <tspan class="mono">/api/train</tspan>  { datasetId, target }</text>
+
+  <!-- 3. API Proxy → FastAPI · request -->
+  <line x1="704" y1="330" x2="958" y2="330" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="831" y="322" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">3.</tspan>  Forward request with session</text>
+
+  <!-- 4. FastAPI → TrainAgent · request -->
+  <line x1="960" y1="375" x2="1214" y2="375" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1087" y="367" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">4.</tspan>  <tspan class="mono">train_agent.run(df, target)</tspan></text>
+
+  <!-- 5. TrainAgent self-loop -->
+  <path d="M 1216 415 L 1296 415 L 1296 435 L 1218 435" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1310" y="423" font-size="12" font-weight="700" fill="#0A0A0A"><tspan font-weight="800" fill="#E8500A">5.</tspan>  Detect task type · pick 5–8 algorithms</text>
+
+  <!-- 6. TrainAgent → Sandbox · request -->
+  <line x1="1216" y1="475" x2="1470" y2="475" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1343" y="467" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">6.</tspan>  Preprocess + One-Hot encode</text>
+
+  <!-- 7. Sandbox → TrainAgent · response (dashed) -->
+  <line x1="1472" y1="510" x2="1218" y2="510" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowResp)"/>
+  <text x="1345" y="502" font-size="11" font-weight="600" fill="#6B6B6B" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">7.</tspan>  train / test split</text>
+
+  <!-- 8. TrainAgent → Sandbox · request -->
+  <line x1="1216" y1="545" x2="1470" y2="545" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1343" y="537" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">8.</tspan>  Cross-validation · 5-fold per algo</text>
+
+  <!-- 9. TrainAgent → Sandbox · request -->
+  <line x1="1216" y1="585" x2="1470" y2="585" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1343" y="577" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">9.</tspan>  Optuna hyperparameter tuning</text>
+
+  <!-- 10. TrainAgent → Sandbox · request -->
+  <line x1="1216" y1="625" x2="1470" y2="625" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1343" y="617" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">10.</tspan>  Compute metrics + evaluation charts</text>
+
+  <!-- 11. Sandbox → TrainAgent · response -->
+  <line x1="1472" y1="660" x2="1218" y2="660" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowResp)"/>
+  <text x="1345" y="652" font-size="11" font-weight="600" fill="#6B6B6B" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">11.</tspan>  metrics + Plotly figures</text>
+
+  <!-- 12. TrainAgent → Model Storage · request -->
+  <line x1="1216" y1="700" x2="1726" y2="700" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1472" y="692" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">12.</tspan>  Save <tspan class="mono">.joblib</tspan> + <tspan class="mono">.json</tspan> metadata</text>
+
+  <!-- 13. Model Storage → TrainAgent · response -->
+  <line x1="1728" y1="740" x2="1218" y2="740" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowResp)"/>
+  <text x="1472" y="732" font-size="11" font-weight="600" fill="#6B6B6B" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">13.</tspan>  <tspan class="mono">model_id</tspan></text>
+
+  <!-- 14. TrainAgent → FastAPI · response -->
+  <line x1="1216" y1="780" x2="962" y2="780" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowResp)"/>
+  <text x="1089" y="772" font-size="11" font-weight="600" fill="#6B6B6B" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">14.</tspan>  <tspan class="mono">TrainResult</tspan> object</text>
+
+  <!-- 15. FastAPI → Frontend · response (crosses API Proxy lifeline) -->
+  <line x1="960" y1="820" x2="450" y2="820" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowResp)"/>
+  <text x="705" y="812" font-size="11" font-weight="600" fill="#6B6B6B" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">15.</tspan>  JSON response · model_id · charts</text>
+
+  <!-- 16. Frontend → User · response -->
+  <line x1="448" y1="860" x2="194" y2="860" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowResp)"/>
+  <text x="321" y="852" font-size="11" font-weight="600" fill="#6B6B6B" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">16.</tspan>  Render TrainResultCard + Download</text>
+
+  <!-- 17. User → Frontend · request (download) -->
+  <line x1="192" y1="905" x2="446" y2="905" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="319" y="897" font-size="12" font-weight="700" fill="#0A0A0A" text-anchor="middle"><tspan font-weight="800" fill="#E8500A">17.</tspan>  Click Download · GET <tspan class="mono">.joblib</tspan></text>
+
+  <!-- Activation bar example on TrainAgent (subtle filled rect on lifeline) -->
+  <rect x="1212" y="375" width="8" height="410" fill="#FFF3EE" stroke="#E8500A" stroke-width="1" opacity="0.6"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       LEGEND                                                                          -->
+  <g transform="translate(80, 1000)">
+    <rect width="1760" height="50" rx="12" fill="#FAFAFA" stroke="#E5E4E1"/>
+
+    <text x="24" y="32" font-size="12" font-weight="800" fill="#9B9B9B" letter-spacing="1.5">LEGEND</text>
+
+    <!-- Request -->
+    <line x1="120" y1="28" x2="160" y2="28" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="172" y="32" font-size="11" fill="#3A3A3A">Request (synchronous call)</text>
+
+    <!-- Response -->
+    <line x1="380" y1="28" x2="420" y2="28" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowResp)"/>
+    <text x="432" y="32" font-size="11" fill="#3A3A3A">Response (return value)</text>
+
+    <!-- Self call -->
+    <path d="M 640 24 L 660 24 L 660 34 L 642 34" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="678" y="32" font-size="11" fill="#3A3A3A">Self-call (internal logic)</text>
+
+    <!-- Lifeline -->
+    <line x1="900" y1="20" x2="900" y2="40" stroke="#C9C7C2" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="912" y="32" font-size="11" fill="#3A3A3A">Actor lifeline</text>
+
+    <!-- Activation -->
+    <rect x="1040" y="20" width="6" height="20" fill="#FFF3EE" stroke="#E8500A" stroke-width="1"/>
+    <text x="1054" y="32" font-size="11" fill="#3A3A3A">Activation (TrainAgent busy)</text>
+
+    <!-- Actor User -->
+    <rect x="1290" y="18" width="22" height="22" rx="6" fill="#E8500A"/>
+    <text x="1320" y="32" font-size="11" fill="#3A3A3A">User-facing actor</text>
+
+    <!-- Actor System -->
+    <rect x="1480" y="18" width="22" height="22" rx="6" fill="#FFF3EE" stroke="#E8500A" stroke-width="1.5"/>
+    <text x="1510" y="32" font-size="11" fill="#3A3A3A">System actor</text>
+
+    <text x="1740" y="32" font-size="11" fill="#9B9B9B" text-anchor="end" class="mono">PrepPilot · 2026-05-19</text>
+  </g>
+
+</svg>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrepPilot — /predict Workflow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FAFAFA; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0A0A0A; }
+    .frame { width: 1920px; margin: 0 auto; padding: 0; background: #FFFFFF; }
+    @media print { @page { size: 1920px 1080px landscape; margin: 0; } body { background: #fff; } }
+    svg { display: block; width: 100%; height: auto; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+  </style>
+</head>
+<body>
+<div class="frame">
+
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot /predict workflow">
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.07"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,10 L11,5 z" fill="#E8500A"/>
+    </marker>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8500A"/>
+      <stop offset="100%" stop-color="#FF6B2B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <rect x="0" y="0" width="6" height="100" fill="url(#titleAccent)"/>
+  <text x="60" y="56" font-size="34" font-weight="800" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — <tspan class="mono">/predict</tspan> Workflow</text>
+  <text x="60" y="82" font-size="14" font-weight="500" fill="#6B6B6B">Inference with schema validation &amp; auto pipeline replay</text>
+  <text x="1860" y="68" font-size="12" fill="#9B9B9B" text-anchor="end">2026-05-19 · Sprint 5.7</text>
+
+  <line x1="40" y1="105" x2="1880" y2="105" stroke="#E5E4E1" stroke-width="1"/>
+
+  <!-- ● START -->
+  <circle cx="960" cy="150" r="24" fill="#E8500A" filter="url(#shadow)"/>
+  <text x="960" y="156" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">START</text>
+
+  <line x1="960" y1="175" x2="960" y2="198" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 1: POST /predict -->
+  <rect x="770" y="202" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="960" y="228" font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle">POST <tspan class="mono">/predict</tspan></text>
+  <text x="960" y="250" font-size="11" fill="#6B6B6B" text-anchor="middle">HTTP endpoint · model_id + dataset_id</text>
+
+  <rect x="1180" y="220" width="170" height="24" rx="12" fill="#FFF3EE" stroke="#FCE0D2"/>
+  <text x="1265" y="236" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle" class="mono">PredictRequest</text>
+
+  <line x1="960" y1="264" x2="960" y2="288" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Load Model -->
+  <rect x="770" y="292" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="960" y="318" font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle">Load Model + Metadata</text>
+  <text x="960" y="340" font-size="11" fill="#6B6B6B" text-anchor="middle" class="mono">joblib.load(MODELS_DIR/{id}.joblib)</text>
+
+  <rect x="1180" y="310" width="190" height="24" rx="12" fill="#FFF3EE" stroke="#FCE0D2"/>
+  <text x="1275" y="326" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle" class="mono">model · schema · pipeline_id</text>
+
+  <line x1="960" y1="354" x2="960" y2="378" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Decision 1: Schema valid? -->
+  <polygon points="960,382 1080,432 960,482 840,432" fill="#FFF3EE" stroke="#E8500A" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="960" y="427" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Schema valid?</text>
+  <text x="960" y="446" font-size="10" fill="#6B6B6B" text-anchor="middle">columns match model</text>
+
+  <!-- Branch NO → error -->
+  <path d="M 840 432 L 700 432 L 700 432" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="840" y1="432" x2="680" y2="432" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="500" y="412" width="160" height="42" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="580" y="430" font-size="13" font-weight="800" fill="#E8500A" text-anchor="middle">400 Error</text>
+  <text x="580" y="446" font-size="10" fill="#6B6B6B" text-anchor="middle">missing / extra cols</text>
+  <rect x="755" y="406" width="50" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2"/>
+  <text x="780" y="422" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">no</text>
+
+  <!-- Branch YES → continue -->
+  <line x1="960" y1="482" x2="960" y2="508" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="985" y="485" width="50" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2"/>
+  <text x="1010" y="501" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">yes</text>
+
+  <!-- Decision 2: Raw or engineered? -->
+  <polygon points="960,512 1100,562 960,612 820,562" fill="#FFF3EE" stroke="#E8500A" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="960" y="557" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Input shape?</text>
+  <text x="960" y="576" font-size="10" fill="#6B6B6B" text-anchor="middle">raw or engineered</text>
+
+  <!-- Branch RAW → replay -->
+  <path d="M 820 562 L 580 562 L 580 612" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="660" y="546" width="60" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2"/>
+  <text x="690" y="562" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">raw</text>
+
+  <!-- Pipeline Replay box -->
+  <rect x="430" y="616" width="300" height="62" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="580" y="642" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Replay Feature Pipeline</text>
+  <text x="580" y="662" font-size="11" fill="#6B6B6B" text-anchor="middle" class="mono">apply_pipeline(df, state)</text>
+
+  <!-- Merge back to predict (curve from replay box to predict box) -->
+  <path d="M 580 678 L 580 750 L 960 750 L 960 750" fill="none" stroke="#E8500A" stroke-width="2.5"/>
+
+  <!-- Branch ENGINEERED → skip replay -->
+  <path d="M 1100 562 L 1340 562 L 1340 750 L 960 750" fill="none" stroke="#E8500A" stroke-width="2.5"/>
+  <rect x="1180" y="546" width="120" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2"/>
+  <text x="1240" y="562" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">engineered · skip</text>
+
+  <!-- Merge label -->
+  <rect x="755" y="722" width="170" height="22" rx="11" fill="#FFF3EE" stroke="#FCE0D2"/>
+  <text x="840" y="738" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle" class="mono">transformed_df</text>
+
+  <!-- Arrow to predict -->
+  <line x1="960" y1="750" x2="960" y2="772" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step: Run model.predict() -->
+  <rect x="770" y="776" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="960" y="802" font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle">Run <tspan class="mono">model.predict()</tspan></text>
+  <text x="960" y="824" font-size="11" fill="#6B6B6B" text-anchor="middle">inference · probabilities if classifier</text>
+
+  <rect x="1180" y="794" width="170" height="24" rx="12" fill="#FFF3EE" stroke="#FCE0D2"/>
+  <text x="1265" y="810" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle" class="mono">y_pred · np.ndarray</text>
+
+  <line x1="960" y1="838" x2="960" y2="862" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step: Persist + Render -->
+  <rect x="770" y="866" width="380" height="62" rx="12" fill="#FFF3EE" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="960" y="892" font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle">Save Dataset + Render Card</text>
+  <text x="960" y="914" font-size="11" fill="#6B6B6B" text-anchor="middle" class="mono">prisma.dataset.create() · PredictionResultCard</text>
+
+  <rect x="1180" y="884" width="170" height="24" rx="12" fill="#FFF3EE" stroke="#FCE0D2"/>
+  <text x="1265" y="900" font-size="11" font-weight="700" fill="#E8500A" text-anchor="middle" class="mono">dataset_id</text>
+
+  <line x1="960" y1="928" x2="960" y2="952" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <circle cx="960" cy="978" r="24" fill="#E8500A" filter="url(#shadow)"/>
+  <text x="960" y="984" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">END</text>
+
+  <!-- LEFT lane labels -->
+  <g transform="translate(60, 200)">
+    <rect x="0" y="0" width="220" height="68" rx="12" fill="#FAFAFA" stroke="#E5E4E1" stroke-dasharray="4 3"/>
+    <text x="20" y="22" font-size="10" font-weight="800" fill="#E8500A" letter-spacing="1.5">LANE 1</text>
+    <text x="20" y="46" font-size="14" font-weight="800" fill="#0A0A0A">HTTP · API</text>
+    <text x="20" y="62" font-size="10" fill="#6B6B6B">Next.js → FastAPI</text>
+
+    <rect x="0" y="92" width="220" height="68" rx="12" fill="#FAFAFA" stroke="#E5E4E1" stroke-dasharray="4 3"/>
+    <text x="20" y="114" font-size="10" font-weight="800" fill="#E8500A" letter-spacing="1.5">LANE 2</text>
+    <text x="20" y="138" font-size="14" font-weight="800" fill="#0A0A0A">STORAGE</text>
+    <text x="20" y="154" font-size="10" fill="#6B6B6B">joblib.load · metadata</text>
+
+    <rect x="0" y="182" width="220" height="120" rx="12" fill="#FAFAFA" stroke="#E5E4E1" stroke-dasharray="4 3"/>
+    <text x="20" y="204" font-size="10" font-weight="800" fill="#E8500A" letter-spacing="1.5">LANE 3</text>
+    <text x="20" y="228" font-size="14" font-weight="800" fill="#0A0A0A">VALIDATION</text>
+    <text x="20" y="244" font-size="10" fill="#6B6B6B">schema check</text>
+    <text x="20" y="272" font-size="10" fill="#6B6B6B">raw vs engineered</text>
+    <text x="20" y="288" font-size="10" fill="#9B9B9B" class="mono">encoder col dtype</text>
+
+    <rect x="0" y="416" width="220" height="68" rx="12" fill="#FAFAFA" stroke="#E5E4E1" stroke-dasharray="4 3"/>
+    <text x="20" y="438" font-size="10" font-weight="800" fill="#E8500A" letter-spacing="1.5">LANE 4</text>
+    <text x="20" y="462" font-size="14" font-weight="800" fill="#0A0A0A">PIPELINE</text>
+    <text x="20" y="478" font-size="10" fill="#6B6B6B">replay if raw input</text>
+
+    <rect x="0" y="576" width="220" height="68" rx="12" fill="#FAFAFA" stroke="#E5E4E1" stroke-dasharray="4 3"/>
+    <text x="20" y="598" font-size="10" font-weight="800" fill="#E8500A" letter-spacing="1.5">LANE 5</text>
+    <text x="20" y="622" font-size="14" font-weight="800" fill="#0A0A0A">INFERENCE</text>
+    <text x="20" y="638" font-size="10" fill="#6B6B6B">model.predict(X)</text>
+
+    <rect x="0" y="666" width="220" height="68" rx="12" fill="#FAFAFA" stroke="#E5E4E1" stroke-dasharray="4 3"/>
+    <text x="20" y="688" font-size="10" font-weight="800" fill="#E8500A" letter-spacing="1.5">LANE 6</text>
+    <text x="20" y="712" font-size="14" font-weight="800" fill="#0A0A0A">PERSIST + RENDER</text>
+    <text x="20" y="728" font-size="10" fill="#6B6B6B">save dataset · card</text>
+  </g>
+
+  <!-- LEGEND -->
+  <g transform="translate(60, 1040)">
+    <circle cx="14" cy="0" r="10" fill="#E8500A"/>
+    <text x="34" y="4" font-size="11" fill="#3A3A3A">Start / End event</text>
+
+    <rect x="170" y="-10" width="22" height="20" rx="5" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5"/>
+    <text x="200" y="4" font-size="11" fill="#3A3A3A">Process step</text>
+
+    <polygon points="334,-9 350,0 334,9 318,0" fill="#FFF3EE" stroke="#E8500A" stroke-width="1.5"/>
+    <text x="360" y="4" font-size="11" fill="#3A3A3A">Decision (gateway)</text>
+
+    <rect x="510" y="-10" width="22" height="20" rx="5" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="540" y="4" font-size="11" fill="#3A3A3A">Error / exception path</text>
+
+    <line x1="700" y1="0" x2="728" y2="0" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="738" y="4" font-size="11" fill="#3A3A3A">Sequence flow</text>
+
+    <rect x="870" y="-10" width="22" height="20" rx="10" fill="#FFF3EE" stroke="#FCE0D2"/>
+    <text x="900" y="4" font-size="11" fill="#3A3A3A">Data object / payload</text>
+
+    <text x="1800" y="4" font-size="11" fill="#9B9B9B" text-anchor="end" class="mono">PrepPilot · 2026-05-19</text>
+  </g>
+
+</svg>
+
+</div>
+</body>
+</html>

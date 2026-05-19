@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot decision flow">
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.07"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,10 L11,5 z" fill="#E8500A"/>
+    </marker>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8500A"/>
+      <stop offset="100%" stop-color="#FF6B2B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- ── Title ── -->
+  <rect x="0" y="0" width="6" height="100" fill="url(#titleAccent)"/>
+  <text x="60" y="56" font-size="34" font-weight="800" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — Decision Flow</text>
+  <text x="60" y="82" font-size="14" font-weight="500" fill="#6B6B6B">Routing · plan branches · verify-then-retry · final answer</text>
+  <text x="1860" y="68" font-size="12" fill="#9B9B9B" text-anchor="end">2026-05-19 · Sprint 5.7</text>
+
+  <line x1="40" y1="105" x2="1880" y2="105" stroke="#E5E4E1" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       1. USER MESSAGE                                                                 -->
+  <rect x="810" y="125" width="300" height="60" rx="12" fill="#E8500A"/>
+  <text x="960" y="155" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">User message</text>
+  <text x="960" y="175" font-size="11" font-weight="500" fill="#FFFFFF" text-anchor="middle" opacity="0.9">text · file · slash command</text>
+
+  <!-- arrow ↓ -->
+  <line x1="960" y1="185" x2="960" y2="212" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       2. ROUTER (decision diamond)                                                    -->
+  <polygon points="960,215 1080,255 960,295 840,255" fill="#FFF3EE" stroke="#E8500A" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="960" y="251" font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle">Router</text>
+  <text x="960" y="270" font-size="11" fill="#6B6B6B" text-anchor="middle">classify intent</text>
+
+  <!-- Branch left: Plan A · direct -->
+  <path d="M 840 255 L 420 255 L 420 322" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="535" y="241" width="110" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="590" y="257" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">Plan A · direct</text>
+
+  <!-- Branch down: Plan B · pipeline -->
+  <line x1="960" y1="295" x2="960" y2="322" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="996" y="298" width="124" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="1058" y="314" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">Plan B · pipeline</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       3a. PLAN A — DIRECT REPLY (left branch)                                         -->
+  <rect x="300" y="325" width="240" height="60" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="420" y="355" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Direct reply</text>
+  <text x="420" y="374" font-size="11" fill="#6B6B6B" text-anchor="middle">no code · short answer</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       3b. PLANNER (main spine)                                                        -->
+  <rect x="820" y="325" width="280" height="60" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="960" y="355" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Planner</text>
+  <text x="960" y="374" font-size="11" fill="#6B6B6B" text-anchor="middle">LLM writes JSON plan from history + data context</text>
+
+  <!-- arrow ↓ -->
+  <line x1="960" y1="385" x2="960" y2="412" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       4. STEP DECISION                                                                -->
+  <polygon points="960,415 1100,455 960,495 820,455" fill="#FFF3EE" stroke="#E8500A" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="960" y="451" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">For each step</text>
+  <text x="960" y="470" font-size="11" fill="#6B6B6B" text-anchor="middle">handler ready?</text>
+
+  <!-- Branch left: handler -->
+  <path d="M 820 455 L 780 455 L 780 522" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="675" y="441" width="92" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="721" y="457" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">yes · handler</text>
+
+  <!-- Branch right: codegen -->
+  <path d="M 1100 455 L 1140 455 L 1140 522" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="1153" y="441" width="92" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="1199" y="457" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">no · codegen</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       5a. RUN HANDLER  &  5b. GENERATE PYTHON                                         -->
+  <rect x="660" y="525" width="240" height="60" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="780" y="555" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Run handler</text>
+  <text x="780" y="574" font-size="11" fill="#6B6B6B" text-anchor="middle">from 417-op registry</text>
+
+  <rect x="1020" y="525" width="240" height="60" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1140" y="555" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Generate Python</text>
+  <text x="1140" y="574" font-size="11" fill="#6B6B6B" text-anchor="middle">LLM writes code</text>
+
+  <!-- Merge: both → sandbox -->
+  <line x1="780" y1="585" x2="780" y2="600" stroke="#E8500A" stroke-width="2.5"/>
+  <line x1="1140" y1="585" x2="1140" y2="600" stroke="#E8500A" stroke-width="2.5"/>
+  <line x1="780" y1="600" x2="1140" y2="600" stroke="#E8500A" stroke-width="2.5"/>
+  <line x1="960" y1="600" x2="960" y2="612" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       6. SANDBOX EXEC                                                                 -->
+  <rect x="840" y="615" width="240" height="60" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="960" y="645" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Sandbox exec</text>
+  <text x="960" y="664" font-size="11" fill="#6B6B6B" text-anchor="middle">isolated Python · timeout 60s</text>
+
+  <!-- arrow ↓ -->
+  <line x1="960" y1="675" x2="960" y2="702" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       7. VERIFY DECISION — did it succeed?                                            -->
+  <polygon points="960,705 1080,745 960,785 840,745" fill="#FFF3EE" stroke="#E8500A" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="960" y="741" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Verify result</text>
+  <text x="960" y="760" font-size="11" fill="#6B6B6B" text-anchor="middle">exec OK · output sane?</text>
+
+  <!-- YES path ↓ -->
+  <line x1="960" y1="785" x2="960" y2="812" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="975" y="788" width="50" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="1000" y="804" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">yes</text>
+
+  <!-- NO path: retry loop back to Generate Python (dashed) -->
+  <path d="M 1080 745 L 1380 745 L 1380 555 L 1262 555" fill="none"
+        stroke="#E8500A" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+  <rect x="1145" y="734" width="160" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="1225" y="750" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">no · retry with error</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       8. INTERPRET                                                                    -->
+  <rect x="840" y="815" width="240" height="60" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+  <text x="960" y="845" font-size="15" font-weight="800" fill="#0A0A0A" text-anchor="middle">Interpret</text>
+  <text x="960" y="864" font-size="11" fill="#6B6B6B" text-anchor="middle">LLM narrates real numbers</text>
+
+  <!-- arrow ↓ -->
+  <line x1="960" y1="875" x2="960" y2="902" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       PLAN A → USER RECEIVES (left side rejoin)                                       -->
+  <path d="M 420 385 L 420 935 L 808 935" fill="none" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="362" y="650" width="116" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="420" y="666" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">skip pipeline</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       9. USER RECEIVES                                                                -->
+  <rect x="810" y="905" width="300" height="60" rx="12" fill="#E8500A"/>
+  <text x="960" y="935" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">User receives</text>
+  <text x="960" y="955" font-size="11" font-weight="500" fill="#FFFFFF" text-anchor="middle" opacity="0.9">chart · table · dataset · model · report</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       FOOTER LEGEND                                                                   -->
+  <g transform="translate(60, 1010)">
+    <text x="0" y="0" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.5">LEGEND</text>
+
+    <!-- USER box -->
+    <rect x="68" y="-12" width="20" height="14" rx="3" fill="#E8500A"/>
+    <text x="96" y="0" font-size="12" fill="#3A3A3A">User-facing</text>
+
+    <!-- Process box -->
+    <rect x="208" y="-12" width="20" height="14" rx="3" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5"/>
+    <text x="236" y="0" font-size="12" fill="#3A3A3A">Process step</text>
+
+    <!-- Decision diamond -->
+    <polygon points="350,-5 360,-12 370,-5 360,2" fill="#FFF3EE" stroke="#E8500A" stroke-width="1.5"/>
+    <text x="380" y="0" font-size="12" fill="#3A3A3A">Decision point</text>
+
+    <!-- Solid arrow -->
+    <line x1="510" y1="-5" x2="538" y2="-5" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="548" y="0" font-size="12" fill="#3A3A3A">Main flow</text>
+
+    <!-- Dashed arrow -->
+    <line x1="650" y1="-5" x2="678" y2="-5" stroke="#E8500A" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="688" y="0" font-size="12" fill="#3A3A3A">Retry / fallback</text>
+
+    <text x="1800" y="0" font-size="11" fill="#9B9B9B" text-anchor="end" class="mono">PrepPilot · 2026-05-19</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       SIDE ANNOTATIONS (subtle, on far right) — what each system stage does          -->
+  <g transform="translate(1500, 230)" opacity="0.9">
+    <text x="0" y="0" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.5">PLAN B · PIPELINE</text>
+
+    <text x="0" y="30" font-size="11" font-weight="700" fill="#0A0A0A">① Route</text>
+    <text x="0" y="46" font-size="11" fill="#6B6B6B">narrow 417 → ~150 handlers</text>
+
+    <text x="0" y="76" font-size="11" font-weight="700" fill="#0A0A0A">② Plan</text>
+    <text x="0" y="92" font-size="11" fill="#6B6B6B">JSON steps · handler-id or codegen</text>
+
+    <text x="0" y="122" font-size="11" font-weight="700" fill="#0A0A0A">③ Execute</text>
+    <text x="0" y="138" font-size="11" fill="#6B6B6B">handler from registry or generated</text>
+
+    <text x="0" y="168" font-size="11" font-weight="700" fill="#0A0A0A">④ Sandbox</text>
+    <text x="0" y="184" font-size="11" fill="#6B6B6B">isolated · timeout · plotly-safe</text>
+
+    <text x="0" y="214" font-size="11" font-weight="700" fill="#0A0A0A">⑤ Verify</text>
+    <text x="0" y="230" font-size="11" fill="#6B6B6B">success? retry once on error</text>
+
+    <text x="0" y="260" font-size="11" font-weight="700" fill="#0A0A0A">⑥ Interpret</text>
+    <text x="0" y="276" font-size="11" fill="#6B6B6B">LLM writes answer with real numbers</text>
+  </g>
+
+</svg>

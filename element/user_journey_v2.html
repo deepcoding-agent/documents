@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrepPilot — User Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FAFAFA; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0A0A0A; }
+    .frame { width: 1920px; margin: 0 auto; padding: 0; background: #FFFFFF; }
+    @media print { @page { size: 1920px 1080px landscape; margin: 0; } body { background: #fff; } }
+    svg { display: block; width: 100%; height: auto; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+  </style>
+</head>
+<body>
+<div class="frame">
+
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot user journey">
+
+  <defs>
+    <symbol id="iLock" viewBox="0 0 24 24">
+      <rect x="5" y="11" width="14" height="10" rx="2" fill="currentColor"/>
+      <path d="M8 11 V8 C8 5.8 9.8 4 12 4 C14.2 4 16 5.8 16 8 V11" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="iCog" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 2 L13 5 L16 4 L17 7 L20 8 L19 11 L22 12 L19 13 L20 16 L17 17 L16 20 L13 19 L12 22 L11 19 L8 20 L7 17 L4 16 L5 13 L2 12 L5 11 L4 8 L7 7 L8 4 L11 5 Z" fill="currentColor"/>
+      <circle cx="12" cy="12" r="3.2" fill="#FFFFFF"/>
+    </symbol>
+    <symbol id="iSpark" viewBox="0 0 24 24">
+      <path d="M12 2 L13.5 9 L21 10.5 L13.5 12 L12 19 L10.5 12 L3 10.5 L10.5 9 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="iChart" viewBox="0 0 24 24">
+      <rect x="3.5" y="14" width="4" height="6.5" rx="0.6" fill="currentColor"/>
+      <rect x="10" y="9" width="4" height="11.5" rx="0.6" fill="currentColor"/>
+      <rect x="16.5" y="3.5" width="4" height="17" rx="0.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="iCheck" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9.5" fill="currentColor"/>
+      <path d="M7 12 L11 16 L17 9" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.07"/>
+    </filter>
+    <filter id="softShadow" x="-2%" y="-2%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.05"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,10 L11,5 z" fill="#E8500A"/>
+    </marker>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8500A"/>
+      <stop offset="100%" stop-color="#FF6B2B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- ── Title ── -->
+  <rect x="0" y="0" width="6" height="100" fill="url(#titleAccent)"/>
+  <text x="60" y="56" font-size="34" font-weight="800" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — User Journey</text>
+  <text x="60" y="82" font-size="14" font-weight="500" fill="#6B6B6B">5 phases · what users do at each step · how they interact</text>
+  <text x="1860" y="68" font-size="12" fill="#9B9B9B" text-anchor="end">2026-05-19 · Sprint 5.7</text>
+
+  <line x1="40" y1="105" x2="1880" y2="105" stroke="#E5E4E1" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       PHASE 1 · ENTRY                                                                 -->
+  <g transform="translate(40, 140)" color="#E8500A">
+    <rect x="0" y="0" width="220" height="830" rx="16" fill="#FFFDFB" stroke="#FCE0D2" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+    <!-- Phase header -->
+    <circle cx="38" cy="40" r="20" fill="#E8500A"/>
+    <text x="38" y="47" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="72" y="34" font-size="14" font-weight="800" fill="#E8500A" letter-spacing="1.5">ENTRY</text>
+    <text x="72" y="52" font-size="10" fill="#6B6B6B">sign in &amp; arrive</text>
+    <use href="#iLock" x="186" y="28" width="22" height="22"/>
+
+    <!-- Card 1 · Sign in -->
+    <g transform="translate(20, 100)">
+      <rect width="180" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="90" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Sign in</text>
+      <line x1="20" y1="44" x2="160" y2="44" stroke="#FCE0D2"/>
+      <text x="90" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">Google OAuth 2.0</text>
+      <text x="90" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">click button → redirect</text>
+    </g>
+
+    <!-- Card 2 · Land on chat -->
+    <g transform="translate(20, 210)">
+      <rect width="180" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="90" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Open chat</text>
+      <line x1="20" y1="44" x2="160" y2="44" stroke="#FCE0D2"/>
+      <text x="90" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">auto-redirect</text>
+      <text x="90" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">workspace loaded</text>
+    </g>
+  </g>
+
+  <!-- arrow P1 → P2 -->
+  <line x1="262" y1="500" x2="298" y2="500" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       PHASE 2 · SETUP                                                                 -->
+  <g transform="translate(300, 140)" color="#E8500A">
+    <rect x="0" y="0" width="280" height="830" rx="16" fill="#FFFDFB" stroke="#FCE0D2" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+    <circle cx="38" cy="40" r="20" fill="#E8500A"/>
+    <text x="38" y="47" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="72" y="34" font-size="14" font-weight="800" fill="#E8500A" letter-spacing="1.5">SETUP</text>
+    <text x="72" y="52" font-size="10" fill="#6B6B6B">data &amp; model</text>
+    <use href="#iCog" x="246" y="28" width="22" height="22"/>
+
+    <!-- Card 1 · Upload -->
+    <g transform="translate(20, 100)">
+      <rect width="240" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Upload dataset</text>
+      <line x1="20" y1="44" x2="220" y2="44" stroke="#FCE0D2"/>
+      <text x="120" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">CSV · XLSX · JSON · Parquet</text>
+      <text x="120" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">drag-drop or file picker</text>
+    </g>
+
+    <!-- Card 2 · Pick saved dataset -->
+    <g transform="translate(20, 210)">
+      <rect width="240" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Pick saved dataset</text>
+      <line x1="20" y1="44" x2="220" y2="44" stroke="#FCE0D2"/>
+      <text x="120" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">switch active dataset</text>
+      <text x="120" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">click chip in DatasetPicker</text>
+    </g>
+
+    <!-- Card 3 · Pick model -->
+    <g transform="translate(20, 320)">
+      <rect width="240" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Pick LLM model</text>
+      <line x1="20" y1="44" x2="220" y2="44" stroke="#FCE0D2"/>
+      <text x="120" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">5 models available</text>
+      <text x="120" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">dropdown · default Haiku 4.5</text>
+    </g>
+  </g>
+
+  <!-- arrow P2 → P3 -->
+  <line x1="582" y1="500" x2="618" y2="500" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       PHASE 3 · ACTION                                                                -->
+  <g transform="translate(620, 140)" color="#E8500A">
+    <rect x="0" y="0" width="540" height="830" rx="16" fill="#FFFDFB" stroke="#FCE0D2" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+    <circle cx="38" cy="40" r="20" fill="#E8500A"/>
+    <text x="38" y="47" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="72" y="34" font-size="14" font-weight="800" fill="#E8500A" letter-spacing="1.5">ACTION</text>
+    <text x="72" y="52" font-size="10" fill="#6B6B6B">free question · or 6 slash commands</text>
+    <use href="#iSpark" x="506" y="28" width="22" height="22"/>
+
+    <!-- Hub-like: Free question (full width) -->
+    <g transform="translate(20, 100)">
+      <rect width="500" height="80" rx="12" fill="#E8500A" filter="url(#softShadow)"/>
+      <text x="250" y="32" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">Ask a free-form question</text>
+      <line x1="20" y1="46" x2="480" y2="46" stroke="#FFFFFF" opacity="0.3"/>
+      <text x="250" y="66" font-size="11" fill="#FFFFFF" text-anchor="middle" opacity="0.9">type natural language · Enter → AI plans · executes · narrates</text>
+    </g>
+
+    <!-- OR divider -->
+    <text x="270" y="210" font-size="11" font-weight="800" fill="#9B9B9B" text-anchor="middle" letter-spacing="2">OR · USE SLASH COMMAND</text>
+
+    <!-- Slash command grid: 3 rows × 2 cols = 6 cards -->
+    <!-- Row 1 -->
+    <g transform="translate(20, 230)">
+      <rect width="240" height="70" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="28" font-size="14" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">/cleaning</text>
+      <text x="120" y="48" font-size="11" fill="#6B6B6B" text-anchor="middle">auto data cleanup</text>
+      <text x="120" y="62" font-size="10" fill="#9B9B9B" text-anchor="middle">AI plans + applies</text>
+    </g>
+    <g transform="translate(280, 230)">
+      <rect width="240" height="70" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="28" font-size="14" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">/feature</text>
+      <text x="120" y="48" font-size="11" fill="#6B6B6B" text-anchor="middle">feature engineering</text>
+      <text x="120" y="62" font-size="10" fill="#9B9B9B" text-anchor="middle">setup panel · encoders</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(20, 320)">
+      <rect width="240" height="70" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="28" font-size="14" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">/train</text>
+      <text x="120" y="48" font-size="11" fill="#6B6B6B" text-anchor="middle">auto ML training</text>
+      <text x="120" y="62" font-size="10" fill="#9B9B9B" text-anchor="middle">pick target · CV + Optuna</text>
+    </g>
+    <g transform="translate(280, 320)">
+      <rect width="240" height="70" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="28" font-size="14" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">/predict</text>
+      <text x="120" y="48" font-size="11" fill="#6B6B6B" text-anchor="middle">run inference</text>
+      <text x="120" y="62" font-size="10" fill="#9B9B9B" text-anchor="middle">pick saved model</text>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(20, 410)">
+      <rect width="240" height="70" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="28" font-size="14" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">/eda</text>
+      <text x="120" y="48" font-size="11" fill="#6B6B6B" text-anchor="middle">technical analysis</text>
+      <text x="120" y="62" font-size="10" fill="#9B9B9B" text-anchor="middle">distributions + 6 charts</text>
+    </g>
+    <g transform="translate(280, 410)">
+      <rect width="240" height="70" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="28" font-size="14" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">/biz-report</text>
+      <text x="120" y="48" font-size="11" fill="#6B6B6B" text-anchor="middle">business strategy</text>
+      <text x="120" y="62" font-size="10" fill="#9B9B9B" text-anchor="middle">segments · KPIs · roadmap</text>
+    </g>
+
+    <!-- Chat-level controls strip at bottom -->
+    <g transform="translate(20, 510)">
+      <text x="0" y="0" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.5">CHAT-LEVEL CONTROLS</text>
+    </g>
+    <g transform="translate(20, 530)">
+      <rect width="156" height="36" rx="18" fill="#FFF3EE" stroke="#FCE0D2"/>
+      <text x="78" y="22" font-size="11" font-weight="700" fill="#0A0A0A" text-anchor="middle">Reply with quote</text>
+    </g>
+    <g transform="translate(192, 530)">
+      <rect width="156" height="36" rx="18" fill="#FFF3EE" stroke="#FCE0D2"/>
+      <text x="78" y="22" font-size="11" font-weight="700" fill="#0A0A0A" text-anchor="middle">Stop generation</text>
+    </g>
+    <g transform="translate(364, 530)">
+      <rect width="156" height="36" rx="18" fill="#FFF3EE" stroke="#FCE0D2"/>
+      <text x="78" y="22" font-size="11" font-weight="700" fill="#0A0A0A" text-anchor="middle">Browse history</text>
+    </g>
+  </g>
+
+  <!-- arrow P3 → P4 -->
+  <line x1="1162" y1="500" x2="1198" y2="500" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       PHASE 4 · RESULT                                                                -->
+  <g transform="translate(1200, 140)" color="#E8500A">
+    <rect x="0" y="0" width="360" height="830" rx="16" fill="#FFFDFB" stroke="#FCE0D2" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+    <circle cx="38" cy="40" r="20" fill="#E8500A"/>
+    <text x="38" y="47" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="72" y="34" font-size="14" font-weight="800" fill="#E8500A" letter-spacing="1.5">RESULT</text>
+    <text x="72" y="52" font-size="10" fill="#6B6B6B">AI returns answer + artefacts</text>
+    <use href="#iChart" x="326" y="28" width="22" height="22"/>
+
+    <!-- 5 result types stacked -->
+    <g transform="translate(20, 100)">
+      <rect width="320" height="80" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="160" y="28" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Inline answer</text>
+      <line x1="20" y1="42" x2="300" y2="42" stroke="#FCE0D2"/>
+      <text x="160" y="60" font-size="11" fill="#6B6B6B" text-anchor="middle">text · table · Plotly chart</text>
+      <text x="160" y="74" font-size="10" fill="#9B9B9B" text-anchor="middle">rendered in chat bubble</text>
+    </g>
+
+    <g transform="translate(20, 200)">
+      <rect width="320" height="80" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="160" y="28" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">New dataset</text>
+      <line x1="20" y1="42" x2="300" y2="42" stroke="#FCE0D2"/>
+      <text x="160" y="60" font-size="11" fill="#6B6B6B" text-anchor="middle">cleaned · engineered · predicted</text>
+      <text x="160" y="74" font-size="10" fill="#9B9B9B" text-anchor="middle">tab added in DatasetPicker</text>
+    </g>
+
+    <g transform="translate(20, 300)">
+      <rect width="320" height="80" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="160" y="28" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Trained model</text>
+      <line x1="20" y1="42" x2="300" y2="42" stroke="#FCE0D2"/>
+      <text x="160" y="60" font-size="11" fill="#6B6B6B" text-anchor="middle">.joblib + evaluation charts</text>
+      <text x="160" y="74" font-size="10" fill="#9B9B9B" text-anchor="middle">linked to conversation</text>
+    </g>
+
+    <g transform="translate(20, 400)">
+      <rect width="320" height="80" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="160" y="28" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Document report</text>
+      <line x1="20" y1="42" x2="300" y2="42" stroke="#FCE0D2"/>
+      <text x="160" y="60" font-size="11" fill="#6B6B6B" text-anchor="middle">EDA or business strategy</text>
+      <text x="160" y="74" font-size="10" fill="#9B9B9B" text-anchor="middle">scrollable card with charts</text>
+    </g>
+
+    <g transform="translate(20, 500)">
+      <rect width="320" height="80" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="160" y="28" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Prepared folder</text>
+      <line x1="20" y1="42" x2="300" y2="42" stroke="#FCE0D2"/>
+      <text x="160" y="60" font-size="11" fill="#6B6B6B" text-anchor="middle">train/val/test split · ZIP</text>
+      <text x="160" y="74" font-size="10" fill="#9B9B9B" text-anchor="middle">ML-ready bundle</text>
+    </g>
+  </g>
+
+  <!-- arrow P4 → P5 -->
+  <line x1="1562" y1="500" x2="1598" y2="500" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       PHASE 5 · FOLLOW-UP                                                             -->
+  <g transform="translate(1600, 140)" color="#E8500A">
+    <rect x="0" y="0" width="280" height="830" rx="16" fill="#FFFDFB" stroke="#FCE0D2" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+    <circle cx="38" cy="40" r="20" fill="#E8500A"/>
+    <text x="38" y="47" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">5</text>
+    <text x="72" y="34" font-size="14" font-weight="800" fill="#E8500A" letter-spacing="1.5">FOLLOW-UP</text>
+    <text x="72" y="52" font-size="10" fill="#6B6B6B">save · export · loop back</text>
+    <use href="#iCheck" x="246" y="28" width="22" height="22"/>
+
+    <g transform="translate(20, 100)">
+      <rect width="240" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Save to library</text>
+      <line x1="20" y1="44" x2="220" y2="44" stroke="#FCE0D2"/>
+      <text x="120" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">permanent storage</text>
+      <text x="120" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">"Save to system" button</text>
+    </g>
+
+    <g transform="translate(20, 210)">
+      <rect width="240" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Export file</text>
+      <line x1="20" y1="44" x2="220" y2="44" stroke="#FCE0D2"/>
+      <text x="120" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">CSV · XLSX · ZIP · .joblib</text>
+      <text x="120" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">download to local</text>
+    </g>
+
+    <g transform="translate(20, 320)">
+      <rect width="240" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Reply with quote</text>
+      <line x1="20" y1="44" x2="220" y2="44" stroke="#FCE0D2"/>
+      <text x="120" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">pin row/message</text>
+      <text x="120" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">context for next turn</text>
+    </g>
+
+    <g transform="translate(20, 430)">
+      <rect width="240" height="90" rx="12" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5" filter="url(#softShadow)"/>
+      <text x="120" y="30" font-size="14" font-weight="800" fill="#0A0A0A" text-anchor="middle">Continue chat</text>
+      <line x1="20" y1="44" x2="220" y2="44" stroke="#FCE0D2"/>
+      <text x="120" y="64" font-size="11" fill="#6B6B6B" text-anchor="middle">ask follow-up</text>
+      <text x="120" y="80" font-size="10" fill="#9B9B9B" text-anchor="middle">→ loops back to Action</text>
+    </g>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       LOOP-BACK indicator: P5 → P3                                                    -->
+  <path d="M 1620 720 Q 1500 720 1500 760 Q 1500 780 1400 780 Q 1200 780 1000 780 Q 890 780 890 760 Q 890 720 880 720"
+        fill="none" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"
+        marker-end="url(#arrow)"/>
+  <rect x="1100" y="790" width="220" height="24" rx="12" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+  <text x="1210" y="806" font-size="11" font-weight="800" fill="#E8500A" text-anchor="middle">next turn · loops to Action</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       FOOTER LEGEND                                                                   -->
+  <g transform="translate(60, 1015)">
+    <rect width="1800" height="50" rx="10" fill="#FAFAFA" stroke="#E5E4E1" stroke-width="1"/>
+
+    <text x="24" y="22" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.2">LEGEND</text>
+
+    <rect x="90" y="14" width="22" height="14" rx="3" fill="#E8500A"/>
+    <text x="120" y="25" font-size="11" fill="#3A3A3A">Primary action (hub)</text>
+
+    <rect x="260" y="14" width="22" height="14" rx="3" fill="#FFFFFF" stroke="#E8500A" stroke-width="1.5"/>
+    <text x="290" y="25" font-size="11" fill="#3A3A3A">User action</text>
+
+    <line x1="400" y1="21" x2="430" y2="21" stroke="#E8500A" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="440" y="25" font-size="11" fill="#3A3A3A">Phase transition</text>
+
+    <line x1="580" y1="21" x2="610" y2="21" stroke="#E8500A" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+    <text x="620" y="25" font-size="11" fill="#3A3A3A">Loop back · next turn</text>
+
+    <text x="24" y="42" font-size="11" fill="#6B6B6B">Each turn cycles ENTRY → SETUP (once) then ACTION ↔ RESULT ↔ FOLLOW-UP repeatedly until the user signs out.</text>
+
+    <text x="1770" y="32" font-size="11" fill="#9B9B9B" text-anchor="end" class="mono">PrepPilot · 2026-05-19</text>
+  </g>
+
+</svg>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrepPilot — Two-Stage AI Routing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FAFAFA; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0A0A0A; }
+    .frame { width: 1920px; margin: 0 auto; padding: 0; background: #FFFFFF; }
+    @media print { @page { size: 1920px 1080px landscape; margin: 0; } body { background: #fff; } }
+    svg { display: block; width: 100%; height: auto; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+  </style>
+</head>
+<body>
+<div class="frame">
+
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PrepPilot two-stage AI routing">
+
+  <defs>
+    <symbol id="iUser" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4" fill="currentColor"/>
+      <path d="M4 22 C4 16 7.6 14 12 14 C16.4 14 20 16 20 22 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="iCompass" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 5 L14.4 12 L12 19 L9.6 12 Z" fill="currentColor"/>
+      <circle cx="12" cy="12" r="1.6" fill="#FFFFFF"/>
+    </symbol>
+    <symbol id="iList" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M6.5 9.5 L8.5 11.5 L12.5 7.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 16.5 L8.5 18.5 L12.5 14.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="14.5" y1="9.5" x2="18" y2="9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="14.5" y1="16.5" x2="18" y2="16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="iCog" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 2 L13 5 L16 4 L17 7 L20 8 L19 11 L22 12 L19 13 L20 16 L17 17 L16 20 L13 19 L12 22 L11 19 L8 20 L7 17 L4 16 L5 13 L2 12 L5 11 L4 8 L7 7 L8 4 L11 5 Z" fill="currentColor"/>
+      <circle cx="12" cy="12" r="3.2" fill="#FFFFFF"/>
+    </symbol>
+    <symbol id="iStack" viewBox="0 0 24 24">
+      <path d="M12 2 L22 7 L12 12 L2 7 Z" fill="currentColor"/>
+      <path d="M2 12 L12 17 L22 12 L20 11 L12 15 L4 11 Z" fill="currentColor" opacity="0.7"/>
+      <path d="M2 17 L12 22 L22 17 L20 16 L12 20 L4 16 Z" fill="currentColor" opacity="0.5"/>
+    </symbol>
+
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.07"/>
+    </filter>
+    <filter id="softShadow" x="-2%" y="-2%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.05"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,10 L11,5 z" fill="#E8500A"/>
+    </marker>
+    <linearGradient id="titleAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8500A"/>
+      <stop offset="100%" stop-color="#FF6B2B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+  <!-- ── Title ── -->
+  <rect x="0" y="0" width="6" height="100" fill="url(#titleAccent)"/>
+  <text x="60" y="56" font-size="34" font-weight="800" fill="#0A0A0A" letter-spacing="-0.5">PrepPilot — Two-Stage AI Routing</text>
+  <text x="60" y="82" font-size="14" font-weight="500" fill="#6B6B6B">How a user message gets narrowed from 417 handlers down to a focused JSON plan</text>
+  <text x="1860" y="68" font-size="12" fill="#9B9B9B" text-anchor="end">2026-05-19 · Sprint 5.7</text>
+
+  <line x1="40" y1="105" x2="1880" y2="105" stroke="#E5E4E1" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       1. USER MESSAGE (left)                                                         -->
+  <g transform="translate(40, 430)" color="#E8500A">
+    <rect x="0" y="0" width="200" height="180" rx="14" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="100" cy="42" r="24" fill="#FFF3EE"/>
+    <use href="#iUser" x="80" y="22" width="40" height="40"/>
+    <text x="100" y="86" font-size="11" font-weight="800" fill="#9B9B9B" text-anchor="middle" letter-spacing="1.2">INPUT</text>
+    <text x="100" y="110" font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle">User Message</text>
+    <line x1="20" y1="128" x2="180" y2="128" stroke="#FCE0D2"/>
+    <text x="100" y="152" font-size="11" fill="#6B6B6B" text-anchor="middle">free-form NL</text>
+    <text x="100" y="168" font-size="11" fill="#6B6B6B" text-anchor="middle">Thai / English</text>
+  </g>
+
+  <!-- arrow user → stage 1 -->
+  <line x1="246" y1="520" x2="284" y2="520" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       2. STAGE 1 · CATEGORY ROUTER                                                   -->
+  <g transform="translate(290, 240)" color="#E8500A">
+    <rect x="0" y="0" width="400" height="560" rx="16" fill="#FFFDFB" stroke="#E8500A" stroke-width="2.5" filter="url(#shadow)"/>
+
+    <!-- Stage badge -->
+    <rect x="22" y="22" width="90" height="26" rx="13" fill="#E8500A"/>
+    <text x="67" y="40" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.2">STAGE 1</text>
+
+    <!-- Icon and title -->
+    <use href="#iCompass" x="22" y="74" width="36" height="36"/>
+    <text x="70" y="100" font-size="22" font-weight="800" fill="#0A0A0A">Category Router</text>
+    <text x="22" y="132" font-size="13" fill="#6B6B6B">Lightweight intent classifier</text>
+
+    <line x1="22" y1="156" x2="378" y2="156" stroke="#FCE0D2" stroke-width="1"/>
+
+    <!-- What it does -->
+    <text x="22" y="186" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.2">WHAT IT DOES</text>
+
+    <g transform="translate(22, 210)" font-size="13" fill="#3A3A3A">
+      <circle cx="6" cy="6" r="3" fill="#E8500A"/>
+      <text x="22" y="11">Classifies into 1–3 of 7 categories</text>
+
+      <circle cx="6" cy="44" r="3" fill="#E8500A"/>
+      <text x="22" y="49">Detects direct-answer questions</text>
+
+      <circle cx="6" cy="82" r="3" fill="#E8500A"/>
+      <text x="22" y="87">AI re-verifies ambiguous cases</text>
+
+      <circle cx="6" cy="120" r="3" fill="#E8500A"/>
+      <text x="22" y="125">No keywords · no regex</text>
+    </g>
+
+    <line x1="22" y1="368" x2="378" y2="368" stroke="#FCE0D2" stroke-width="1"/>
+
+    <!-- Output -->
+    <text x="22" y="398" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.2">PRODUCES</text>
+    <text x="22" y="424" font-size="14" font-weight="700" fill="#0A0A0A">Selected categories</text>
+    <text x="22" y="444" font-size="11" fill="#6B6B6B">+ direct_answer verdict</text>
+
+    <!-- Spec tag -->
+    <rect x="22" y="478" width="356" height="60" rx="10" fill="#FFF3EE" stroke="#FCE0D2"/>
+    <text x="36" y="498" font-size="10" font-weight="800" fill="#9B9B9B" letter-spacing="1">SPEC</text>
+    <text x="36" y="518" font-size="12" fill="#3A3A3A" class="mono">max_tokens = 200</text>
+    <text x="36" y="532" font-size="12" fill="#3A3A3A" class="mono">temperature = 0.0</text>
+  </g>
+
+  <!-- arrow stage 1 → categories -->
+  <line x1="696" y1="520" x2="734" y2="520" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="688" y="478" width="60" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2"/>
+  <text x="718" y="494" font-size="10" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">narrow</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       3. HANDLER CATEGORIES (central, vertical list of 7)                            -->
+  <g transform="translate(740, 160)" color="#E8500A">
+    <rect x="0" y="0" width="380" height="720" rx="16" fill="#FFFDFB" stroke="#E8500A" stroke-width="2.5" stroke-dasharray="10 6"/>
+
+    <use href="#iStack" x="22" y="24" width="28" height="28"/>
+    <text x="60" y="40" font-size="14" font-weight="800" fill="#E8500A">Handler Registry</text>
+    <text x="60" y="58" font-size="11" fill="#6B6B6B">417 ops · 7 categories</text>
+
+    <line x1="22" y1="80" x2="358" y2="80" stroke="#FCE0D2"/>
+
+    <!-- 7 category rows -->
+    <!-- Row 1 · stats -->
+    <g transform="translate(22, 100)">
+      <rect width="336" height="64" rx="12" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+      <text x="24" y="28" font-size="15" font-weight="800" fill="#0A0A0A" class="mono">stats</text>
+      <text x="24" y="48" font-size="11" fill="#6B6B6B">describe · correlation · chi²</text>
+      <text x="314" y="40" font-size="22" font-weight="800" fill="#E8500A" text-anchor="end">56</text>
+    </g>
+
+    <!-- Row 2 · clean -->
+    <g transform="translate(22, 178)">
+      <rect width="336" height="64" rx="12" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+      <text x="24" y="28" font-size="15" font-weight="800" fill="#0A0A0A" class="mono">clean</text>
+      <text x="24" y="48" font-size="11" fill="#6B6B6B">fill_nulls · SMOTE · dedupe</text>
+      <text x="314" y="40" font-size="22" font-weight="800" fill="#E8500A" text-anchor="end">60</text>
+    </g>
+
+    <!-- Row 3 · transform -->
+    <g transform="translate(22, 256)">
+      <rect width="336" height="64" rx="12" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+      <text x="24" y="28" font-size="15" font-weight="800" fill="#0A0A0A" class="mono">transform</text>
+      <text x="24" y="48" font-size="11" fill="#6B6B6B">pivot · encode · sample</text>
+      <text x="314" y="40" font-size="22" font-weight="800" fill="#E8500A" text-anchor="end">64</text>
+    </g>
+
+    <!-- Row 4 · viz (HIGHLIGHTED · selected) -->
+    <g transform="translate(22, 334)">
+      <rect width="336" height="64" rx="12" fill="#E8500A" stroke="#E8500A" stroke-width="1.5"/>
+      <rect x="0" y="0" width="6" height="64" rx="3" fill="#FF6B2B"/>
+      <text x="24" y="28" font-size="15" font-weight="800" fill="#FFFFFF" class="mono">viz</text>
+      <text x="24" y="48" font-size="11" fill="#FFFFFF" opacity="0.85">bar · scatter · heatmap</text>
+      <text x="314" y="40" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="end">56</text>
+      <rect x="270" y="44" width="60" height="16" rx="8" fill="#FFFFFF"/>
+      <text x="300" y="55" font-size="9" font-weight="800" fill="#E8500A" text-anchor="middle" letter-spacing="0.8">SELECTED</text>
+    </g>
+
+    <!-- Row 5 · feature (HIGHLIGHTED · selected) -->
+    <g transform="translate(22, 412)">
+      <rect width="336" height="64" rx="12" fill="#E8500A" stroke="#E8500A" stroke-width="1.5"/>
+      <rect x="0" y="0" width="6" height="64" rx="3" fill="#FF6B2B"/>
+      <text x="24" y="28" font-size="15" font-weight="800" fill="#FFFFFF" class="mono">feature</text>
+      <text x="24" y="48" font-size="11" fill="#FFFFFF" opacity="0.85">PCA · RFE · rolling</text>
+      <text x="314" y="40" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="end">63</text>
+      <rect x="270" y="44" width="60" height="16" rx="8" fill="#FFFFFF"/>
+      <text x="300" y="55" font-size="9" font-weight="800" fill="#E8500A" text-anchor="middle" letter-spacing="0.8">SELECTED</text>
+    </g>
+
+    <!-- Row 6 · nlp -->
+    <g transform="translate(22, 490)">
+      <rect width="336" height="64" rx="12" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+      <text x="24" y="28" font-size="15" font-weight="800" fill="#0A0A0A" class="mono">nlp</text>
+      <text x="24" y="48" font-size="11" fill="#6B6B6B">tokenize · NER · sentiment</text>
+      <text x="314" y="40" font-size="22" font-weight="800" fill="#E8500A" text-anchor="end">56</text>
+    </g>
+
+    <!-- Row 7 · analysis -->
+    <g transform="translate(22, 568)">
+      <rect width="336" height="64" rx="12" fill="#FFFFFF" stroke="#FCE0D2" stroke-width="1.5"/>
+      <text x="24" y="28" font-size="15" font-weight="800" fill="#0A0A0A" class="mono">analysis</text>
+      <text x="24" y="48" font-size="11" fill="#6B6B6B">DBSCAN · drift · schema</text>
+      <text x="314" y="40" font-size="22" font-weight="800" fill="#E8500A" text-anchor="end">62</text>
+    </g>
+
+    <!-- Bottom note: example -->
+    <text x="190" y="678" font-size="11" font-weight="800" fill="#9B9B9B" text-anchor="middle" letter-spacing="1">EXAMPLE SELECTION</text>
+    <text x="190" y="698" font-size="11" fill="#6B6B6B" text-anchor="middle" class="mono">viz + feature · 119 of 417 handlers</text>
+  </g>
+
+  <!-- arrow categories → stage 2 -->
+  <line x1="1124" y1="520" x2="1162" y2="520" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="1110" y="478" width="84" height="22" rx="11" fill="#FFFFFF" stroke="#FCE0D2"/>
+  <text x="1152" y="494" font-size="10" font-weight="800" fill="#E8500A" text-anchor="middle" class="mono">~150 handlers</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       4. STAGE 2 · FOCUSED PLANNER                                                   -->
+  <g transform="translate(1170, 240)" color="#E8500A">
+    <rect x="0" y="0" width="400" height="560" rx="16" fill="#FFFDFB" stroke="#E8500A" stroke-width="2.5" filter="url(#shadow)"/>
+
+    <rect x="22" y="22" width="90" height="26" rx="13" fill="#E8500A"/>
+    <text x="67" y="40" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.2">STAGE 2</text>
+
+    <use href="#iList" x="22" y="74" width="36" height="36"/>
+    <text x="70" y="100" font-size="22" font-weight="800" fill="#0A0A0A">Focused Planner</text>
+    <text x="22" y="132" font-size="13" fill="#6B6B6B">JSON plan from narrowed scope</text>
+
+    <line x1="22" y1="156" x2="378" y2="156" stroke="#FCE0D2" stroke-width="1"/>
+
+    <text x="22" y="186" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.2">WHAT IT DOES</text>
+
+    <g transform="translate(22, 210)" font-size="13" fill="#3A3A3A">
+      <circle cx="6" cy="6" r="3" fill="#E8500A"/>
+      <text x="22" y="11">Sees only the selected categories</text>
+
+      <circle cx="6" cy="44" r="3" fill="#E8500A"/>
+      <text x="22" y="49">Writes ordered JSON plan steps</text>
+
+      <circle cx="6" cy="82" r="3" fill="#E8500A"/>
+      <text x="22" y="87">Each step: handler.id OR codegen</text>
+
+      <circle cx="6" cy="120" r="3" fill="#E8500A"/>
+      <text x="22" y="125">Reads last 6 turns of history</text>
+    </g>
+
+    <line x1="22" y1="368" x2="378" y2="368" stroke="#FCE0D2" stroke-width="1"/>
+
+    <text x="22" y="398" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.2">PRODUCES</text>
+    <text x="22" y="424" font-size="14" font-weight="700" fill="#0A0A0A">Ordered step list</text>
+    <text x="22" y="444" font-size="11" fill="#6B6B6B">Ready for execution</text>
+
+    <rect x="22" y="478" width="356" height="60" rx="10" fill="#FFF3EE" stroke="#FCE0D2"/>
+    <text x="36" y="498" font-size="10" font-weight="800" fill="#9B9B9B" letter-spacing="1">SAMPLE OUTPUT</text>
+    <text x="36" y="518" font-size="11" fill="#3A3A3A" class="mono">[describe(age), describe(price),</text>
+    <text x="36" y="532" font-size="11" fill="#3A3A3A" class="mono">  histogram(age), scatter(age,price)]</text>
+  </g>
+
+  <!-- arrow stage 2 → executor -->
+  <line x1="1576" y1="520" x2="1614" y2="520" stroke="#E8500A" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       5. STEP EXECUTOR (right)                                                       -->
+  <g transform="translate(1620, 380)" color="#E8500A">
+    <rect x="0" y="0" width="260" height="280" rx="14" fill="#FFFFFF" stroke="#E8500A" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="130" cy="42" r="24" fill="#FFF3EE"/>
+    <use href="#iCog" x="110" y="22" width="40" height="40"/>
+    <text x="130" y="86" font-size="11" font-weight="800" fill="#9B9B9B" text-anchor="middle" letter-spacing="1.2">EXECUTION</text>
+    <text x="130" y="110" font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle">Step Executor</text>
+    <line x1="20" y1="128" x2="240" y2="128" stroke="#FCE0D2"/>
+
+    <text x="130" y="158" font-size="12" fill="#3A3A3A" text-anchor="middle">handler or codegen</text>
+    <text x="130" y="180" font-size="12" fill="#3A3A3A" text-anchor="middle">isolated sandbox</text>
+    <text x="130" y="202" font-size="12" fill="#3A3A3A" text-anchor="middle">auto-retry once</text>
+    <text x="130" y="224" font-size="12" fill="#3A3A3A" text-anchor="middle">LLM interprets result</text>
+
+    <line x1="20" y1="242" x2="240" y2="242" stroke="#FCE0D2"/>
+    <text x="130" y="262" font-size="10" font-weight="700" fill="#E8500A" text-anchor="middle">→ user receives answer</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════
+       BOTTOM EXAMPLE STRIP                                                            -->
+  <g transform="translate(40, 910)">
+    <rect x="0" y="0" width="1840" height="110" rx="14" fill="#FAFAFA" stroke="#E5E4E1" stroke-width="1.5"/>
+
+    <text x="24" y="30" font-size="13" font-weight="800" fill="#0A0A0A">Worked example — &quot;plot age vs price with histograms&quot;</text>
+
+    <g transform="translate(24, 52)">
+      <rect width="350" height="46" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="14" y="20" font-size="10" font-weight="800" fill="#9B9B9B" letter-spacing="1">USER INPUT</text>
+      <text x="14" y="38" font-size="12" fill="#3A3A3A">"plot age vs price with histograms"</text>
+    </g>
+
+    <g transform="translate(388, 52)">
+      <rect width="350" height="46" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="14" y="20" font-size="10" font-weight="800" fill="#9B9B9B" letter-spacing="1">STAGE 1 OUTPUT</text>
+      <text x="14" y="38" font-size="12" fill="#3A3A3A" class="mono">["stats", "viz"]</text>
+    </g>
+
+    <g transform="translate(752, 52)">
+      <rect width="380" height="46" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="14" y="20" font-size="10" font-weight="800" fill="#9B9B9B" letter-spacing="1">NARROWED SCOPE</text>
+      <text x="14" y="38" font-size="12" fill="#3A3A3A">~112 handlers (56 stats + 56 viz)</text>
+    </g>
+
+    <g transform="translate(1146, 52)">
+      <rect width="380" height="46" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="14" y="20" font-size="10" font-weight="800" fill="#9B9B9B" letter-spacing="1">STAGE 2 PLAN</text>
+      <text x="14" y="38" font-size="11" fill="#3A3A3A" class="mono">describe → histogram → scatter</text>
+    </g>
+
+    <g transform="translate(1540, 52)">
+      <rect width="280" height="46" rx="10" fill="#FFFFFF" stroke="#FCE0D2"/>
+      <text x="14" y="20" font-size="10" font-weight="800" fill="#9B9B9B" letter-spacing="1">EXECUTOR</text>
+      <text x="14" y="38" font-size="12" fill="#3A3A3A">runs 3 steps · charts back</text>
+    </g>
+  </g>
+
+  <!-- Footer legend -->
+  <g transform="translate(40, 1050)">
+    <text x="0" y="0" font-size="11" font-weight="800" fill="#9B9B9B" letter-spacing="1.5">KEY IDEA</text>
+    <text x="80" y="0" font-size="11" fill="#3A3A3A">Stage 1 narrows the handler set (417 → ~150) so Stage 2 sees a focused, cheaper, faster prompt.</text>
+    <text x="1800" y="0" font-size="11" fill="#9B9B9B" text-anchor="end" class="mono">PrepPilot · 2026-05-19</text>
+  </g>
+
+</svg>
+
+</div>
+</body>
+</html>
